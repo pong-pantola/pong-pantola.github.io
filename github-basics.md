@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Git Basics
+title: GitHub Basics
 permalink: /github-basics/
 ---
 
@@ -65,9 +65,99 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 1. Click the `New repository` button.  
 
 1. In the `Create a new repository` page enter the following values:
-	text box, type `myfirstrepo`
 
-1. 
+	||||
+	|---|---|---|
+	| **Repository name** | myfirstrepo |
+	| **Type** | Public |
+	| **Initialize this repository with a README** | checked |
+
+1. Click the `Create repository` button.
+
+1. You will be redirected to your `myfirstrepo` repository.  Currently, the repository contains a single file: `README.md`.
+
+	You may add new files and edit existing files using the GitHub interface.  This tutorial will not cover the procedure to accomplish this.
+
+1. Take note of the Git URL of your `myfirstrepo`.  In GitHub, the Git URL follows the following format:
+
+	```text
+	https://github.com/<username>/<repository_name>.git
+	```
+
+	**Example:**
+	```text
+	https://github.com/pong/myfirstrepo.git
+	```
+	>**IMPORTANT:** The example above is the Git URL of another user.  Make sure to take note the URL of your `myfirstrepo`.
+
+	The Git URL is important to sync your local repository (i.e., the one in your hard drive)  and your remote repository (e.g., `myfirstrepo`).
+
+1. Open a terminal window.  Create the directory `gittemp` in the root directory.  Go to the created directory.
+
+	```text
+	> mkdir gittemp
+	> cd gittemp
+	```
+
+1. Clone the git repository `https://github.com/<username>/myfirstrepo.git` and go to the created `myfirstrepo` directory.
+
+	```text
+	> git clone https://github.com/<username>/myfirstrepo.git
+	> cd myfirstrepo
+	```
+ 
+ 	**Example:**
+	```text
+	> git clone https://github.com/pong/myfirstrepo.git
+	> cd myfirstrepo
+	```
+	>**IMPORTANT:** As mentioned earlier, the example above is the Git URL of another user.  Make sure to use the URL of your `myfirstrepo`.
+
+	**Output:**
+	```text
+	Cloning into 'myfirstrepo'...
+	remote: Counting objects: 3, done.
+	remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+	Unpacking objects: 100% (3/3), done.
+	Checking connectivity... done.
+	```
+
+	You have copied the contents of your remote repository `myfirstrepo` to a local repository (i.e., the `myfirstrepo` directory in your hard drive).
+
+1. Update `README.md` to the following:
+
+	```text
+	# myfirstrepo
+	Hello GitHub!
+	```
+
+	<br>
+
+1. Create a file `sample.txt` in `myfirstrepo` directory containing the following value:
+
+	```text
+	This is just a sample text file.
+	```
+
+	<br>
+
+
+1. Track and commit the changes made in the local repository.
+
+	```text
+	> git add README.md sample.txt
+	> git commit -m "updated README.md and created sample.txt"
+	```
+
+	**Output:**
+
+	```text
+	[master 5394740] added words from iguana to pig
+	 1 file changed, 9 insertions(+), 1 deletion(-)
+	```	
+	
+	<br>
+
 ####Install a Git Client
 
 
