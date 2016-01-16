@@ -152,11 +152,63 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	**Output:**
 
 	```text
-	[master 5394740] added words from iguana to pig
-	 1 file changed, 9 insertions(+), 1 deletion(-)
+	[master 671b491] updated README.md and created sample.txt
+	 2 files changed, 3 insertions(+), 1 deletion(-)
+	 create mode 100644 sample.txt
 	```	
-	
 	<br>
+
+	At this point, the changes made (i.e., updated the `README.md` file and created the `sample.txt text file`) are committed in your local repository.  However, the local repository is not synced with the remote repository `myfirstrepo`.  
+
+1. Go back to your web browser and refresh your page to confirm that `README.md` has not been updated and `sample.txt` is not yet created in the remote repository`myfirstrepo`.
+
+1. Verify that the Git URL of your remote repository is declared in your local repository
+
+	```text
+	> git remote -v
+	```
+	
+	**Output:**
+	```text
+	origin  https://github.com/<username>/myfirstrepo.git (fetch)
+	origin  https://github.com/<username>/myfirstrepo.git (push)
+	```
+	
+	As shown in the output above, your local repository is aware of the Git RL of your remote repository.  The name `origin` is used to refer to the Git URL (e.g., instead of mentioning the very long Git URL, you may just refer to it as `origin`).
+
+	Note that the declaration of having the name `origin` associated with the Git URL `https://github.com/<username>/myfirstrepo.git` was automatically done when you did a `git clone` earlier.  The name `origin` can be changed to something else but in this tutorial you will retain this name.
+
+1. Sync the contents of the local repository to the remote repository.
+
+
+	```text
+	> git push origin master
+	```
+	
+	**Output:**
+	```text
+	Username for 'https://github.com': <username>
+	Password for 'https://<username>@github.com':
+	Counting objects: 6, done.
+	Delta compression using up to 4 threads.
+	Compressing objects: 100% (2/2), done.
+	Writing objects: 100% (4/4), 375 bytes | 0 bytes/s, done.
+	Total 4 (delta 0), reused 0 (delta 0)
+	```
+
+	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
+
+	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository`myfirstrepo`.  A repository may have one or more branch.  By default, a repository has only one branch named `master`.   You may look at your GitHub page to verify that there is indeed a branch named `master`.  This tutorial does not cover the creation of additional branches.
+
+	The command `git push origin master` pushes the changes of your local repository to the `master` branch of the remote repository referred to by origin (which is https://github.com/<username>/myfirstrepo.git).
+
+	<br>
+	
+1. Go back to your web browser and refresh your page to confirm that `README.md` has been updated and `sample.txt` already exist in the remote repository`myfirstrepo`.
+
+	<br>
+	
+####Fork an Existing Repository
 
 ####Install a Git Client
 
