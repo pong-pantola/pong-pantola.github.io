@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Git Basics
-permalink: /git_basics/
+permalink: /git-basics/
 ---
 
 ##Application Development Tutorial
