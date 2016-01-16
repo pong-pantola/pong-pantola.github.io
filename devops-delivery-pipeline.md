@@ -130,7 +130,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 1. On the `DEVOPS-GIT TAB`: Set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Select All** | checked |
 	| **Commit message** | files created when Bluemix DevOps project was created |
 
@@ -160,7 +160,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `INPUT` tab, set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Input Type** | SCM Repository |
 	| **Git URL** | https://github.com/juandelacruz/devops-delivery-pipeline.git |
 	| **Branch** | master |
@@ -171,7 +171,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `JOBS` tab, click the `ADD JOB` link and select `Build`.   Change the job name `Build` to `Gradle Assemble`.  Set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Builder Type** | Gradle |		
 	| **Build Shell Command** | `#!/bin/bash`<br>`gradle asemble`  |	
 	| **Stop running this stage if this job fails** | checked |
@@ -189,7 +189,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `INPUT` tab, set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Input Type** | Build Artifacts |
 	| **Stage** | Build Stage |
 	| **Job** | Gradle Assemble |
@@ -200,7 +200,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `JOBS` tab, click the `ADD JOB` link and select `Test`.   Change the job name `Test` to `JUnit Test through Gradle`.  Set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Tester Type** | Simple |		
 	| **Test Command** | `#!/bin/bash`<br>`gradle test`  |	
 	| **Stop running this stage if this job fails** | checked |
@@ -221,7 +221,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `INPUT` tab, set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Input Type** | Build Artifacts |
 	| **Stage** | Build Stage |
 	| **Job** | Gradle Assemble |
@@ -232,7 +232,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `JOBS` tab, click the `ADD JOB` link and select `Deploy`.   Change the job name `Deploy` to `Cloud Foundry Push to Dev Space`.  Set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Deployer Type** | Cloud Foundry |		
 	| **Target** | IBM Bluemix US South - https://api.ng.bluemix.net |		
 	| **Organization** | you may leave the default selection |		
@@ -264,7 +264,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 	Recall that in the [Creating a Web Application using Gradle Tutorial](/gradle-web-application) the following commands are used:
 
 	Command | Purpose
-	-|-
+	---|---
 	`gradle assemble` | build `calcuapp.war`
 	`gradle test` | run the JUnit test
 	`cf push` | deploy the web application in Bluemix
@@ -368,7 +368,7 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 1. On the `DEVOPS-GIT TAB`: Set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Select All** | checked |
 	| **Commit message** | added another computation |
 
@@ -470,7 +470,7 @@ Having separate deploy stages for development and production is essential to ens
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `JOBS` tab, click the `ADD JOB` link and select `Deploy`.   Change the job name `Deploy` to `Cloud Foundry Push to Prod Space`.  Set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Deployer Type** | Cloud Foundry |		
 	| **Target** | IBM Bluemix US South - https://api.ng.bluemix.net |		
 	| **Organization** | you may leave the default selection |		
