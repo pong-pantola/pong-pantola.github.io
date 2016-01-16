@@ -15,6 +15,8 @@ In this tutorial you will learn how to deploy a sample JSP application in Bluemi
 
 >Having a basic background in web application development is required in this tutorial.
 
+
+
 <br>
 
 ####Create a Bluemix Account
