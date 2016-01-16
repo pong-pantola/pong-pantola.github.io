@@ -37,7 +37,37 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 <br>
 
 
+####Create a GitHub Account
+1. Go to [GitHub](https://github.com) and click the `SIGN UP` button.
 
+1. Fill-up and submit the registration form.
+
+1. Wait for a confirmation e-mail and follow the instructions in the e-mail to validate your GitHub registration.
+
+<br>
+
+####Explore your GitHub Account
+
+1. Open a web browser and login to your [GitHub](https://github.com) account.
+
+1. You will be redirected to your homepage.  Your homepage lists the available repositories in your account.  At this point you don't have any repository.
+	
+	
+	There are two ways to create a repository in GitHub:
+	- create a new repository
+	- fork an existing repository
+
+	You will try both approaches in this tutorial.
+
+
+####Create a New Repository
+
+1. Click the `New repository` button.  
+
+1. In the `Create a new repository` page enter the following values:
+	text box, type `myfirstrepo`
+
+1. 
 ####Install a Git Client
 
 
