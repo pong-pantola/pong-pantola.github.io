@@ -107,7 +107,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 1. Ensure the following options are chosen:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Private Project** | checked |
 	| **Add features for Scrum development** | checked |
 	| **Make this a Bluemix Project** | checked |
