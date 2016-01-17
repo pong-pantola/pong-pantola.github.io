@@ -162,7 +162,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 1. Go back to your web browser and refresh your page to confirm that `README.md` has not been updated and `sample.txt` is not yet created in the remote repository`myfirstrepo`.
 
-1. Verify that the Git URL of your remote repository is declared in your local repository
+1. Verify that the Git URL of your remote repository is declared in your local repository.
 
 	```text
 	> git remote -v
@@ -327,13 +327,19 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	```text
 	git remote add origin https://github.com/pong/mysecondrepo.git
 	```
-	>**IMPORTANT:** The example above is the Git URL of another user.  Make sure to take note the URL of your `mysecondrepo`.
+	>**IMPORTANT:** The example above uses the Git URL of another user.  Make sure to use the URL of your `mysecondrepo`.
 
+1. Verify that the Git URL of your remote repository is already declared in your local repository.
 
-xxxx
-	As shown in the output above, your local repository is aware of the Git URL of your remote repository.  The name `origin` is used to refer to the Git URL (e.g., instead of mentioning the very long Git URL `https://github.com/<username>/myfirstrepo.git`, you may just refer to it as `origin`).
-
-	Note that the declaration of having the name `origin` associated with the Git URL `https://github.com/<username>/myfirstrepo.git` was automatically done when you did a `git clone` earlier.  The name `origin` can be changed to something else but in this tutorial you will retain this name.
+	```text
+	> git remote -v
+	```
+	
+	**Output:**
+	```text
+	origin  https://github.com/<username>/mysecondrepo.git (fetch)
+	origin  https://github.com/<username>/mysecondrepo.git (push)
+	```
 
 1. Sync the contents of the local repository to the remote repository.
 
@@ -346,13 +352,45 @@ xxxx
 	```text
 	Username for 'https://github.com': <username>
 	Password for 'https://<username>@github.com':
-	Counting objects: 6, done.
-	Delta compression using up to 4 threads.
-	Compressing objects: 100% (2/2), done.
-	Writing objects: 100% (4/4), 375 bytes | 0 bytes/s, done.
-	Total 4 (delta 0), reused 0 (delta 0)
+	To https://github.com/<username>/mysecondrepo.git
+	 ! [rejected]        master -> master (fetch first)
+	error: failed to push some refs to 'https://github.com/<username>/mysecondrepo.git
+	'
+	hint: Updates were rejected because the remote contains work that you do
+	hint: not have locally. This is usually caused by another repository pushing
+	hint: to the same ref. You may want to first integrate the remote changes
+	hint: (e.g., 'git pull ...') before pushing again.
+	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 	```
 
+
+	Unlike the `git push` command you issued to sync the contents of `localrepo-one` with the remote repository `myfirstrepo` in an earlier task, the `git push` command above encountered an error.
+
+	The intention of a `git push` command is to make the contents of the local repository the same as the remote repository.  If `git push` detects that proceeding with the push will not result to a local and remote repositories that are synced, it will not proceed with the push.  This is what happened with your attempt to push the changes in `localrepo-two` to the remote repository `mysecondrepo`.
+
+	Note that the remote repository `mysecondrepo` contains the file `README.md` while `localrepo-two` contains the file `anothersample.txt`.  A `git push` command would have copied `anothersample.txt` to `mysecondrepo`. This is illustrated below:
+
+	Repository | Contents Before the Push | Contents After the Push (if push will be allowed to proceed)
+	---|---|---
+	`localrepo-two` | `anothersample.txt` |  `anothersample.txt`
+	`mysecondrepo` | `README.md` | `README.md` and `anothersample.txt`
+
+	Proceeding with the push will not result to synced `mysecondrepo` and `localrepo-two`.  
+
+	To solve this problem, a `git pull` command will be performed first.
+
+1. Sync the contents of the local repository to the remote repository.
+
+
+	```text
+	> git pull origin master
+	```
+	
+	**Output:**
+	```text
+	```
+
+xxx
 	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
 
 	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository`myfirstrepo`.  A repository may have one or more branch.  By default, a repository has only one branch named `master`.   That is why your remote repository `myfirstrepo` has a `master` branch even if you never explicitly created it.  You may look at your GitHub page to verify that there is indeed a branch named `master` under the remote repository `myfirstrepo`.  This tutorial does not cover the creation of additional branches.
