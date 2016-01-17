@@ -314,6 +314,22 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	Note that the `localrepo-one` repository was created when you issued the `git clone https://github.com/<username>/myfirstrepo.git localrepo-one` command earlier.  The `git clone` command did not only created the `localrepo-one` repository but also did the necessary declaration to map the name `origin` to the Git URL `https://github.com/<username>/myfirstrepo.git`.
 
 	However, in the case of `localrepo-two`, this repository was created by manually creating the directory `localrepo-two` and issuing the command `git init` inside it.  Therefore, `localrepo-two` is not even aware of the existence of the remote repository `mysecondrepo` nor its Git URL `https://github.com/<username>/mysecondrepo.git`.
+
+	You need to explicitly inform the local repository `localrepo-two` of the remote repository `mysecondrepo`.
+
+1. Make the localrepo-two `localrepo-two` aware of the remote repository `mysecondrepo`.
+
+	```text
+	git remote add origin https://github.com/<username>/mysecondrepo.git
+	```
+
+	**Example:**
+	```text
+	git remote add origin https://github.com/pong/mysecondrepo.git
+	```
+	>**IMPORTANT:** The example above is the Git URL of another user.  Make sure to take note the URL of your `mysecondrepo`.
+
+
 xxxx
 	As shown in the output above, your local repository is aware of the Git URL of your remote repository.  The name `origin` is used to refer to the Git URL (e.g., instead of mentioning the very long Git URL `https://github.com/<username>/myfirstrepo.git`, you may just refer to it as `origin`).
 
