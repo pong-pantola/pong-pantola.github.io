@@ -712,6 +712,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	```
 	
 	**Output:**
+	
 	```text
 	remote: Counting objects: 5, done.
 	remote: Compressing objects: 100% (4/4), done.
@@ -728,6 +729,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	```
 
 	The repositories' contents after the pull are the following:
+	
 	Repository | Contents Before **Person A**'s Pull | Contents After **Person A**'s Pull
 	---|---|---
 	`localrepo-three` of **Person A** | `contribution-a.txt` and `README.md` |  `contribution-a.txt`, `contribution-b.txt`, and `README.md`
