@@ -54,13 +54,13 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	
 	
 	There are two ways to create a repository in GitHub:
-	- create a new repository
+	- create a new repository from scratch
 	- fork an existing repository
 
 	You will try both approaches in this tutorial.
 
 
-####Create a New Repository
+####Create a New Repository from Scratch
 
 1. Click the `New repository` button.  
 
@@ -102,27 +102,27 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 1. Clone the git repository `https://github.com/<username>/myfirstrepo.git` and go to the created `myfirstrepo` directory.
 
 	```text
-	> git clone https://github.com/<username>/myfirstrepo.git
-	> cd myfirstrepo
+	> git clone https://github.com/<username>/myfirstrepo.git localrepo-one
+	> cd localrepo-one
 	```
  
  	**Example:**
 	```text
-	> git clone https://github.com/pong/myfirstrepo.git
-	> cd myfirstrepo
+	> git clone https://github.com/pong/myfirstrepo.git localrepo-one
+	> cd localrepo-one
 	```
 	>**IMPORTANT:** As mentioned earlier, the example above is the Git URL of another user.  Make sure to use the URL of your `myfirstrepo`.
 
 	**Output:**
 	```text
-	Cloning into 'myfirstrepo'...
+	Cloning into 'localrepo-one'...
 	remote: Counting objects: 3, done.
 	remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
 	Unpacking objects: 100% (3/3), done.
 	Checking connectivity... done.
 	```
 
-	You have copied the contents of your remote repository `myfirstrepo` to a local repository (i.e., the `myfirstrepo` directory in your hard drive).
+	You have copied the contents of your remote repository `myfirstrepo` to a local repository (i.e., the `localrepo-one` directory in your hard drive).  In the `git clone` command, if you omit the parameter `localrepo-one`, the directory that will be created will have he same name as the remote repository (i.e., `myfirstrepo`).  In this tutorial, we intentionally specified the parameter `localrepo-one` so that the name of the remote repository (`myfirstrepo`)  and local repository (`localrepo-one`) are different.
 
 1. Update `README.md` to the following:
 
@@ -133,7 +133,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 	<br>
 
-1. Create a file `sample.txt` in `myfirstrepo` directory containing the following value:
+1. Create a file `sample.txt` in `localrepo-one` directory containing the following value:
 
 	```text
 	This is just a sample text file.
@@ -174,7 +174,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	origin  https://github.com/<username>/myfirstrepo.git (push)
 	```
 	
-	As shown in the output above, your local repository is aware of the Git RL of your remote repository.  The name `origin` is used to refer to the Git URL (e.g., instead of mentioning the very long Git URL, you may just refer to it as `origin`).
+	As shown in the output above, your local repository is aware of the Git URL of your remote repository.  The name `origin` is used to refer to the Git URL (e.g., instead of mentioning the very long Git URL `https://github.com/<username>/myfirstrepo.git`, you may just refer to it as `origin`).
 
 	Note that the declaration of having the name `origin` associated with the Git URL `https://github.com/<username>/myfirstrepo.git` was automatically done when you did a `git clone` earlier.  The name `origin` can be changed to something else but in this tutorial you will retain this name.
 
@@ -198,9 +198,9 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
 
-	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository`myfirstrepo`.  A repository may have one or more branch.  By default, a repository has only one branch named `master`.   You may look at your GitHub page to verify that there is indeed a branch named `master`.  This tutorial does not cover the creation of additional branches.
+	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository`myfirstrepo`.  A repository may have one or more branch.  By default, a repository has only one branch named `master`.   That is why your remote repository `myfirstrepo` has a `master` branch even if you never explicitly created it.  You may look at your GitHub page to verify that there is indeed a branch named `master` under the remote repository `myfirstrepo`.  This tutorial does not cover the creation of additional branches.
 
-	The command `git push origin master` pushes the changes of your local repository to the `master` branch of the remote repository referred to by origin (which is https://github.com/<username>/myfirstrepo.git).
+	The command `git push origin master` pushes the changes of your local repository to the `master` branch of the remote repository referred to by origin (which is `https://github.com/<username>/myfirstrepo.git`).
 
 	<br>
 	
@@ -209,6 +209,144 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	<br>
 	
 ####Fork an Existing Repository
+
+As mentioned earlier, there are two ways to create a repository.  Either create a new repository from scratch (which is the activity you did in the previous steps) or you fork an existing repository.  In the task below, you will now create your second remote repository by forking an existing one.
+
+1. Go back to your browser and go to the URL:
+		`https://github.com/pong-pantola/mysecondrepo`
+
+		Take note that you do not own this repository.  It is owned by user `pong-pantola`.  This can be verified through to the text `pong-pantola/mysecondrepo` found on the webpage.
+
+1. Click the `Fork` button.
+
+		You know have your own copy of `mysecondrepo`.  This can be verified through to the text `pantolav/mysecondrepo` followed by `forked from pong-pantola/mysecondrepo`.
+
+	Forking allows you to make a copy of an existing repository and make it independent from the said existing repository.  If you start making changes to your forked repository, it will affect only this repository.
+
+
+
+1. Take note of the Git URL of your `mysecondrepo`.  
+
+	```text
+	https://github.com/<username>/mysecondrepo.git
+	```
+
+
+1. Open another terminal window.  Go to the `gittemp` directory.
+
+	```text
+	> cd gittemp
+	```
+
+1. Create the directory `localrepo-two` and go to the created directory.
+
+	```text
+	> mkdir localrepo-two
+	> cd localrepo-two
+	```
+
+	Recall that you previously created the local repository `localrepo-one` by issuing the command `git clone https://github.com/<username>/myfirstrepo.git localrepo-one`.  You could have done the same thing with `localrepo-two`.  However, we want to discuss an alternative technique in syncing with a remote repository.
+
+	<br>
+	
+1. Make the `localrepo-two` a local repository.
+
+	```text
+	> git init
+	```
+	
+	**Output:**
+	
+	```text
+	Initialized empty Git repository in D:/gittemp/localrepo-two/.git/
+	```
+
+	The `git init` command creates a hidden `.git` subdirectory in the directory `localrepo-two`.  This makes the `localrepo-two` a Git repository.
+
+
+
+1. Create a file `anothersample.txt` in `localrepo-two` directory containing the following value:
+
+	```text
+	This is just a ANOTHER sample text file.
+	```
+
+	<br>
+
+
+1. Track and commit the changes made in the local repository.
+
+	```text
+	> git add anothersample.txt
+	> git commit -m "created anothersample.txt"
+	```
+
+	**Output:**
+
+	```text
+	[master (root-commit) e6f6dbb] created anothersample.txt
+	 1 file changed, 1 insertion(+)
+	 create mode 100644 anothersample.txt
+	```	
+	<br>
+
+	At this point, the changes made (i.e., created the `anothersample.txt text file`) are committed in your local repository.  However, the local repository is not synced with the remote repository `mysecondrepo`.  
+
+1. Go back to your web browser and refresh your page to confirm that `anothersample.txt` is not yet created in the remote repository`mysecondrepo`.
+
+1. Verify if the Git URL of your remote repository is declared in your local repository
+
+	```text
+	> git remote -v
+	```
+	
+	**Output:**
+	```text
+
+	```
+
+	The output of the command is blank.  Recall that when you issued the same command in the `localrepo-one` repository, the output is not blank and it states that the following declaration:
+
+	```text
+	origin  https://github.com/<username>/myfirstrepo.git (fetch)
+	origin  https://github.com/<username>/myfirstrepo.git (push)
+	```
+
+	As shown in the output above, your local repository is aware of the Git URL of your remote repository.  The name `origin` is used to refer to the Git URL (e.g., instead of mentioning the very long Git URL `https://github.com/<username>/myfirstrepo.git`, you may just refer to it as `origin`).
+
+	Note that the declaration of having the name `origin` associated with the Git URL `https://github.com/<username>/myfirstrepo.git` was automatically done when you did a `git clone` earlier.  The name `origin` can be changed to something else but in this tutorial you will retain this name.
+
+1. Sync the contents of the local repository to the remote repository.
+
+
+	```text
+	> git push origin master
+	```
+	
+	**Output:**
+	```text
+	Username for 'https://github.com': <username>
+	Password for 'https://<username>@github.com':
+	Counting objects: 6, done.
+	Delta compression using up to 4 threads.
+	Compressing objects: 100% (2/2), done.
+	Writing objects: 100% (4/4), 375 bytes | 0 bytes/s, done.
+	Total 4 (delta 0), reused 0 (delta 0)
+	```
+
+	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
+
+	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository`myfirstrepo`.  A repository may have one or more branch.  By default, a repository has only one branch named `master`.   That is why your remote repository `myfirstrepo` has a `master` branch even if you never explicitly created it.  You may look at your GitHub page to verify that there is indeed a branch named `master` under the remote repository `myfirstrepo`.  This tutorial does not cover the creation of additional branches.
+
+	The command `git push origin master` pushes the changes of your local repository to the `master` branch of the remote repository referred to by origin (which is `https://github.com/<username>/myfirstrepo.git`).
+
+	<br>
+	
+1. Go back to your web browser and refresh your page to confirm that `README.md` has been updated and `sample.txt` already exist in the remote repository`myfirstrepo`.
+
+	<br>
+
+
 
 ####Install a Git Client
 
