@@ -107,6 +107,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	```
  
  	**Example:**
+ 	
 	```text
 	> git clone https://github.com/pong/myfirstrepo.git localrepo-one
 	> cd localrepo-one
@@ -114,6 +115,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	>**IMPORTANT:** As mentioned earlier, the example above is the Git URL of another user.  Make sure to use the URL of your `myfirstrepo`.
 
 	**Output:**
+	
 	```text
 	Cloning into 'localrepo-one'...
 	remote: Counting objects: 3, done.
