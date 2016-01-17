@@ -626,7 +626,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 
 	The `unable to access` error does not anymore appear.  This means that **Person B** is already given authorization to push updates to **Person A**'s remote repository.  However, the error message encountered in the previous activity.  This is due to to a `git push` will not sync the local repository of **Person B** and the remote repository of **Person A**.  Note that the remote repository already has `contribution-a.txt` which is still missing in **Person B**'s local repository.  This is summarized below:
 
-	Repository | Contents Before **Person B**'s Push | Contents After the **Person B**'s Push (if push will be allowed to proceed)
+	Repository | Contents Before **Person B**'s Push | Contents After **Person B**'s Push (if push will be allowed to proceed)
 	---|---|---
 	`localrepo-three` of **Person A** | `contribution-a.txt` and `README.md` |  `contribution-a.txt` and `README.md`
 	`localrepo-three` of **Person B** | `contribution-b.txt` and `README.md` |  `contribution-b.txt` and `README.md`
@@ -639,7 +639,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 
 	<br>
 
-	1. **Person B:** Pull the contents of the remote repository to the  local repository.
+1. **Person B:** Pull the contents of the remote repository to the  local repository.
 
 
 	```text
@@ -663,11 +663,11 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 
 	The repositories' contents after the pull are the following:
 	
-	Repository | Contents Before **Person B**'s Pull | Contents After the **Person B**'s Pull
+	Repository | Contents Before **Person B**'s Pull | Contents After **Person B**'s Pull
 	---|---|---
 	`localrepo-three` of **Person A** | `contribution-a.txt` and `README.md` |  `contribution-a.txt` and `README.md`
 	`localrepo-three` of **Person B** | `contribution-b.txt` and `README.md` |  `contribution-a.txt`, `contribution-b.txt`, and `README.md`
-	`mysharedrepo` of **Person A** | `contribution-a.txt` and `README.md` | `contribution-a.txt`,  and `README.md`
+	`mysharedrepo` of **Person A** | `contribution-a.txt` and `README.md` | `contribution-a.txt`  and `README.md`
 	
 
 	<br>
@@ -695,16 +695,50 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 
 	The repositories' contents after the pull are the following:
 	
-	Repository | Contents Before **Person B**'s Push | Contents After the **Person B**'s Pushl
+	Repository | Contents Before **Person B**'s Push | Contents After **Person B**'s Push
 	---|---|---
 	`localrepo-three` of **Person A** | `contribution-a.txt` and `README.md` |  `contribution-a.txt` and `README.md`
 	`localrepo-three` of **Person B** | `contribution-a.txt`, `contribution-b.txt`, and `README.md` |  `contribution-a.txt`, `contribution-b.txt`, and `README.md`
-	`mysharedrepo` of **Person A** | `contribution-a.txt` and `README.md` | `contribution-a.txt`,  and `README.md`
+	`mysharedrepo` of **Person A** | `contribution-a.txt` and `README.md` | `contribution-a.txt`,  `contribution-b.txt`, and `README.md`
 	
-
+	The local repository of **Person B** and the remote repository of **Person A** are now synced.  However, **Person A**'s local repository is not synced with the remote repository.  This can easily be solved with another pull from **Person A**.
 	<br>
 
+1. **Person A:** Pull the contents of the remote repository to the  local repository.
 
+
+	```text
+	> git pull origin master
+	```
+	
+	**Output:**
+	```text
+	remote: Counting objects: 5, done.
+	remote: Compressing objects: 100% (4/4), done.
+	remote: Total 5 (delta 1), reused 5 (delta 1), pack-reused 0
+	Unpacking objects: 100% (5/5), done.
+	From https://github.com/<username_of_Person_A>/mysharedrepo
+	 * branch            master     -> FETCH_HEAD
+	   83d407a..95b2e65  master     -> origin/master
+	Updating 83d407a..95b2e65
+	Fast-forward
+	 contribution-b.txt | 1 +
+	 1 file changed, 1 insertion(+)
+	 create mode 100644 contribution-b.txt
+	```
+
+	The repositories' contents after the pull are the following:
+	Repository | Contents Before **Person A**'s Pull | Contents After **Person A**'s Pull
+	---|---|---
+	`localrepo-three` of **Person A** | `contribution-a.txt` and `README.md` |  `contribution-a.txt`, `contribution-b.txt`, and `README.md`
+	`localrepo-three` of **Person B** | `contribution-a.txt`, `contribution-b.txt`, and `README.md` |  `contribution-a.txt`, `contribution-b.txt`, and `README.md`
+	`mysharedrepo` of **Person A** | `contribution-a.txt` and `README.md` | `contribution-a.txt`,  `contribution-b.txt`, and `README.md`
+	
+	The two local repositories and the remote repository are now synced.
+
+	<br>
+	
+####Merge Changes Made on the same file
 xxx
 	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
 
