@@ -133,7 +133,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 	<br>
 
-1. Create a file `sample.txt` in `localrepo-one` directory containing the following value:
+1. Create a file `sample.txt` in `localrepo-one` directory containing the following:
 
 	```text
 	This is just a sample text file.
@@ -219,7 +219,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 
 1. Click the `Fork` button.
 
-		You know have your own copy of `mysecondrepo`.  This can be verified through to the text `pantolav/mysecondrepo` followed by `forked from pong-pantola/mysecondrepo`.
+		You know have your own copy of `mysecondrepo`.  This can be verified through to the text `<username>/mysecondrepo` followed by `forked from pong-pantola/mysecondrepo`.
 
 	Forking allows you to make a copy of an existing repository and make it independent from the said existing repository.  If you start making changes to your forked repository, it will affect only this repository.
 
@@ -258,14 +258,14 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	**Output:**
 	
 	```text
-	Initialized empty Git repository in D:/gittemp/localrepo-two/.git/
+	Initialized empty Git repository in /gittemp/localrepo-two/.git/
 	```
 
 	The `git init` command creates a hidden `.git` subdirectory in the directory `localrepo-two`.  This makes the `localrepo-two` a Git repository.
 
 
 
-1. Create a file `anothersample.txt` in `localrepo-two` directory containing the following value:
+1. Create a file `anothersample.txt` in `localrepo-two` directory containing the following:
 
 	```text
 	This is just a ANOTHER sample text file.
@@ -392,7 +392,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	remote: Counting objects: 3, done.
 	remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
 	Unpacking objects: 100% (3/3), done.
-	From https://github.com/pantolav/mysecondrepo
+	From https://github.com/<username>/mysecondrepo
 	 * branch            master     -> FETCH_HEAD
 	 * [new branch]      master     -> origin/master
 	Merge made by the 'recursive' strategy.
@@ -499,7 +499,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 
 
 
-1. **Person A:** Create a file `contribution-a.txt` in `localrepo-three` directory containing the following value:
+1. **Person A:** Create a file `contribution-a.txt` in `localrepo-three` directory containing the following:
 
 	```text
 	This is the contribution of Person A.  This represents a source code written by Person A.
@@ -546,7 +546,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	```
 
 
-1. **Person B:** Create a file `contribution-b.txt` in `localrepo-three` directory containing the following value:
+1. **Person B:** Create a file `contribution-b.txt` in `localrepo-three` directory containing the following:
 
 	```text
 	This is the contribution of Person B.  This represents a source code written by Person B.
@@ -739,609 +739,252 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	<br>
 	
 ####Merge Changes Made on the same file
-xxx
-	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
+The previous activity demonstrated how the contributions made by teammates can be consolidated together.  In the next activity, both **Person A** and **Person B** will update the same file `contribution-a.txt`.  You will see the problem caused by such an update and the steps to resolve the problem.
 
-	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository`myfirstrepo`.  A repository may have one or more branch.  By default, a repository has only one branch named `master`.   That is why your remote repository `myfirstrepo` has a `master` branch even if you never explicitly created it.  You may look at your GitHub page to verify that there is indeed a branch named `master` under the remote repository `myfirstrepo`.  This tutorial does not cover the creation of additional branches.
-
-	The command `git push origin master` pushes the changes of your local repository to the `master` branch of the remote repository referred to by origin (which is `https://github.com/<username>/myfirstrepo.git`).
-
-	<br>
-	
-1. Go back to your web browser and refresh your page to confirm that `README.md` has been updated and `sample.txt` already exist in the remote repository`myfirstrepo`.
-
-	<br>
-
-
-
-####Install a Git Client
-
-
-1. Go to [Git](https://git-scm.com/).
-
-1. Download the Git client installer and install.
-
-1. Test if the Git client is installed successfully.  Open a terminal window.
+1. **Person A:** Update the file `contribution-a.txt` in `localrepo-three` directory so that it contains the following:
 
 	```text
-	> git
-	```
-	**Output:**
-
-	```text
-	usage: git [--version] [--help] [-C <path>] [-c name=value]
-	           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-	           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
-	           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-	           <command> [<args>]
+	This is the contribution of Person A.  This represents a source code written by Person A.
 	
-	The most commonly used git commands are:
-	   add        Add file contents to the index
-	   bisect     Find by binary search the change that introduced a bug
-	   :
-	   :
+	This is an UPDATE made by Person A.
 	```
 
-	You should see the help screen of the Git client.
-
 	<br>
-	
-####Create several text files and use Git to manage the versions of the files
 
-In this tutorial, you will be creating several `.txt` files that will contain a list of words representing each letter of the alphabet.  The use of this approach will help you understand how Git works.  Once you are familiar with Git, you may use Git with your source code (e.g., `.java` file).
 
-1. Create the directory `gittemp` in the root directory.  Go to the created directory.
+1. **Person A:** Track and commit the changes made in the local repository.
 
 	```text
-	> mkdir gittemp
-	> cd gittemp
-	```
-
-1. Create the subdirectory `alphabet` in the `gittemp` directory.  Go to the created directory.
-
-	```text
-	> mkdir alphabet
-	> cd alphabet
-	```
-
-	The `alphabet` directory represents a working directory containing your source code.  As mentioned earlier, instead of source code, text files will be used in this tutorial.
-
-	<br>
-	
-1. Make the `alphabet` directory a local Git repository.
-
-	```text
-	> git init
+	> git add contribution-a.txt
+	> git commit -m "updated contribution-a.txt"
 	```
 
 	**Output:**
 
 	```text
-	Initialized empty Git repository in /gittemp/alphabet/.git/
-	```
-
-	A hidden directory named `.git` is created after you issued the `git init` command.  You should not modify the contents of the `.git` hidden directory.  This contains information that will track the changes you made inside the `alphabet` directory.
-
-	<br>
-
-
-1. Check the status of your local Git repository.
-
-	```text
-	> git status
-	```
-
-	**Output:**
-
-	```text
-	On branch master
-	
-	Initial commit
-	
-	nothing to commit (create/copy files and use "git add" to track)
-	```
-
-	As stated in the status, there is `nothing to commit`.  This will change once you start creating files.
-
-	<br>
-	
-1. Create a file `animal.txt` in the `alphabet` directory with the following contents:
-
-	```text
-	ant
-	bat
-	cat
-	dog
-	eagle
-	fox
-	goat
-	horse
-	```
-
-	<br>
-	
-1. Check the status of your local Git repository.
-
-	```text
-	> git status
-	```
-
-	**Output:**
-
-	```text
-	On branch master
-	
-	Initial commit
-	
-	Untracked files:
-	  (use "git add <file>..." to include in what will be committed)
-	
-	        animal.txt
-	
-	nothing added to commit but untracked files present (use "git add" to track)
-	```
-
-	Git detected the `animal.txt` file that you created.  However, it is currently untracked by Git.  Untracked files are those in the working directory but are NOT in index.
-
-	Git does not track all the files you created since it is possible that some of the files are non-essential.  You need to explicitly tell Git to track a file.
-
-	<br>
-	
-1. Let Git track `animal.txt`.
-
-	```text
-	> git add animal.txt
-	```
-
-	>If there are multiple files that you want Git to track, you may use the same `git add` command and just separate the files with a `space`.
-
-	The `git add animal.txt` command places the `animal.txt` in the index.  Those files in the index are staged. Staging means that a file is being prepared to be committed. 
-
-	<br>
-	
-1. Check the status of your local Git repository.
-
-	```text
-	> git status
-	```
-
-	**Output:**
-
-	```text
-	On branch master
-	
-	Initial commit
-	
-	Changes to be committed:
-	  (use "git rm --cached <file>..." to unstage)
-	
-	        new file:   animal.txt
-	```
-
-	At this point, `animal.txt` is already in index and being tracked by Git.  However, changes made in `animal.txt` is not yet committed.
-
-	<br>
-
-1. Commit the changes made in `animal.txt`.
-
-	```text
-	> git commit -m "added words from ant to horse"
-	```
-
-	**Output:**
-
-	```text
-	[master (root-commit) 828389d] added words from ant to horse
-	 1 file changed, 8 insertions(+)
-	 create mode 100644 animal.txt
-	```
-	
-	Note that if there are other files that are staged aside from `animal.txt`, the changes made in those files will also be committed.
-
-	<br>
-	
-1. Check the status of your local Git repository.
-
-	```text
-	> git status
-	```
-
-	**Output:**
-
-	```text
-	On branch master
-	nothing to commit, working directory clean
-	```
-
-	At this point,  changes made in `animal.txt` are committed.  In the `git commit` command, you included a message `added words from ant to horse` to give a short description on what changes were committed.  This is very useful when you perform several commits later and you want to undo previous commits.
-
-	<br>
-
-1. Visually look at the the details regarding the commit you performed.
-
-	```text
-	> gitk
-	```
-
-	**Output:**
-
-	```text
-	*master added words from ant to horse
+	[master d972fef] updated contribution-a.txt
+	 1 file changed, 3 insertions(+), 1 deletion(-)
 	```	
-
-	`gitk` is a tool which allows you to visualize the commits you performed.  You may use `gitk` as a guide when you need to undo previous commits.
-	
 	<br>
 
-1. Update `animal.txt` to include words `iguana` to `pig`:
+
+1. **Person A:** Sync the contents of the local repository to the remote repository.
+
 
 	```text
-	ant
-	bat
-	cat
-	dog
-	eagle
-	fox
-	goat
-	horse
-	iguana
-	jaguar
-	kangaroo
-	lion
-	monkey
-	newt
-	octopus
-	pig
+	> git push origin master
+	```
+		
+	**Output:**
+	```text
+	Username for 'https://github.com': <username_of_Person_A>
+	Password for 'https://<username_of_Person_A>@github.com':
+	Counting objects: 5, done.
+	Delta compression using up to 4 threads.
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 391 bytes | 0 bytes/s, done.
+	Total 3 (delta 1), reused 0 (delta 0)
+	To https://github.com/<username_of_Person_A>/mysharedrepo.git
+	   95b2e65..d972fef  master -> master
+	```
+
+1. **Person B:** Update the file `contribution-a.txt` (not `contribution-b.txt`) in `localrepo-three` directory so that it contains the following:
+
+	```text
+	This is the contribution of Person A.  This represents a source code written by Person A.
+	
+	This is an UPDATE made by Person B.
 	```
 
 	<br>
-	
-1. Track and commit the changes made in `animal.txt`.
+
+
+1. **Person B:** Track and commit the changes made in the local repository.
 
 	```text
-	> git add animal.txt
-	> git commit -m "added words from iguana to pig"
+	> git add contribution-a.txt
+	> git commit -m "updated contribution-a.txt by Person B"
 	```
 
 	**Output:**
 
 	```text
-	[master 5394740] added words from iguana to pig
-	 1 file changed, 9 insertions(+), 1 deletion(-)
+	[master 8927d94] updated contribution-a.txt by Person B
+	 1 file changed, 3 insertions(+), 1 deletion(-)
 	```	
-	
 	<br>
 
-1. Update `animal.txt` to include words `quail` to `zebra`.  In addition, delete `dog` and change `monkey` to `mouse`:
+
+1. **Person B:** Sync the contents of the local repository to the remote repository.
+
 
 	```text
-	ant
-	bat
-	cat
-	eagle
-	fox
-	goat
-	horse
-	iguana
-	jaguar
-	kangaroo
-	lion
-	mouse
-	newt
-	octopus
-	pig
-	quail
-	rabbit
-	snail
-	tiger
-	uakari
-	vulture
-	wolf
-	x-ray tetra
-	yak
-	zebra
+	> git push origin master
+	```
+		
+	**Output:**
+	```text
+	Username for 'https://github.com': <username_of_Person_B>
+	Password for 'https://<username_of_Person_B>@github.com':
+	To https://github.com/<username_of_Person_A>/mysharedrepo.git
+	 ! [rejected]        master -> master (fetch first)
+	error: failed to push some refs to 'https://github.com/<username_of_Person_A>/mysharedrepo.git
+	'
+	hint: Updates were rejected because the remote contains work that you do
+	hint: not have locally. This is usually caused by another repository pushing
+	hint: to the same ref. You may want to first integrate the remote changes
+	hint: (e.g., 'git pull ...') before pushing again.
+	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 	```
 
-	<br>
+	Similar to the error encountered by **Person B** earlier, **Person B** needs to perform a pull first before doing a push.  The only difference with the error encountered in this step is that the error is caused not by a missing file but due to the varying contents of `contribution-a.txt` in the remote repository and **Pearson B**'s local repository. 
+
+	**Person B**'s  local repository's `contribution-a.txt`:
+	```text
+	This is the contribution of Person A.  This represents a source code written by Person A.
 	
-1. Track and commit the changes made in `animal.txt`.
+	This is an UPDATE made by Person B.
+	```
+
+	**Person A**'s remote repository's  `contribution-a.txt`:
+	```text
+	This is the contribution of Person A.  This represents a source code written by Person A.
+	
+	This is an UPDATE made by Person A.
+	```
+
+	As mentioned, **Person B** can attempt to do a pull to fix the problem.
+	<br>
+1. **Person B:** Pull the contents of the remote repository to the  local repository.
+
 
 	```text
-	> git add animal.txt
-	> git commit -m "added words from quail to zebra, deleted dog, and changed monkey to mouse"
+	> git pull origin master
+	```
+	
+	**Output:**
+	```text
+	remote: Counting objects: 3, done.
+	remote: Compressing objects: 100% (2/2), done.
+	remote: Total 3 (delta 1), reused 3 (delta 1), pack-reused 0
+	Unpacking objects: 100% (3/3), done.
+	From https://github.com/<username_of_Person_A>/mysharedrepo
+	 * branch            master     -> FETCH_HEAD
+	   95b2e65..d972fef  master     -> origin/master
+	Auto-merging contribution-a.txt
+	CONFLICT (content): Merge conflict in contribution-a.txt
+	Automatic merge failed; fix conflicts and then commit the result.
+	```
+
+	The `git pull` command is able to pull the changes from the remote repository (i.e., the line added in `contribution-a.txt`) and include it in `contribution-a.txt` in the local repository of **Person B**.  However, since **Person B** did its own changes on the file, git failed to figure out ohow to properly merge/consolidate the two changes.  
+
+	The `contribution-a.txt` in the local repository of **Person B** now contains the following:
+
+	```text
+	This is the contribution of Person A.  This represents a source code written by Person A.
+	
+	<<<<<<< HEAD
+	This is an UPDATE made by Person B.
+	=======
+	This is an UPDATE made by Person A.
+	>>>>>>> d972fefa5dc88f258ded0d157977600e7503293f
+	```
+	The `git pull` command placed a marker on the changes that it failed to merge.  The reason why it failed to merge is `git pull` does not know if your intention is to retain only one of the two lines or if you want to retain both.  Git is letting you to manually merge these updates.
+
+	You will retain both `This is an UPDATE made by Person B.` and `This is an UPDATE made by Person A.`.  This represents both **Person A** and **Person B** placing updates on the same file.
+
+
+	<br>
+
+1. **Person B:** Fix the file `contribution-a.txt`  in `localrepo-three` directory so that the markers are removed:
+
+	```text
+	This is the contribution of Person A.  This represents a source code written by Person A.
+	
+	This is an UPDATE made by Person B.
+	
+	This is an UPDATE made by Person A.
+	```
+
+	Take note that `contribution-a.txt` in the remote repository still does not contain the updates made by **Person B**:
+
+	```text
+	This is the contribution of Person A.  This represents a source code written by Person A.
+	
+	This is an UPDATE made by Person A.
+	```
+
+	**Person B** will commit the changes made in `contribution-a.txt` and push the updates to the remote repository.
+	<br>
+
+
+1. **Person B:** Track and commit the changes made in the local repository.
+
+	```text
+	> git add contribution-a.txt
+	> git commit -m "merged updates on contribution-a.txt"
 	```
 
 	**Output:**
 
 	```text
-	[master f1fbe3c] added words from quail to zebra, deleted dog, and changed monkey to mouse
-	 1 file changed, 12 insertions(+), 3 deletions(-)
+	[master 72c9355] merged updates on contribution-a.txt
 	```	
-	
 	<br>
 
 
+1. **Person B:** Sync the contents of the local repository to the remote repository.
 
-
-####Checkout Previous Commits
-
-Checking out previous commits allows you to inspect the state of the files after a particular commit.  This is done by changing back the contents of the working directory.  However, the latest committed changes remain intact.
-
-1. Get a summary of the commits performed in the local Git repository.
 
 	```text
-	> git log
+	> git push origin master
 	```
-
+		
 	**Output:**
-
 	```text
-	commit f1fbe3cfccfa0343f0b4ffe0d9c35967174b5f77
-	Author: Alexis V. Pantola <pantolav@gmail.com>
-	Date:   Sun Jan 10 23:32:48 2016 +0800
-	
-	    added words from quail to zebra, deleted dog, and changed monkey to
-	commit 539474028f1a73dcb01111ce79eefa4a50a31baf
-	Author: Alexis V. Pantola <pantolav@gmail.com>
-	Date:   Sun Jan 10 23:31:45 2016 +0800
-	
-	    added words from iguana to pig
-	
-	commit 828389d84eedf01b1ca4fa842c879139bc8e62b5
-	Author: Alexis V. Pantola <pantolav@gmail.com>
-	Date:   Sun Jan 10 23:29:40 2016 +0800
-	
-	    added words from ant to horse
+	Username for 'https://github.com': <username_of_Person_B>
+	Password for 'https://<username_of_Person_B>@github.com':
+	Counting objects: 10, done.
+	Delta compression using up to 4 threads.
+	Compressing objects: 100% (6/6), done.
+	Writing objects: 100% (6/6), 709 bytes | 0 bytes/s, done.
+	Total 6 (delta 2), reused 0 (delta 0)
+	To https://github.com/<username_of_Person_A>/mysharedrepo.git
+	   d972fef..72c9355  master -> master
 	```
 
-	>**NOTE**: You may press `Q` to exit the log console.
+	Note that before the push, `contribution-a.txt` of the local repository of **Person B** and the remote repository are different.  The version in the remote repository does not contain the line `This is an UPDATE made by Person B.`.  After the push, git is able to successfully merge the updates made in the local repository of **Person B** to the remote repository.
 
-	Notice that the three commits performed earlier are listed in the log.  In addition, there are unique hash values identifying each commit.  As an example, in the log above, the commit `added words from ant to horse` has a hash value of `828389d84eedf01b1ca4fa842c879139bc8e62b5`.  Note that the hash value in your repository is not necessarily the same as the one shown in this tutorial.
+	At this point, the local repository of **Person B** and remote repository are synced.  However, `contribution-a.txt` of the local repository of **Person A** is not yet updated.  It does not contain the line `This is an UPDATE made by Person B.`.  This can be resolved with another pull from **Person A**.
+	
+	<br>
 
-	The hash value is important to undo previous commits and go to a particular state of a file.
+1. **Person A:** Pull the contents of the remote repository to the  local repository.
 
-1. Inspect the state of the file when the words ant to horse has just been added.
 
 	```text
-	> git checkout <hash of commit for "added words from ant to horse">
+	> git pull origin master
 	```
-
-	**Example:**
-
-	```text
-	> git checkout 828389d84eedf01b1ca4fa842c879139bc8e62b5
-	```
-
-
+	
 	**Output:**
-
 	```text
-	Note: checking out '828389d84eedf01b1ca4fa842c879139bc8e62b5'.
-
-	You are in 'detached HEAD' state. You can look around, make experimental
-	changes and commit them, and you can discard any commits you make in this
-	state without impacting any branches by performing another checkout.
-	
-	If you want to create a new branch to retain commits you create, you may
-	do so (now or later) by using -b with the checkout command again. Example:
-	
-	  git checkout -b new_branch_name
-	
-	HEAD is now at 828389d... added words from ant to horse
+	remote: Counting objects: 6, done.
+	remote: Compressing objects: 100% (4/4), done.
+	remote: Total 6 (delta 2), reused 6 (delta 2), pack-reused 0
+	Unpacking objects: 100% (6/6), done.
+	From https://github.com/<username_of_Person_A>/mysharedrepo
+	 * branch            master     -> FETCH_HEAD
+	   d972fef..72c9355  master     -> origin/master
+	Updating d972fef..72c9355
+	Fast-forward
+	 contribution-a.txt | 4 +++-
+	 1 file changed, 3 insertions(+), 1 deletion(-)		
 	```
 
-	<br>
-	
-1. Open (or reload) `animal.txt`and verify that its content is now the following:
-
-	```text
-	ant
-	bat
-	cat
-	dog
-	eagle
-	fox
-	goat
-	horse
-	```
-
-	As expected,  you went back to the state  when the words ant to horse has just been added to `animal.txt`.
-	
-	<br>
-	
-1. Check the contents of the log.
-
-	```text
-	> git log
-	```
-
-	**Output:**
-
-	```text
-	commit 828389d84eedf01b1ca4fa842c879139bc8e62b5
-	Author: Alexis V. Pantola <pantolav@gmail.com>
-	Date:   Sun Jan 10 23:29:40 2016 +0800
-	
-	    added words from ant to horse
-	```
-
-	Notice that the log has only one commit.
+	The two local repositories and the remote repository are now synced.
 
 	<br>
 
-
-
-1. Go back to the last commit you made (i.e., `added words from quail to zebra, deleted dog, and changed monkey to mouse`).
-
-	```text
-	> git checkout master
-	```
-
-
-	**Output:**
-
-	```text
-	Previous HEAD position was 828389d... added words from ant to horse
-	Switched to branch 'master'
-	```
-
-	<br>
-	
-1. Open (or reload) `animal.txt`and verify that its content is now the following:
-
-	```text
-	ant
-	bat
-	cat
-	eagle
-	fox
-	goat
-	horse
-	iguana
-	jaguar
-	kangaroo
-	lion
-	mouse
-	newt
-	octopus
-	pig
-	quail
-	rabbit
-	snail
-	tiger
-	uakari
-	vulture
-	wolf
-	x-ray tetra
-	yak
-	zebra
-	```
-
-	As expected, you are able to return to the latest state of the file.
-
-	<br>
-
-
-####Go back to a particular Commit
-
-The `git checkout` command that was demonstrated above allows you to inspect the state of a file of a particular commit.  However, the latest committed changes remain intact.  In the event that you really want to go back to a particular commit (e.g., you realized that you erroneously changed the contents of a file and want to go back to its correct state), you may use the `git reset` command.
-
-1. Get a summary of the commits performed in the local Git repository.
-
-	```text
-	> git log
-	```
-
-	**Output:**
-
-	```text
-	commit f1fbe3cfccfa0343f0b4ffe0d9c35967174b5f77
-	Author: Alexis V. Pantola <pantolav@gmail.com>
-	Date:   Sun Jan 10 23:32:48 2016 +0800
-	
-	    added words from quail to zebra, deleted dog, and changed monkey to
-	commit 539474028f1a73dcb01111ce79eefa4a50a31baf
-	Author: Alexis V. Pantola <pantolav@gmail.com>
-	Date:   Sun Jan 10 23:31:45 2016 +0800
-	
-	    added words from iguana to pig
-	
-	commit 828389d84eedf01b1ca4fa842c879139bc8e62b5
-	Author: Alexis V. Pantola <pantolav@gmail.com>
-	Date:   Sun Jan 10 23:29:40 2016 +0800
-	
-	    added words from ant to horse
-	```
-
-	This is the same log that was shown in the previous steps.
-
-1. Go back to the state of the file when the words ant to horse has just been added.
-
-	```text
-	> git reset --hard <hash of commit for "added words from ant to horse">
-	```
-
-	**Example:**
-
-	```text
-	> git reset --hard 828389d84eedf01b1ca4fa842c879139bc8e62b5
-	```
-
-
-	**Output:**
-
-	```text
-	HEAD is now at 828389d added words from ant to horse
-	```
-
-	<br>
-	
-1. Open (or reload) `animal.txt`and verify that its content is now the following:
-
-	```text
-	ant
-	bat
-	cat
-	dog
-	eagle
-	fox
-	goat
-	horse
-	```
-
-	Similar to `git checkout`,  you are able to go back to the state   when the words ant to horse has just been added to `animal.txt` using `git reset`.  You will see later the difference of these two commands.
-	
-	<br>
-	
-1. Check the contents of the log.
-
-	```text
-	> git log
-	```
-
-	**Output:**
-
-	```text
-	commit 828389d84eedf01b1ca4fa842c879139bc8e62b5
-	Author: Alexis V. Pantola <pantolav@gmail.com>
-	Date:   Sun Jan 10 23:29:40 2016 +0800
-	
-	    added words from ant to horse
-	```
-
-	<br>
-
-
-
-1. **TRY** to go back to the last commit you made (i.e., `added words from quail to zebra, deleted dog, and changed monkey to mouse`).
-
-	```text
-	> git checkout master
-	```
-
-	**Output:**
-
-	```text
-	Already on 'master'
-	```
-	Notice that the output is `Already on 'master'`.  This means that you have reset the last commit from `added words from quail to zebra, deleted dog, and changed monkey to mouse` to `added words from ant to horse`.   The `added words from quail to zebra, deleted dog, and changed monkey to mouse`commit as well as the `added words from iguana to pig` commit are already removed.
-	
-	<br>
-	
-1. Open (or reload) `animal.txt`and verify that its content is **STILL** ant to horse:
-
-	```text
-	ant
-	bat
-	cat
-	dog
-	eagle
-	fox
-	goat
-	horse
-	```
-
-	<br>
 	
 ####End of Tutorial
 
