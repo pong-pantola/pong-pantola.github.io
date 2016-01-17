@@ -46,6 +46,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 	You will try both approaches in this tutorial.
 
+	<br>
 
 ####Create a New Repository from Scratch
 
@@ -59,11 +60,15 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	| **Type** | Public |
 	| **Initialize this repository with a README** | checked |
 
+	<br>
+	
 1. Click the `Create repository` button.
 
 1. You will be redirected to your `myfirstrepo` repository.  Currently, the repository contains a single file: `README.md`.
 
 	You may add new files and edit existing files using the GitHub interface.  This tutorial will not cover the procedure to accomplish this.
+
+	<br>
 
 1. Take note of the Git URL of your `myfirstrepo`.  In GitHub, the Git URL follows the following format:
 
@@ -79,6 +84,8 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 	The Git URL is important to sync your local repository (i.e., the one in your hard drive)  and your remote repository (e.g., `myfirstrepo`).
 
+	<br>
+	
 1. Open a terminal window.  Create the directory `gittemp` in the root directory.  Go to the created directory.
 
 	```text
@@ -86,6 +93,8 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	> cd gittemp
 	```
 
+	<br>
+	
 1. Clone the git repository `https://github.com/<username>/myfirstrepo.git` and go to the created directory.
 
 	```text
@@ -113,6 +122,8 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 	You have copied the contents of your remote repository `myfirstrepo` to a local repository (i.e., the `localrepo-one` directory in your hard drive).  In the `git clone` command, if you omit the parameter `localrepo-one`, the directory that will be created will have he same name as the remote repository (i.e., `myfirstrepo`).  In this tutorial, we intentionally specified the parameter `localrepo-one` so that the name of the remote repository (`myfirstrepo`)  and local repository (`localrepo-one`) are different.
 
+	<br>
+	
 1. Update `README.md` to the following:
 
 	```text
@@ -145,9 +156,10 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	 2 files changed, 3 insertions(+), 1 deletion(-)
 	 create mode 100644 sample.txt
 	```	
-	<br>
 
 	At this point, the changes made (i.e., updated the `README.md` file and created the `sample.txt text file`) are committed in your local repository.  However, the local repository is not synced with the remote repository `myfirstrepo`.  
+
+	<br>
 
 1. Go back to your web browser and refresh your page to confirm that `README.md` has not been updated and `sample.txt` is not yet created in the remote repository`myfirstrepo`.
 
@@ -168,6 +180,8 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 	Note that the declaration of having the name `origin` associated with the Git URL `https://github.com/<username>/myfirstrepo.git` was automatically done when you did a `git clone` earlier.  The name `origin` can be changed to something else but in this tutorial you will retain this name.
 
+	<br>
+	
 1. Sync the contents of the local repository to the remote repository.
 
 
@@ -203,17 +217,22 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 As mentioned earlier, there are two ways to create a repository.  Either create a new repository from scratch (which is the activity you did in the previous steps) or you fork an existing repository.  In the task below, you will now create your second remote repository by forking an existing one.
 
+<br>
+
 1. Go back to your browser and go to the URL:
 		`https://github.com/pong-pantola/mysecondrepo`
 
-		Take note that you do not own this repository.  It is owned by user `pong-pantola`.  This can be verified through to the text `pong-pantola/mysecondrepo` found on the webpage.
+	Take note that you do not own this repository.  It is owned by user `pong-pantola`.  This can be verified through to the text `pong-pantola/mysecondrepo` found on the webpage.
 
+	<br>
+	
 1. Click the `Fork` button.
 
-		You know have your own copy of `mysecondrepo`.  This can be verified through to the text `<username>/mysecondrepo` followed by `forked from pong-pantola/mysecondrepo`.
+	You know have your own copy of `mysecondrepo`.  This can be verified through to the text `<username>/mysecondrepo` followed by `forked from pong-pantola/mysecondrepo`.
 
 	Forking allows you to make a copy of an existing repository and make it independent from the said existing repository.  If you start making changes to your forked repository, it will affect only this repository.
 
+	<br>
 
 
 1. Take note of the Git URL of your `mysecondrepo`.  
@@ -222,6 +241,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	https://github.com/<username>/mysecondrepo.git
 	```
 
+	<br>
 
 1. Open another terminal window.  Go to the `gittemp` directory.
 
@@ -229,6 +249,8 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	> cd gittemp
 	```
 
+	<br>
+	
 1. Create the directory `localrepo-two` and go to the created directory.
 
 	```text
@@ -254,7 +276,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 
 	The `git init` command creates a hidden `.git` subdirectory in the directory `localrepo-two`.  This makes the `localrepo-two` a Git repository.
 
-
+	<br>
 
 1. Create a file `anothersample.txt` in `localrepo-two` directory containing the following:
 
@@ -279,10 +301,12 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	 1 file changed, 1 insertion(+)
 	 create mode 100644 anothersample.txt
 	```	
-	<br>
+	
 
 	At this point, the changes made (i.e., created the `anothersample.txt text file`) are committed in your local repository.  However, the local repository is not synced with the remote repository `mysecondrepo`.  
 
+	<br>
+	
 1. Go back to your web browser and refresh your page to confirm that `anothersample.txt` is not yet created in the remote repository`mysecondrepo`.
 
 1. Verify if the Git URL of your remote repository is declared in your local repository
@@ -310,6 +334,8 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 
 	You need to explicitly inform the local repository `localrepo-two` of the remote repository `mysecondrepo`.
 
+	<br>
+	
 1. Make the localrepo-two `localrepo-two` aware of the remote repository `mysecondrepo`.
 
 	```text
@@ -324,6 +350,8 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	
 	>**IMPORTANT:** The example above uses the Git URL of another user.  Make sure to use the URL of your `mysecondrepo`.
 
+	<br>
+	
 1. Verify that the Git URL of your remote repository is already declared in your local repository.
 
 	```text
@@ -337,6 +365,8 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	origin  https://github.com/<username>/mysecondrepo.git (push)
 	```
 
+	<br>
+	
 1. Sync the contents of the local repository to the remote repository.
 
 
@@ -376,6 +406,8 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 
 	To solve this problem, a `git pull` command will be performed first.
 
+	<br>
+	
 1. Pull the contents of the remote repository to the  local repository.
 
 
@@ -410,6 +442,8 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 
 	Note that a `git pull` command does not require that the local and remote repositories to be synced with each other.  It only ensures that files in the remote repository that are missing or different from the local repository is copied/merged to the local repository.
 
+	<br>
+	
 1. Go back to your web browser and refresh your page to confirm that the remote repository `mysecondrepo` still contains only the `README.md` file.  At this point, `anothersample.txt` should still not exist in the remote repository.
 
 1. Try to sync again the contents of the local repository to the remote repository.
@@ -451,6 +485,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 >**IMPORTANT:** 
 >Each step is labeled as **Person A**, **Person B**, or **Both** to know who should be performing a particular step.  Note that even if two steps are assigned to different persons, it does not mean that they can be performed in parallel.  For example, if step X is for **Person A** and step Y is for **Person B**, **Person B** should wait for **Person A** to finish step X before **Person B** performs step Y.
 
+<br>
 
 1. **Person A:** On your web browser, create a new remote repository with the following specification:
 
@@ -547,6 +582,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	   cb74f88..83d407a  master -> master
 	```
 
+	<br>
 
 1. **Person B:** Create a file `contribution-b.txt` in `localrepo-three` directory containing the following:
 
@@ -597,6 +633,8 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 
 	However, when **Person B** issued the `git push` command to push its update to the remote repository `mysharedrepo` of **Person A**, an error is encountered because **Person B** is not given any authorization to push updates to **Person A**'s remote repository.
 
+	<br>
+	
 1. **Person A:** Give permission to **Person B** to push updates to the remote repository `mysharedrepo`.  Go to the web browser and make sure that you are in the `mysharedrepo` repository.
 
 1. **Person A:** Click the `Settings` link.  Click the `Collaborators` link.  Confirm your password.
@@ -705,6 +743,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	`mysharedrepo` of **Person A** | `contribution-a.txt` and `README.md` | `contribution-a.txt`,  `contribution-b.txt`, and `README.md`
 	
 	The local repository of **Person B** and the remote repository of **Person A** are now synced.  However, **Person A**'s local repository is not synced with the remote repository.  This can easily be solved with another pull from **Person A**.
+
 	<br>
 
 1. **Person A:** Pull the contents of the remote repository to the  local repository.
@@ -794,6 +833,8 @@ The previous activity demonstrated how the contributions made by teammates can b
 	   95b2e65..d972fef  master -> master
 	```
 
+	<br>
+	
 1. **Person B:** Update the file `contribution-a.txt` (not `contribution-b.txt`) in `localrepo-three` directory so that it contains the following:
 
 	```text
@@ -862,7 +903,9 @@ The previous activity demonstrated how the contributions made by teammates can b
 	```
 
 	As mentioned, **Person B** can attempt to do a pull to fix the problem.
+	
 	<br>
+	
 1. **Person B:** Pull the contents of the remote repository to the  local repository.
 
 
