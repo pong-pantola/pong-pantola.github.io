@@ -16,22 +16,9 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 >**Prerequisite:**
 
->You are **required** to do the [Creating a Web Application using Gradle Tutorial](/gradle-web-application).
+>You are **required** to do the [Git Basics Tutorial](/git-basics).
 
->- The sample code used in the current tutorial is based from the sample code used in [Creating a Web Application using Gradle Tutorial](/gradle-web-application). 
-
->You are not required (but **recommended**) to do  the [Bluemix Basics Tutorial](/bluemix-basics).
-
->- **However**, ensure that you have a Bluemix account.  
->- Your account should have the space `dev` under the region `US-South`.  The creation of the space `dev` is discussed in [Bluemix Basics Tutorial](/bluemix-basics).
-
->XXXYou are not required (but **recommended**) to do  the [Bluemix DevOps Services Basics Tutorial](/devops-basics).
-
->- **However**, ensure that you have a Bluemix DevOps Services account.
-
->XXXYou are not required (but **recommended**) to do  the [GitHub Basics Tutorial](/github-basics).
-
->- **However**, ensure that you have a GitHub account.
+>There are activities in this tutorial that require a teammate.  Make sure that you identify another person who will be your teammate in this tutorial.
 
 
 <br>
