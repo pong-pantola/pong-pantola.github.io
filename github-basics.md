@@ -626,10 +626,85 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 
 	The `unable to access` error does not anymore appear.  This means that **Person B** is already given authorization to push updates to **Person A**'s remote repository.  However, the error message encountered in the previous activity.  This is due to to a `git push` will not sync the local repository of **Person B** and the remote repository of **Person A**.  Note that the remote repository already has `contribution-a.txt` which is still missing in **Person B**'s local repository.  This is summarized below:
 
-	Repository | Contents Before the Push | Contents After the Push (if push will be allowed to proceed)
+	Repository | Contents Before **Person B**'s Push | Contents After the **Person B**'s Push (if push will be allowed to proceed)
 	---|---|---
-	`localrepo-three` of Person A | `anothersample.txt` |  `anothersample.txt`
-	`mysecondrepo` | `README.md` | `anothersample.txt` and `README.md`
+	`localrepo-three` of **Person A** | `contribution-a.txt` and `README.md` |  `contribution-a.txt` and `README.md`
+	`localrepo-three` of **Person B** | `contribution-b.txt` and `README.md` |  `contribution-b.txt` and `README.md`
+	`mysharedrepo` of **Person A** | `contribution-a.txt` and `README.md` | `contribution-a.txt`, `contribution-b.txt`, and `README.md`
+
+	Note that the push is not allowed because the local repository of **Person B** will not be synced with the remote repository of **Person A**.
+
+	This can easily be solved by **Person B** by doing a pull followed by a push.
+
+
+	<br>
+
+	1. **Person B:** Pull the contents of the remote repository to the  local repository.
+
+
+	```text
+	> git pull origin master
+	```
+	
+	**Output:**
+	```text
+	remote: Counting objects: 3, done.
+	remote: Compressing objects: 100% (3/3), done.
+	remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+	Unpacking objects: 100% (3/3), done.
+	From https://github.com/<username_of_Person_A>/mysharedrepo
+	 * branch            master     -> FETCH_HEAD
+	   cb74f88..83d407a  master     -> origin/master
+	Merge made by the 'recursive' strategy.
+	 contribution-a.txt | 1 +
+	 1 file changed, 1 insertion(+)
+	 create mode 100644 contribution-a.txt
+	```
+
+	The repositories' contents after the pull are the following:
+	
+	Repository | Contents Before **Person B**'s Pull | Contents After the **Person B**'s Pull
+	---|---|---
+	`localrepo-three` of **Person A** | `contribution-a.txt` and `README.md` |  `contribution-a.txt` and `README.md`
+	`localrepo-three` of **Person B** | `contribution-b.txt` and `README.md` |  `contribution-a.txt`, `contribution-b.txt`, and `README.md`
+	`mysharedrepo` of **Person A** | `contribution-a.txt` and `README.md` | `contribution-a.txt`,  and `README.md`
+	
+
+	<br>
+
+1. **Person B:** Try again to sync the contents of the local repository to the remote repository.
+
+
+	```text
+	> git push origin master
+	```
+	
+	**Output:**
+	
+	```text
+	Username for 'https://github.com': <username_of_Person_B>
+	Password for 'https://<username_of_Person_B>@github.com':
+	Counting objects: 7, done.
+	Delta compression using up to 4 threads.
+	Compressing objects: 100% (5/5), done.
+	Writing objects: 100% (5/5), 647 bytes | 0 bytes/s, done.
+	Total 5 (delta 1), reused 0 (delta 0)
+	To https://github.com/<username_of_Person_A>/mysharedrepo.git
+	   83d407a..95b2e65  master -> master
+	```
+
+	The repositories' contents after the pull are the following:
+	
+	Repository | Contents Before **Person B**'s Push | Contents After the **Person B**'s Pushl
+	---|---|---
+	`localrepo-three` of **Person A** | `contribution-a.txt` and `README.md` |  `contribution-a.txt` and `README.md`
+	`localrepo-three` of **Person B** | `contribution-a.txt`, `contribution-b.txt`, and `README.md` |  `contribution-a.txt`, `contribution-b.txt`, and `README.md`
+	`mysharedrepo` of **Person A** | `contribution-a.txt` and `README.md` | `contribution-a.txt`,  and `README.md`
+	
+
+	<br>
+
+
 xxx
 	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
 
