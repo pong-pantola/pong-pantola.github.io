@@ -778,6 +778,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	```
 		
 	**Output:**
+	
 	```text
 	Username for 'https://github.com': <username_of_Person_A>
 	Password for 'https://<username_of_Person_A>@github.com':
@@ -825,6 +826,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	```
 		
 	**Output:**
+	
 	```text
 	Username for 'https://github.com': <username_of_Person_B>
 	Password for 'https://<username_of_Person_B>@github.com':
@@ -842,6 +844,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	Similar to the error encountered by **Person B** earlier, **Person B** needs to perform a pull first before doing a push.  The only difference with the error encountered in this step is that the error is caused not by a missing file but due to the varying contents of `contribution-a.txt` in the remote repository and **Pearson B**'s local repository. 
 
 	**Person B**'s  local repository's `contribution-a.txt`:
+	
 	```text
 	This is the contribution of Person A.  This represents a source code written by Person A.
 	
@@ -865,6 +868,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	```
 	
 	**Output:**
+	
 	```text
 	remote: Counting objects: 3, done.
 	remote: Compressing objects: 100% (2/2), done.
@@ -891,6 +895,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	This is an UPDATE made by Person A.
 	>>>>>>> d972fefa5dc88f258ded0d157977600e7503293f
 	```
+	
 	The `git pull` command placed a marker on the changes that it failed to merge.  The reason why it failed to merge is `git pull` does not know if your intention is to retain only one of the two lines or if you want to retain both.  Git is letting you to manually merge these updates.
 
 	You will retain both `This is an UPDATE made by Person B.` and `This is an UPDATE made by Person A.`.  This represents both **Person A** and **Person B** placing updates on the same file.
@@ -917,7 +922,9 @@ The previous activity demonstrated how the contributions made by teammates can b
 	```
 
 	**Person B** will commit the changes made in `contribution-a.txt` and push the updates to the remote repository.
+	
 	<br>
+	
 
 
 1. **Person B:** Track and commit the changes made in the local repository.
@@ -943,6 +950,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	```
 		
 	**Output:**
+	
 	```text
 	Username for 'https://github.com': <username_of_Person_B>
 	Password for 'https://<username_of_Person_B>@github.com':
@@ -969,6 +977,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	```
 	
 	**Output:**
+	
 	```text
 	remote: Counting objects: 6, done.
 	remote: Compressing objects: 100% (4/4), done.
