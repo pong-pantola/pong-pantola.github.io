@@ -171,6 +171,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	```
 	
 	**Output:**
+	
 	```text
 	origin  https://github.com/<username>/myfirstrepo.git (fetch)
 	origin  https://github.com/<username>/myfirstrepo.git (push)
@@ -188,6 +189,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	```
 	
 	**Output:**
+	
 	```text
 	Username for 'https://github.com': <username>
 	Password for 'https://<username>@github.com':
@@ -303,6 +305,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	```
 	
 	**Output:**
+	
 	```text
 
 	```
@@ -313,6 +316,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	origin  https://github.com/<username>/myfirstrepo.git (fetch)
 	origin  https://github.com/<username>/myfirstrepo.git (push)
 	```
+	
 	Note that the `localrepo-one` repository was created when you issued the `git clone https://github.com/<username>/myfirstrepo.git localrepo-one` command earlier.  The `git clone` command did not only created the `localrepo-one` repository but also did the necessary declaration to map the name `origin` to the Git URL `https://github.com/<username>/myfirstrepo.git`.
 
 	However, in the case of `localrepo-two`, this repository was created by manually creating the directory `localrepo-two` and issuing the command `git init` inside it.  Therefore, `localrepo-two` is not even aware of the existence of the remote repository `mysecondrepo` nor its Git URL `https://github.com/<username>/mysecondrepo.git`.
@@ -326,9 +330,11 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	```
 
 	**Example:**
+	
 	```text
 	git remote add origin https://github.com/pong/mysecondrepo.git
 	```
+	
 	>**IMPORTANT:** The example above uses the Git URL of another user.  Make sure to use the URL of your `mysecondrepo`.
 
 1. Verify that the Git URL of your remote repository is already declared in your local repository.
@@ -338,6 +344,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	```
 	
 	**Output:**
+	
 	```text
 	origin  https://github.com/<username>/mysecondrepo.git (fetch)
 	origin  https://github.com/<username>/mysecondrepo.git (push)
@@ -351,6 +358,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	```
 	
 	**Output:**
+	
 	```text
 	Username for 'https://github.com': <username>
 	Password for 'https://<username>@github.com':
@@ -389,6 +397,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	```
 	
 	**Output:**
+	
 	```text
 	warning: no common commits
 	remote: Counting objects: 3, done.
@@ -424,6 +433,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	```
 	
 	**Output:**
+	
 	```text
 	Username for 'https://github.com': <username>
 	Password for 'https://<username>@github.com':
@@ -468,7 +478,6 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 1. **Both:** Open another terminal window. Go to the `gittemp` directory.
 
 	```text
-
 	> cd gittemp
 	```
 
@@ -482,13 +491,16 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	```
  
  	**Example:**
+ 	
 	```text
 	> git clone https://github.com/usera/mysharedrepo.git localrepo-three
 	> cd localrepo-three
 	```
+	
 	>**IMPORTANT:** The example above is the Git URL of another user.  Make sure to use the URL of **Person A**'s `mysharedrepo`.  Even **Person B** should use the URL of **Person A**'s `mysharedrepo`.
 
 	**Output:**
+	
 	```text
 	Cloning into 'localrepo-three'...
 	remote: Counting objects: 3, done.
@@ -535,6 +547,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	```
 	
 	**Output:**
+	
 	```text
 	Username for 'https://github.com': <username_of_Person_A>
 	Password for 'https://<username_of_Person_A>@github.com':
@@ -571,6 +584,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	 1 file changed, 1 insertion(+)
 	 create mode 100644 contribution-b.txt
 	```	
+	
 	<br>
 
 
