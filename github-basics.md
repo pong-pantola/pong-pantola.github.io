@@ -7,7 +7,7 @@ permalink: /github-basics/
 ##Application Development Tutorial
 
 ###GitHub Basics
-[GitHub](https://github.com) is a Git repository hosting system that can be used as remote Git repository.
+[GitHub](https://github.com) is a Git repository hosting system that can be used as a remote Git repository.
 
 In the [Git Basics Tutorial](/git-basics) , you learned to do version control in a local Git repository (i.e., repository in your hard drive).  This allows you to go back to a previous version of your work.  However, using only a local repository prevents you to collaborate with a teammate.  For example, if you are working on  a Java code `Module1.java` and your teammate is working on `Module2.java`, the typical way of consolidating your work is copying through a USB drive or sending your code as an e-mail.
 
