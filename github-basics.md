@@ -99,7 +99,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	> cd gittemp
 	```
 
-1. Clone the git repository `https://github.com/<username>/myfirstrepo.git` and go to the created `myfirstrepo` directory.
+1. Clone the git repository `https://github.com/<username>/myfirstrepo.git` and go to the created directory.
 
 	```text
 	> git clone https://github.com/<username>/myfirstrepo.git localrepo-one
@@ -368,18 +368,18 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 
 	The intention of a `git push` command is to make the contents of the local repository the same as the remote repository.  If `git push` detects that proceeding with the push will not result to a local and remote repositories that are synced, it will not proceed with the push.  This is what happened with your attempt to push the changes in `localrepo-two` to the remote repository `mysecondrepo`.
 
-	Note that the remote repository `mysecondrepo` contains the file `README.md` while `localrepo-two` contains the file `anothersample.txt`.  A `git push` command would have copied `anothersample.txt` to `mysecondrepo`. This is illustrated below:
+	Note that the remote repository `mysecondrepo` contains the file `README.md` while `localrepo-two` contains the file `anothersample.txt`.  A `git push` command would have copied `anothersample.txt` to `mysecondrepo`. This is summarized below:
 
 	Repository | Contents Before the Push | Contents After the Push (if push will be allowed to proceed)
 	---|---|---
 	`localrepo-two` | `anothersample.txt` |  `anothersample.txt`
-	`mysecondrepo` | `README.md` | `README.md` and `anothersample.txt`
+	`mysecondrepo` | `README.md` | `anothersample.txt` and `README.md`
 
-	Proceeding with the push will not result to synced `mysecondrepo` and `localrepo-two`.  
+	Proceeding with the push will not result to synced `mysecondrepo` and `localrepo-two`.  This is the reason why the `git push` command resulted to an error.
 
 	To solve this problem, a `git pull` command will be performed first.
 
-1. Sync the contents of the local repository to the remote repository.
+1. Pull the contents of the remote repository to the  local repository.
 
 
 	```text
@@ -388,8 +388,248 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	
 	**Output:**
 	```text
+	warning: no common commits
+	remote: Counting objects: 3, done.
+	remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+	Unpacking objects: 100% (3/3), done.
+	From https://github.com/pantolav/mysecondrepo
+	 * branch            master     -> FETCH_HEAD
+	 * [new branch]      master     -> origin/master
+	Merge made by the 'recursive' strategy.
+	 README.md | 1 +
+	 1 file changed, 1 insertion(+)
+	 create mode 100644 README.md
 	```
 
+	The `git pull` command checks files in the remote repository that are missing or different from the local repository.  Those that are missing will be copied, while those that are different will be merged (or attempted to be merged) by `git pull`.
+
+	The remote repository `mysecondrepo` has a `README.md` file that is missing in the local repository `localrepo-two`.  A pull will copy the `README.md` file the local repository.  This is summarized below:
+
+	Repository | Contents Before the Pull | Contents After the Pull
+	---|---|---
+	`localrepo-two` | `anothersample.txt` |  `anothersample.txt` and `README.md`
+	`mysecondrepo` | `README.md` | `README.md`
+
+	Note that a `git pull` command does not require that the local and remote repositories to be synced with each other.  It only ensures that files in the remote repository that are missing or different from the local repository is copied/merged to the local repository.
+
+1. Go back to your web browser and refresh your page to confirm that the remote repository `mysecondrepo` still contains only the `README.md` file.  At this point, `anothersample.txt` should still not exist in the remote repository.
+
+1. Try to sync again the contents of the local repository to the remote repository.
+
+
+	```text
+	> git push origin master
+	```
+	
+	**Output:**
+	```text
+	Username for 'https://github.com': <username>
+	Password for 'https://<username>@github.com':
+	Counting objects: 6, done.
+	Delta compression using up to 4 threads.
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (5/5), 588 bytes | 0 bytes/s, done.
+	Total 5 (delta 0), reused 0 (delta 0)
+	To https://github.com/<username>/mysecondrepo.git
+	   125720e..86cb740  master -> master	
+	```
+
+	Repository | Contents Before the Push | Contents After the Push
+	---|---|---
+	`localrepo-two` |  `anothersample.txt` and `README.md` | `anothersample.txt` and `README.md`
+	`mysecondrepo` | `README.md` | `anothersample.txt` and `README.md`
+
+
+	<br>
+
+1. Go back to your web browser and refresh your page to confirm that aside from `README.md`, the remote repository `mysecondrepo` now contains `anothersample.txt`.
+
+	<br>
+
+####Sharing a Remote Repository
+Syncing the contents of a local repository to a remote repository is an effective way of creating a back up of your source code.  However, sharing a remote repository to teammates allow you to easily consolidate your team's work.  In the next activity, you will work with another person.  One of you will be **Person A** (the one who will share the repository) and the other one is **Person B**.
+
+>**IMPORTANT:** 
+>Each step is labeled as **Person A**, **Person B**, or **Both** to know who should be performing a particular step.  Note that even if two steps are assigned to different persons, it does not mean that they can be performed in parallel.  For example, if step X is for **Person A** and step Y is for **Person B**, **Person B** should wait for **Person A** to finish step X before **Person B** performs step Y.
+
+
+1. **Person A:** On your web browser, create a new remote repository with the following specification:
+
+	||||
+	|---|---|---|
+	| **Repository name** | myfirstrepo |
+	| **Type** | Public |
+	| **Initialize this repository with a README** | checked |
+
+	<br>
+	
+1. **Both:** Open another terminal window. Go to the `gittemp` directory.
+
+	```text
+
+	> cd gittemp
+	```
+
+	<br>
+	
+1. **Both:** Clone the git repository `https://github.com/<username_of_Person_A>/mysharedrepo.git` and go to the created directory.
+
+	```text
+	> git clone https://github.com/<username_of_Person_A>/mysharedrepo.git localrepo-three
+	> cd localrepo-three
+	```
+ 
+ 	**Example:**
+	```text
+	> git clone https://github.com/usera/mysharedrepo.git localrepo-three
+	> cd localrepo-three
+	```
+	>**IMPORTANT:** The example above is the Git URL of another user.  Make sure to use the URL of **Person A**'s `mysharedrepo`.  Even **Person B** should use the URL of **Person A**'s `mysharedrepo`.
+
+	**Output:**
+	```text
+	Cloning into 'localrepo-three'...
+	remote: Counting objects: 3, done.
+	remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+	Unpacking objects: 100% (3/3), done.
+	Checking connectivity... done.
+	```
+
+	<br>
+
+
+
+1. **Person A:** Create a file `contribution-a.txt` in `localrepo-three` directory containing the following value:
+
+	```text
+	This is the contribution of Person A.  This represents a source code written by Person A.
+	```
+
+	<br>
+
+
+1. **Person A:** Track and commit the changes made in the local repository.
+
+	```text
+	> git add contribution-a.txt
+	> git commit -m "created contribution-a.txt"
+	```
+
+	**Output:**
+
+	```text
+	[master 83d407a] created contribution-a.txt
+	 1 file changed, 1 insertion(+)
+	 create mode 100644 contribution-a.txt
+	```	
+	<br>
+
+
+1. **Person A:** Sync the contents of the local repository to the remote repository.
+
+
+	```text
+	> git push origin master
+	```
+	
+	**Output:**
+	```text
+	Username for 'https://github.com': <username_of_Person_A>
+	Password for 'https://<username_of_Person_A>@github.com':
+	Counting objects: 4, done.
+	Delta compression using up to 4 threads.
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 377 bytes | 0 bytes/s, done.
+	Total 3 (delta 0), reused 0 (delta 0)
+	To https://github.com/<username_of_Person_A>/mysharedrepo.git
+	   cb74f88..83d407a  master -> master
+	```
+
+
+1. **Person B:** Create a file `contribution-b.txt` in `localrepo-three` directory containing the following value:
+
+	```text
+	This is the contribution of Person B.  This represents a source code written by Person B.
+	```
+
+	<br>
+
+
+1. **Person B:** Track and commit the changes made in the local repository.
+
+	```text
+	> git add contribution-b.txt
+	> git commit -m "created contribution-b.txt"
+	```
+
+	**Output:**
+
+	```text
+	[master d0d039d] created contribution-b.txt
+	 1 file changed, 1 insertion(+)
+	 create mode 100644 contribution-b.txt
+	```	
+	<br>
+
+
+1. **Person B:** Sync the contents of the local repository to the remote repository.
+
+
+	```text
+	> git push origin master
+	```
+	
+	**Output:**
+	
+	```text
+	Username for 'https://github.com': <username_of_Person_B>
+	Password for 'https://<username_of_Person_B>@github.com':
+	remote: Permission to <username_of_Person_A>/mysharedrepo.git denied to <username_of_Person_B.>
+	fatal: unable to access 'https://github.com/<username_of_Person_A>/mysharedrepo.git/': The requested URL returned error: 403
+	```
+
+	Unlike **Person A**, **Person B** encountered an `unable to access` error.  Recall that both **Person A** and **Person B** cloned the remote repository `mysharedrepo` of **Person A**.
+
+	When **Person A** issued the `git push` command to push its update to the remote repository `mysharedrepo` of **Person A** this does not cause any problem since **Person A** has access to its remote repository.
+
+	However, when **Person B** issued the `git push` command to push its update to the remote repository `mysharedrepo` of **Person A**, an error is encountered because **Person B** is not given any authorization to push updates to **Person A**'s remote repository.
+
+1. **Person A:** Give permission to **Person B** to push updates to the remote repository `mysharedrepo`.  Go to the web browser and make sure that you are in the `mysharedrepo` repository.
+
+1. **Person A:** Click the `Settings` link.  Click the `Collaborators` link.  Confirm your password.
+
+1. **Person A:** In the text box, type the username of **Person B** and click the `Add Collaborator` button.
+
+
+1. **Person B:** Try again to sync the contents of the local repository to the remote repository.
+
+
+	```text
+	> git push origin master
+	```
+	
+	**Output:**
+	
+	```text
+	Username for 'https://github.com': <username_of_Person_B>
+	Password for 'https://<username_of_Person_B>@github.com':
+	To https://github.com/<username_of_Person_A>/mysharedrepo.git
+	 ! [rejected]        master -> master (fetch first)
+	error: failed to push some refs to 'https://github.com/<username_of_Person_A>/mysharedrepo.git
+	'
+	hint: Updates were rejected because the remote contains work that you do
+	hint: not have locally. This is usually caused by another repository pushing
+	hint: to the same ref. You may want to first integrate the remote changes
+	hint: (e.g., 'git pull ...') before pushing again.
+	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+	```
+
+	The `unable to access` error does not anymore appear.  This means that **Person B** is already given authorization to push updates to **Person A**'s remote repository.  However, the error message encountered in the previous activity.  This is due to to a `git push` will not sync the local repository of **Person B** and the remote repository of **Person A**.  Note that the remote repository already has `contribution-a.txt` which is still missing in **Person B**'s local repository.  This is summarized below:
+
+	Repository | Contents Before the Push | Contents After the Push (if push will be allowed to proceed)
+	---|---|---
+	`localrepo-three` of Person A | `anothersample.txt` |  `anothersample.txt`
+	`mysecondrepo` | `README.md` | `anothersample.txt` and `README.md`
 xxx
 	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
 
