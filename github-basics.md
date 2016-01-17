@@ -305,13 +305,16 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 
 	```
 
-	The output of the command is blank.  Recall that when you issued the same command in the `localrepo-one` repository, the output is not blank and it states that the following declaration:
+	The output of the command is blank.  Recall that when you issued the same command in the `localrepo-one` repository, the output is not blank.  It states that the following declaration:
 
 	```text
 	origin  https://github.com/<username>/myfirstrepo.git (fetch)
 	origin  https://github.com/<username>/myfirstrepo.git (push)
 	```
+	Note that the `localrepo-one` repository was created when you issued the `git clone https://github.com/<username>/myfirstrepo.git localrepo-one` command earlier.  The `git clone` command did not only created the `localrepo-one` repository but also did the necessary declaration to map the name `origin` to the Git URL `https://github.com/<username>/myfirstrepo.git`.
 
+	However, in the case of `localrepo-two`, this repository was created by manually creating the directory `localrepo-two` and issuing the command `git init` inside it.  Therefore, `localrepo-two` is not even aware of the existence of the remote repository `mysecondrepo` nor its Git URL `https://github.com/<username>/mysecondrepo.git`.
+xxxx
 	As shown in the output above, your local repository is aware of the Git URL of your remote repository.  The name `origin` is used to refer to the Git URL (e.g., instead of mentioning the very long Git URL `https://github.com/<username>/myfirstrepo.git`, you may just refer to it as `origin`).
 
 	Note that the declaration of having the name `origin` associated with the Git URL `https://github.com/<username>/myfirstrepo.git` was automatically done when you did a `git clone` earlier.  The name `origin` can be changed to something else but in this tutorial you will retain this name.
