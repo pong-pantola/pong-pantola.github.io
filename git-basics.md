@@ -3,7 +3,7 @@ layout: post
 title: Git Basics
 permalink: /git-basics/
 ---
-
+*
 ##Application Development Tutorial
 
 ###Git Basics
