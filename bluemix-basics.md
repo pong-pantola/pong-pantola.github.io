@@ -3,7 +3,7 @@ layout: post
 title: Bluemix Basics
 permalink: /bluemix-basics/
 ---
-
+*
 ##Application Development Tutorial
 
 ###Bluemix Basics
