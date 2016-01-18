@@ -3,7 +3,7 @@ layout: post
 title: GitHub Basics
 permalink: /github-basics/
 ---
-
+*
 ##Application Development Tutorial
 
 ###GitHub Basics
