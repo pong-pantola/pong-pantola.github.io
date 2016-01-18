@@ -5,7 +5,7 @@ permalink: /gradle-web-application/
 ---
 jetty tutorial:
 -Dorg.apache.jasper.compiler.disablejsr199=true
-
+*
 ##Application Development Tutorial
 
 ###Creating a Web Application using Gradle
