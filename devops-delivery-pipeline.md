@@ -128,7 +128,20 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 	<br>
 
-1. On the `DEVOPS-GIT TAB`: Click the `Sync` button.
+
+1. On the `DEVOPS-GIT TAB`: Set the following values:
+
+	||||
+	|---|---|---|
+	| **Select All** | checked |
+	| **Commit message** | files created when Bluemix DevOps project was created |
+
+	<br>
+
+1. On the `DEVOPS-GIT TAB`: Click the `Commit` button.
+
+
+1. On the `DEVOPS-GIT TAB`: Click the `Push` button.
 
 	Your working directory and GitHub repository are now the same.
 
@@ -234,6 +247,8 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 	| **Deploy Script** | `#!/bin/bash`<br>`cf push calculator-<your_name> -m 256M -p build/libs/calcuapp.war`  |	
 	| **Stop running this stage if this job fails** | checked |
 
+	>**IMPORTANT:** In the `cf push` command, make sure to change <your_name> to your name.
+	
 	<br>
 
 	
@@ -267,11 +282,11 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 1.  On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click the `Run Stage` icon of the `Build Stage`.
 
-	Notice that the status o fthe `Build Stage` changes to `STAGE RUNNING`.
+	Notice that the status of the `Build Stage` changes to `STAGE RUNNING`.
 
-	Once the status `Build Stage` changed to `STAGE PASSED`, the `Test Stage` will automatically start.
+	Once the status of `Build Stage` changes to `STAGE PASSED`, the `Test Stage` will automatically start.
 
-	Similarly, when the status `Test Stage` changed to `STAGE PASSED`, the `Dev Deploy Stage` will automatically start.
+	Similarly, when the status of `Test Stage` changes to `STAGE PASSED`, the `Dev Deploy Stage` will automatically start.
 
 	Wait for the status of the `Dev Deploy Stage` to change to `STAGE PASSED`.
 
