@@ -43,17 +43,14 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 1. Using the same web browser tab, go to the GitHub repository [`https://github.com/pong-pantola/devops-delivery-pipeline`](https://github.com/pong-pantola/devops-delivery-pipeline).
 
-1. Fork the repository by clicking the `Fork` button. 
+	1. Fork the repository by clicking the ` Fork` button. 
 
 1. Verify that you have successfully forked the repository by checking its name:
-
-	>**VERY IMPORTANT:**
-	>In this tutorial, we will use the username `juandelacruz`.  Kindly use your username in place of `juandelacruz` when you do the tutorial.
 
 	**Name of Repository:**
 
 	```text		
-	juandelacruz/devops-delivery-pipeline
+	<username>/devops-delivery-pipeline
 	```
 
 		The repository contains the following.
@@ -102,7 +99,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 	>If this is the first time you will link a Bluemix DevOps project to a GitHub repository, you will be asked to authorize your Bluemix DevOps account to access your GitHub account.  Proceed with confirming access.
 
-1. Select the repository `juandelacruz/devops-delivery-pipeline`
+1. Select the repository `<username>/devops-delivery-pipeline`
 
 1. Ensure the following options are chosen:
 
@@ -121,9 +118,9 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 1. Click the `EDIT CODE` button.  You will be redirected to Bluemix DevOps' editor.  In this tutorial, we will refer to this browser tab as `DEVOPS-EDITOR TAB`.
 
-	The editor shows the working directory (and not the GitHub repository you forked earlier).  Since the Bluemix DevOps project is liked to the GitHub repository `juandelacruz/devops-delivery-pipeline`, the contents of the working directory is based from the repository. 
+	The editor shows the working directory (and not the GitHub repository you forked earlier).  The working directory is very similar to a local directory in your hard drive as discussed in the [GitHub Basics Tutorial](/github-basics).  Since the Bluemix DevOps project is linked to the GitHub repository `<username>/devops-delivery-pipeline`, the contents of the working directory is based from the repository. 
 
-	However, notice that there are additional files/subdirectories (e.g., `.cfignore` and `launchConfigurations`) that were added in the working directory.  These were added automatically when the Bluemix DevOps project was created.  To sync the working directory with the GitHub repository `juandelacruz/devops-delivery-pipeline`, these files/directories need to be pushed to the repository.
+	However, notice that there are additional files/subdirectories (e.g., `.cfignore` and `launchConfigurations`) that were added in the working directory.  These were added automatically when the Bluemix DevOps project was created.  To sync the working directory with the GitHub repository `<username>/devops-delivery-pipeline`, these files/directories need to be pushed to the repository.
 
 1. On the `DEVOPS-EDITOR TAB`: Click (open in another browser tab) the `Git Repository` icon found on the left side of the screen.  We will refer to this browser tab as `DEVOPS-GIT TAB`.
 
@@ -162,7 +159,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 	||||
 	|---|---|---|
 	| **Input Type** | SCM Repository |
-	| **Git URL** | https://github.com/juandelacruz/devops-delivery-pipeline.git |
+	| **Git URL** | https://github.com/<username>/devops-delivery-pipeline.git |
 	| **Branch** | master |
 	| **Stage Trigger** | Run jobs whenever a change is pushed to Git |
 
