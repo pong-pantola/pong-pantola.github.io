@@ -143,7 +143,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 1. On the `DEVOPS-GIT TAB`: Click (open in another browser tab) the `BUILD & DEPLOY` button.  We will refer to this browser tab as `DEVOPS-DELIVERY-PIPELINE TAB`.
 
 
-
+	<br>
 
 
 ####Create a Build Stage
@@ -267,7 +267,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 1.  On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click the `Run Stage` icon of the `Build Stage`.
 
-	Notice that the status o fthe `Build Stage` changes to `STAGE RUNNING`.  W
+	Notice that the status o fthe `Build Stage` changes to `STAGE RUNNING`.
 
 	Once the status `Build Stage` changed to `STAGE PASSED`, the `Test Stage` will automatically start.
 
