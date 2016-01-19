@@ -120,29 +120,25 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 	The editor shows the working directory (and not the GitHub repository you forked earlier).  The working directory is very similar to a local directory in your hard drive as discussed in the [GitHub Basics Tutorial](/github-basics).  Since the Bluemix DevOps project is linked to the GitHub repository `<username>/devops-delivery-pipeline`, the contents of the working directory is based from the repository. 
 
-	However, notice that there are additional files/subdirectories (e.g., `.cfignore` and `launchConfigurations`) that were added in the working directory.  These were added automatically when the Bluemix DevOps project was created.  To sync the working directory with the GitHub repository `<username>/devops-delivery-pipeline`, these files/directories need to be pushed to the repository.
-
-1. On the `DEVOPS-EDITOR TAB`: Click (open in another browser tab) the `Git Repository` icon found on the left side of the screen.  We will refer to this browser tab as `DEVOPS-GIT TAB`.
-
-1. On the `DEVOPS-GIT TAB`: Set the following values:
-
-	||||
-	|---|---|---|
-	| **Select All** | checked |
-	| **Commit message** | files created when Bluemix DevOps project was created |
+	However, notice that there are additional files/subdirectories (e.g., `.cfignore` and `launchConfigurations`) that were added in the working directory.  These were added automatically when the Bluemix DevOps project was created.  To sync the working directory with the GitHub repository `<username>/devops-delivery-pipeline`, these files/directories need to be pushed to the GitHub remote repository.
 
 	<br>
 
-1. On the `DEVOPS-GIT TAB`: Click the `Commit` button.
+1. On the `DEVOPS-EDITOR TAB`: Click (open in another browser tab) the `Git Repository` icon found on the left side of the screen.  We will refer to this browser tab as `DEVOPS-GIT TAB`.
 
+	<br>
 
-1. On the `DEVOPS-GIT TAB`: Click the `Push` button.
+1. On the `DEVOPS-GIT TAB`: Click the `Sync` button.
 
 	Your working directory and GitHub repository are now the same.
 
+	<br>
+	
 1. On the `GITHUB TAB`: Refresh the page and verify that `.cfignore` and `launchConfigurations` are added.
 
 	You are now ready to create the delivery pipeline (i.e., build stage, test stage, deploy stage).
+
+	<br>
 	
 1. On the `DEVOPS-GIT TAB`: Click (open in another browser tab) the `BUILD & DEPLOY` button.  We will refer to this browser tab as `DEVOPS-DELIVERY-PIPELINE TAB`.
 
