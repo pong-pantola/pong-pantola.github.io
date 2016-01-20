@@ -536,6 +536,30 @@ Having separate deploy stages for development and production is essential to ens
 
 	The development version of the application is accessible through `http://calculator-<your_name>.mybluemix.net/calculator.jsp`.
 
+	To make sure that the working directory of your Bluemix DevOps project is in sync with your GitHub repository, you will sync again the changes you made in your GitHub repository.
+	
+	<br>
+
+1.  On the `DEVOPS-GIT TAB`:  Refresh the page.
+
+1.  On the `DEVOPS-GIT TAB`:  Notice that there is an `Incoming` change due to the modification you did on `Math.java` and `calculator.jsp` in GitHub.  Click the `Sync` button to update the copy of `Math.java` and `calculator.jsp` in the working directory in your Bluemix DevOps project.
+
+	<br>
+
+####Delete the Bluemix Applications
+
+1. Delete the two applications (i.e., the one deployed in `dev` space and the other one deployed in `prod` space) in your Bluemix account.
+
+	This will free up some resources which is essential to accommodate new applications and services you want to deploy in the future.
+
+1. You may retain the Bluemix DevOps project `devops-delivery-pipeline` and your <username>/devops-delivery-pipeline GitHub repository.
+
+	The DevOps project and the GitHub repository are needed in the [Bluemix DevOps Services Track and Plan Tutorial](/devops-track-plan), DO NOT delete your 
+
+	<br>
+
+1. You may close all the browser tabs you have opened.
+	
 	<br>
 
 ####End of Tutorial
