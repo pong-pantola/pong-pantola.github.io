@@ -4,9 +4,6 @@ title: Bluemix Devops Services Delivery Pipeline
 permalink: /devops-delivery-pipeline/
 ---
 
-##Application Development Tutorial
-
-###Bluemix DevOps Services Delivery Pipeline
 
 [Bluemix DevOps Services](https://hub.jazz.net) has a delivery pipeline that allows you to build, test, and deploy your web application.
 
