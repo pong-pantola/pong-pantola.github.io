@@ -4,9 +4,6 @@ title: Bluemix Basics
 permalink: /bluemix-basics/
 ---
 
-##Application Development Tutorial
-
-###Bluemix Basics
 
 IBM [Bluemix](https://ibm.biz/bluemixph) is a platform as a service (PaaS) cloud technology of IBM.  You may develop applications and deploy them in Bluemix.
 
