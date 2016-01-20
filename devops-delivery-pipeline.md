@@ -118,7 +118,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 1. Click the `EDIT CODE` button.  You will be redirected to Bluemix DevOps' editor.  In this tutorial, we will refer to this browser tab as `DEVOPS-EDITOR TAB`.
 
-	The editor shows the working directory (and not the GitHub repository you forked earlier).  The working directory is very similar to a local directory in your hard drive as discussed in the [GitHub Basics Tutorial](/github-basics).  Since the Bluemix DevOps project is linked to the GitHub repository `<username>/devops-delivery-pipeline`, the contents of the working directory is based from the repository. 
+	The editor shows the working directory (and not the GitHub repository you forked earlier).  The working directory is very similar to a local directory in your hard drive as discussed in the [GitHub Basics Tutorial](/github-basics).  In fact, when you chose to link the existing `<username>/devops-delivery-pipeline` remote repository in an earlier step, you basically instructed Bluemix DevOps to clone the said remote repository to the working directory.  This is very similar to cloning the remote repository to a local repository (i.e., the one in a hard drive).
 
 	However, notice that there are additional files/subdirectories (e.g., `.cfignore` and `launchConfigurations`) that were added in the working directory.  These were added automatically when the Bluemix DevOps project was created.  To sync the working directory with the GitHub repository `<username>/devops-delivery-pipeline`, these files/directories need to be pushed to the GitHub remote repository.
 
