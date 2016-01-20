@@ -3,13 +3,14 @@ layout: post
 title: Bluemix Devops Services Track and Plan
 permalink: /devops-track-plan/
 ---
-*
+
 ##Application Development Tutorial
 
 ###Bluemix DevOps Services Track and Plan
-[Bluemix DevOps Services](https://hub.jazz.net) has a track and plan feature supports Agile planning.
 
-In this tutorial you will learn how to use track and plan to create and monitor stories and defects.
+[Bluemix DevOps Services](https://hub.jazz.net) has a track and plan feature to support Agile planning.
+
+In this tutorial you will learn how to use track and plan to create and monitor stories and defects in a web application project.
 
 
 >**Prerequisite:**
@@ -239,9 +240,10 @@ In the activity below, you need to have a teammate with a Bluemix DevOps account
 
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
-
+Coming Soon
 
 
