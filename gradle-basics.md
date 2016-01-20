@@ -7,17 +7,16 @@ permalink: /gradle-basics/
 ##Application Development Tutorial
 
 ###Gradle Basics
-[Gradle](http://gradle.org/) is an open source build automation system.  It has a Java plugin to allow building and running test of Java applications.
 
-In this tutorial you will explore the different task available in Gradle.
+[Gradle](http://gradle.org/) is an open source build automation system.  It has a Java plugin to allow building Java applications and running tests for them.
+
+In this tutorial you will explore the different tasks available in Gradle.
 
 <br>
 
 >**Prerequisite:**
 
->You are not required (but **recommended**) to do  the [Git Basics Tutorial](/git-basics).
-
->- **However**, ensure that you have Git client installed in your machine.
+>Having a basic background in Java programming is required to do this tutorial.
 
 
 
@@ -41,6 +40,8 @@ In this tutorial you will explore the different task available in Gradle.
 
 	In `Linux`, kindly consult the Internet to permanently include the path of the Gradle `bin` directory to the `PATH` environment variable.
 
+	<br>
+	
 1. Open a terminal window and issue the `gradle` command to confirm that gradle is set-up properly.
 
 	```text
@@ -67,66 +68,46 @@ In this tutorial you will explore the different task available in Gradle.
 	Total time: 2.034 secs
 	```
 
+	<br>
+
+####Understanding Gradle
+
+Gradle is a build automation system.  A build has one or more projects (e.g., the thing we build like a `.jar` file).  A project, on the other hand, has one or more tasks (e.g., compiling a project or running a test).
 
 
+1. Open a terminal window and check the tasks available in Gradle.
 
-1. Start the Jetty server.
 
 	```text
-	java -jar start.jar
+	> gradle tasks
 	```
 
 	**Output:**
 
-	```text
+	```
 	:
 	:
-	2016-01-20 16:16:04.688:INFO:oejs.ServerConnector:main: Started ServerConnector@380fb434{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
-	2016-01-20 16:16:04.689:INFO:oejs.Server:main: Started @2121ms
+	assemble - Assembles the outputs of this project.
+	build - Assembles and tests this project.
+	buildDependents - Assembles and tests this project and all projects that depend on it.
+	buildNeeded - Assembles and tests this project and all projects it depends on.
+	classes - Assembles main classes.
+	clean - Deletes the build directory.
+	jar - Assembles a jar archive containing the main classes.
+	testClasses - Assembles test classes.
+	war - Generates a war archive with all the compiled classes, the web-app content and the libraries.
 	```
-	
-	>Just in case you encounter an error in running Jetty, you may need to edit start.ini and include the following line:
-	`-Dorg.apache.jasper.compiler.disablejsr199=true`
-	
-	>If this still does not work, remove the said line and check the Internet for possible solution.
+
+	Some of these tasks will be used in succeeding exercises involving Gradle.
 
 	<br>
 
-###Deploy a Sample Application in Jetty
+####End of Tutorial
 
-1. Open another terminal window.  Clone the git repository `https://github.com/pong-pantola/jetty-basics.git` and go to the created `jetty-basics` directory.
-
-	```text
-	> git clone https://github.com/pong-pantola/jetty-basics.git
-	> cd jetty-basics
-	```
-
-	A sample web application `calcu.app` can be found in the directory.  This sample application simply displays 3 simple mathematical equations.  
-
-1. Copy `calcuapp.war` to Jetty's `webapps` subdirectory.
-
-1. On a web browser, go to [`http://localhost:8080/calcuapp/calculator.jsp`](http://localhost:8080/calcuapp/calculator.jsp).
-
-	**Output:**
-		
-	```text
-	5 + 9 = 14
-	8 - 2 = 6
-	4 x 7 = 28 
-	```
-
-	You have successfully deployed the calculator application in Jetty.
-
-	<br>
-	
-1. Delete `calcuapp.war` from Jetty's `webapps` subdirectory.
-
-1. Go back to the terminal window showing the Jetty console.  Press `Ctrl+C` to stop the server.
-
-	<br>
+Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
-
+[Gradle's Dependency Management Tutorial](/gradle-dependency-management)
 
 
