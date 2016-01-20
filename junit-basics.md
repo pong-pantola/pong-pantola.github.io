@@ -3,11 +3,12 @@ layout: post
 title: Junit Basics
 permalink: /junit-basics/
 ---
-*
+
 ##Application Development Tutorial
 
 ###JUnit Basics
-JUnit is a simple framework to write repeatable tests. You may go to [http://junit.org/](http://junit.org/) for additional information regarding JUnit.
+
+[JUnit](http://junit.org/) is a simple framework to write repeatable tests.
 
 In this tutorial you will learn how to create a simple test class that is used to test the methods of a Java class.
 
@@ -18,6 +19,7 @@ In this tutorial you will learn how to create a simple test class that is used t
 <br>
 
 ####Copy Sample Codes from Git repository
+
 1. Open a terminal window and create the directory `junittemp` in the root directory.  Go to the created directory.
 
 	```text		
@@ -25,6 +27,8 @@ In this tutorial you will learn how to create a simple test class that is used t
 	> cd junittemp
 	```
 
+	<br>
+	
 1. Clone the git repository `https://github.com/pong-pantola/junit-basics.git` and go to the created `junit-basics` directory.
 
 	```text
@@ -71,15 +75,17 @@ In this tutorial you will learn how to create a simple test class that is used t
 
 	`build/libs` is used for the JUnit libraries (i.e, `.jar` files) that you will download later.
 
-<br>
+	<br>
+	
 ####Download the JUnit libraries
+
 1. Go to [https://github.com/junit-team/junit/wiki/Download-and-Install](https://github.com/junit-team/junit/wiki/Download-and-Install).
  
 	>Just in case the URL is broken, you may go to [http://junit.org/](http://junit.org/) and find the download link.
  
 2. Download the latest version of `junit.jar` and `hamcrest-core.jar` and save them in the subdirectory `build/libs`.
 
-<br>
+	<br>
 
 ####Examine the Java class to be tested
 
@@ -187,7 +193,8 @@ In this tutorial you will learn how to create a simple test class that is used t
 
 	As expected, the output `5 + 9 = -4` is wrong.  In addition, it took approximately 3 secs. before the line `4 x 7 = 28` appeared.
  
-<br>
+	<br>
+	
 ####Test the Java class
 
 1. Let's examine the code `MyTest.java` which will serve as the test class to test the methods of `Math.java`.
@@ -364,7 +371,8 @@ In this tutorial you will learn how to create a simple test class that is used t
 
 	Notice that the classpath includes `build/libs/*`.  Recall that you downloaded and saved the two JUnit `jar` files in this directory.
  
- 
+	 <br>
+	 
 1. Run the `TestRunner` application.
 
 	```text
@@ -385,6 +393,12 @@ In this tutorial you will learn how to create a simple test class that is used t
 
 	In addition, the `addShouldReturnSum` test method also failed since we intentionally made the `sum` method of `Math.java` incorrect.  Recall that we used `return a-b;` instead of `return a+b;` in the `sum` method of `Math.java`.
  
-<br>
+	<br>
+	
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
+
+####What's Next?
+
+[Gradle Basics Tutorial](/gradle-basics)
