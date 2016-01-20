@@ -7,9 +7,9 @@ permalink: /gradle-basics/
 ##Application Development Tutorial
 
 ###Gradle Basics
-Jetty is a Java HTTP (Web) server and Java Servlet container. 
+[Gradle](http://gradle.org/) is an open source build automation system.  It has a Java plugin to allow building and running test of Java applications.
 
-In this tutorial you will learn how to deploy a web application packaged as a `.war` file in Jetty.
+In this tutorial you will explore the different task available in Gradle.
 
 <br>
 
@@ -22,22 +22,53 @@ In this tutorial you will learn how to deploy a web application packaged as a `.
 
 
 
-
-
-
 <br>
 
 
-####Install Jetty
+####Install Gradle
 
 
-1. Go to [Jetty](http://download.eclipse.org/jetty/) download page.  Download the appropriate version.
+1. Go to [Gradle's download page](http://gradle.org/gradle-download/).  Download the latest version.  The `Binary only distribution` is sufficient.
 
-	Jetty is highly dependent on the installed JDK.  Make sure that your version of JDK is compatible with the Jetty version you will download.  You may refer to the [Jetty Comparison Table](https://wiki.eclipse.org/Jetty/Starting/Jetty_Version_Comparison_Table) for Jetty-JDK version compatibility.
 
-1. Extract Jetty in a directory.  We will call this directory as Jetty's home directory.
+1. Extract Gradle directory.
 
-1. Open a terminal window a go to the Jetty directory.
+1. In the extracted Gradle directory, confirm that there is a `bin` subdirectory.  Take note of the path of the `bin` subdirectory (e.g., `/temp/gradle-2.10/bin`).
+
+1. Add the path of the `bin` subdirectory to the `PATH` environment variable.
+
+	In `Windows`, you may use this [link](http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx) as a guide.
+
+	In `Linux`, kindly consult the Internet to permanently include the path of the Gradle `bin` directory to the `PATH` environment variable.
+
+1. Open a terminal window and issue the `gradle` command to confirm that gradle is set-up properly.
+
+	```text
+	> gradle
+	```
+
+	**Output:**
+
+	```text
+	:help
+	
+	Welcome to Gradle 2.10.
+	
+	To run a build, run gradle <task> ...
+	
+	To see a list of available tasks, run gradle tasks
+	
+	To see a list of command-line options, run gradle --help
+	
+	To see more detail about a task, run gradle help --task <task>
+	
+	BUILD SUCCESSFUL
+	
+	Total time: 2.034 secs
+	```
+
+
+
 
 1. Start the Jetty server.
 
