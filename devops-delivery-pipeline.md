@@ -425,7 +425,7 @@ You will intentionally introduce errors in `src/main/java/net/tutorial/Math.java
 
 	Since `delay()` is added, we expect that `multiply` method will execute for at least 3 secs..  This will cause a timeout error.
 
-	This error is also discussed in detail in the [JUnit Basics Tutorial](/junit-basic) and revisited in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
+	This error is also discussed in detail in the [JUnit Basics Tutorial](/junit-basics) and revisited in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
 
 	<br>
 
