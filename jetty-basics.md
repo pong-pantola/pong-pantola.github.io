@@ -3,15 +3,15 @@ layout: post
 title: Jetty Basics
 permalink: /jetty-basics/
 ---
-jetty tutorial:
--Dorg.apache.jasper.compiler.disablejsr199=true
-*
+
 ##Application Development Tutorial
 
 ###Jetty Basics
 Jetty is a Java HTTP (Web) server and Java Servlet container. 
 
 In this tutorial you will learn how to deploy a web application packaged as a `.war` file in Jetty.
+
+<br>
 
 >**Prerequisite:**
 
