@@ -4,9 +4,6 @@ title: Junit Basics
 permalink: /junit-basics/
 ---
 
-##Application Development Tutorial
-
-###JUnit Basics
 
 [JUnit](http://junit.org/) is a simple framework to write repeatable tests.
 
