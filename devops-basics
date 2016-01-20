@@ -6,35 +6,31 @@ permalink: /devops-basics/
 *
 ##Application Development Tutorial
 
-###Bluemix DevOps Services Delivery Pipeline
-[Bluemix DevOps Services](https://hub.jazz.net) has a delivery pipeline that allows you to build, test, and deploy your web application.
+###Bluemix DevOps Services Basics
+[Bluemix DevOps Services](https://hub.jazz.net) or simply Bluemix DevOps is software as a service (SaaS) cloud technology that supports development, tracking and planning, and deployment of software.
 
-In this tutorial you will learn to set-up a delivery pipeline by creating a build stage, a test stage, and a deploy stage.  The build stage will use Gradle.  The test stage will use JUnit through Gradle.  The deploy stage will use the cf tool.
-
+In this tutorial you will explore the different features of Bluemix DevOps.
 
 >**Prerequisite:**
 
->You are **required** to do the [Creating a Web Application using Gradle Tutorial](/gradle-web-application).
+>Having a basic background in web application development is required in this tutorial.
 
->- The sample code used in the current tutorial is based from the sample code used in [Creating a Web Application using Gradle Tutorial](/gradle-web-application). 
-
->You are not required (but **recommended**) to do  the [Bluemix Basics Tutorial](/bluemix-basics).
-
->- **However**, ensure that you have a Bluemix account.  
->- Your account should have the space `dev` under the region `US-South`.  The creation of the space `dev` is discussed in [Bluemix Basics Tutorial](/bluemix-basics).
-
->You are not required (but **recommended**) to do  the [Bluemix DevOps Services Basics Tutorial](/devops-basics).
-
->- **However**, ensure that you have a Bluemix DevOps Services account.
-
->You are not required (but **recommended**) to do  the [GitHub Basics Tutorial](/github-basics).
-
->- **However**, ensure that you have a GitHub account.
 
 
 <br>
 
+####Create a Bluemix Account
+1. Go to [Bluemix DevOps](https://ibm.biz/bluemixph) and click the `SIGN UP` button.
 
+1. Fill-up and submit the registration form.
+
+1. Wait for a confirmation e-mail and follow the instructions in the e-mail to validate your Bluemix registration.
+
+<br>
+
+####Explore your Bluemix DevOps Account
+
+xxx
 
 ####Copy a GitHub Repository
 
