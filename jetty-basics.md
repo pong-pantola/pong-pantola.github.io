@@ -31,7 +31,7 @@ In this tutorial you will learn how to deploy a web application packaged as a `.
 ####Install Jetty
 
 
-1. Go to [Jetty](http://download.eclipse.org/jetty/) download page.  Download the appropriate version.
+1. Go to [Jetty's download page](http://download.eclipse.org/jetty/).  Download the appropriate version.
 
 	Jetty is highly dependent on the installed JDK.  Make sure that your version of JDK is compatible with the Jetty version you will download.  You may refer to the [Jetty Comparison Table](https://wiki.eclipse.org/Jetty/Starting/Jetty_Version_Comparison_Table) for Jetty-JDK version compatibility.
 
