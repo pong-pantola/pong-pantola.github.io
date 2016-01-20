@@ -7,12 +7,14 @@ permalink: /github-basics/
 ##Application Development Tutorial
 
 ###GitHub Basics
+
 [GitHub](https://github.com) is a Git repository hosting system that can be used as a remote Git repository.
 
 In the [Git Basics Tutorial](/git-basics) , you learned to do version control in a local Git repository (i.e., repository in your hard drive).  This allows you to go back to a previous version of your work.  However, using only a local repository prevents you to collaborate with a teammate efficiently.  For example, if you are working on  a Java code `Module1.java` and your teammate is working on `Module2.java`, the typical way of consolidating your work is copying through a USB drive or sending your code as an e-mail.
 
 In this tutorial, you will learn how to use GitHub as a remote Git repository in order for you to share your work with a teammate.
 
+<br>
 
 >**Prerequisite:**
 
@@ -25,6 +27,7 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 
 ####Create a GitHub Account
+
 1. Go to [GitHub](https://github.com) and click the `SIGN UP` button.
 
 1. Fill-up and submit the registration form.
@@ -120,11 +123,11 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	Checking connectivity... done.
 	```
 
-	You have copied the contents of your remote repository `myfirstrepo` to a local repository (i.e., the `localrepo-one` directory in your hard drive).  In the `git clone` command, if you omit the parameter `localrepo-one`, the directory that will be created will have he same name as the remote repository (i.e., `myfirstrepo`).  In this tutorial, we intentionally specified the parameter `localrepo-one` so that the name of the remote repository (`myfirstrepo`)  and local repository (`localrepo-one`) are different.
+	You have copied the contents of your remote repository `myfirstrepo` to a local repository (i.e., the `localrepo-one` directory in your hard drive).  In the `git clone` command, if you omit the parameter `localrepo-one`, the directory that will be created will have the same name as the remote repository (i.e., `myfirstrepo`).  In this tutorial, we intentionally specified the parameter `localrepo-one` so that the name of the remote repository (`myfirstrepo`)  and local repository (`localrepo-one`) are different.
 
 	<br>
 	
-1. Update `README.md` to the following:
+1. Update `README.md` in `localrepo-one` to the following:
 
 	```text
 	# myfirstrepo
@@ -203,9 +206,9 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
 
-	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository`myfirstrepo`.  A repository may have one or more branch.  By default, a repository has only one branch named `master`.   That is why your remote repository `myfirstrepo` has a `master` branch even if you never explicitly created it.  You may look at your GitHub page to verify that there is indeed a branch named `master` under the remote repository `myfirstrepo`.  This tutorial does not cover the creation of additional branches.
+	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository`myfirstrepo`.  A repository may have one or more branches.  By default, a repository has only one branch named `master`.   That is why your remote repository `myfirstrepo` has a `master` branch even if you never explicitly created it.  You may look at your GitHub page to verify that there is indeed a branch named `master` under the remote repository `myfirstrepo`.  This tutorial does not cover the creation of additional branches.
 
-	The command `git push origin master` pushes the changes of your local repository to the `master` branch of the remote repository referred to by origin (which is `https://github.com/<username>/myfirstrepo.git`).
+	In summary, the command `git push origin master` pushes the changes of your local repository to the `master` branch of the remote repository referred to by origin (which is `https://github.com/<username>/myfirstrepo.git`).
 
 	<br>
 	
@@ -480,6 +483,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	<br>
 
 ####Sharing a Remote Repository
+
 Syncing the contents of a local repository to a remote repository is an effective way of creating a back up of your source code.  However, sharing a remote repository to teammates allow you to easily consolidate your team's work.  In the next activity, you will work with another person.  One of you will be **Person A** (the one who will share the repository) and the other one is **Person B**.
 
 >**IMPORTANT:** 
@@ -783,6 +787,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	<br>
 	
 ####Merge Changes Made on the same file
+
 The previous activity demonstrated how the contributions made by teammates can be consolidated together.  In the next activity, both **Person A** and **Person B** will update the same file `contribution-a.txt`.  You will see the problem caused by such an update and the steps to resolve the problem.
 
 1. **Person A:** Update the file `contribution-a.txt` in `localrepo-three` directory so that it contains the following:
@@ -809,6 +814,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	[master d972fef] updated contribution-a.txt
 	 1 file changed, 3 insertions(+), 1 deletion(-)
 	```	
+
 	<br>
 
 
@@ -858,7 +864,8 @@ The previous activity demonstrated how the contributions made by teammates can b
 	```text
 	[master 8927d94] updated contribution-a.txt by Person B
 	 1 file changed, 3 insertions(+), 1 deletion(-)
-	```	
+	```
+
 	<br>
 
 
@@ -927,7 +934,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	CONFLICT (content): Merge conflict in contribution-a.txt
 	Automatic merge failed; fix conflicts and then commit the result.
 	```
-
+	
 	The `git pull` command is able to pull the changes from the remote repository (i.e., the line added in `contribution-a.txt`) and include it in `contribution-a.txt` in the local repository of **Person B**.  However, since **Person B** did its own changes on the file, git failed to figure out ohow to properly merge/consolidate the two changes.  
 
 	The `contribution-a.txt` in the local repository of **Person B** now contains the following:
@@ -1045,9 +1052,11 @@ The previous activity demonstrated how the contributions made by teammates can b
 	
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
+[JUnit Basics Tutorial](/junit-basics)
 
 
 
