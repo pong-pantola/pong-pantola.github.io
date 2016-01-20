@@ -344,7 +344,7 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 
 1.  On the `DEVOPS-EDITOR TAB`:  Open the file `src/main/webapp/calculator.jsp`.  
 
-	Notice that the lines you added in the `calculator.jsp`(i.e., `<%="2 + 2 = " + m.add(2, 2)%>` and `<br>`) in your GitHub repository does not appear in `calculator.jsp` of your working directory.
+	Notice that the lines you added in the `calculator.jsp`(i.e., `<%="2 + 2 = " + m.add(2, 2)%>` and `<br>`) in your GitHub repository do not appear in `calculator.jsp` of your working directory.
 
 	You need first to sync the working directory in your Bluemix DevOps project before you start editing another file.
 
