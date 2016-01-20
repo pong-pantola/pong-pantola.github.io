@@ -94,6 +94,8 @@ In this tutorial you will learn how to deploy a web application packaged as a `.
 
 	<br>
 
+####End of Tutorial
+
 ####What's next?
 
 
