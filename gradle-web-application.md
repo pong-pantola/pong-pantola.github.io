@@ -1,17 +1,18 @@
 ---
 layout: post
-title: Gradle Web Application
+title: Creating a Web Application using Gradle
 permalink: /gradle-web-application/
 ---
-jetty tutorial:
--Dorg.apache.jasper.compiler.disablejsr199=true
-*
+
 ##Application Development Tutorial
 
 ###Creating a Web Application using Gradle
+
 Gradle has an available `war` plugin that allows you to package your Java web application into a `.war` file.
 
 In this tutorial you will learn how to create a `.war` file.  The `.war` file will be deployed twice: locally (through a Jetty web server) and remotely (through [IBM Bluemix](https://ibm.biz/bluemixph)).
+
+<br>
 
 >**Prerequisite:**
 
@@ -30,11 +31,7 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 >- Make sure that the `cf` tool is installed.  The installation of `cf` tool is discussed in [Bluemix Basics Tutorial](/bluemix-basics).
 
 
-
-
-
 <br>
-
 
 
 ####Copy Sample Codes from Git repository
@@ -47,6 +44,8 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 	> cd gradletemp
 	```
 
+	<br>
+	
 1. Clone the git repository `https://github.com/pong-pantola/gradle-web-application.git` and go to the created `gradle-web-application` directory.
 
 	```text
@@ -92,7 +91,7 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 
 	The logical errors present in `Math.java` in the [Gradle's Unit Testing Tutorial](/gradle-unit-testing) are already corrected in this tutorial's version of `Math.java`.
 
-<br>
+	<br>
 
 ####Review some of the Java classes and Build script
 
@@ -199,6 +198,8 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 	<%@ page import="net.tutorial.Math" %>
 	```
 
+	<br>
+	
 ####Update Build script to support Web Application
 	
 1. Update `build.gradle` to include `.war` related entries:
@@ -312,6 +313,8 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 	> cf login -a https://api.ng.bluemix.net -s dev
 	```
 
+	<br>
+	
 1. Upload the web application to your Bluemix account.
 
 	```text
@@ -324,6 +327,8 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 	> cf push calculator-pong -p build/libs/calcuapp.war
 	```
 
+	<br>
+	
 1. On a web browser, go to `http://calculator-<your_name>.mybluemix.net/calculator.jsp`.
 
 	**Output:**
@@ -341,14 +346,16 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 ####Clean up
 
 1. Delete your Bluemix application `calculator-<your_name>`.
+
 1. Delete `calcuapp.war` from Jetty's `webapps` subdirectory.
 	>You may need to stop the Jetty web server to delete `calcuapp.war`.
 
-<br>
+	<br>
 
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
-
+[Bluemix DevOps Services Basics Tutorial](/devops-basics)
