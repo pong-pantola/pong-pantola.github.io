@@ -9,6 +9,8 @@ permalink: /devops-basics/
 
 In this tutorial you will explore the different features of Bluemix DevOps.
 
+<br>
+
 >**Prerequisite:**
 
 >Having a basic background in web application development is required to do this tutorial.
