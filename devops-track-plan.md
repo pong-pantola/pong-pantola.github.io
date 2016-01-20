@@ -4,9 +4,6 @@ title: Bluemix Devops Services Track and Plan
 permalink: /devops-track-plan/
 ---
 
-##Application Development Tutorial
-
-###Bluemix DevOps Services Track and Plan
 
 [Bluemix DevOps Services](https://hub.jazz.net) has a track and plan feature to support Agile planning.
 
