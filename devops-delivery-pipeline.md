@@ -129,7 +129,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 	<br>
 
 
-1. On the `DEVOPS-GIT TAB`: Set the following values:
+1. On the `DEVOPS-GIT TAB`: On the `Working Directory` section (right side of the page) Set the following values:
 
 	||||
 	|---|---|---|
@@ -143,7 +143,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 1. On the `DEVOPS-GIT TAB`: Click the `Push` button.
 
-	Your working directory and GitHub repository are now the same.
+	Your working directory and GitHub repository are now synced.
 
 	<br>
 	
