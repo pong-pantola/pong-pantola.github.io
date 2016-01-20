@@ -4,9 +4,6 @@ title: Bluemix Devops Services Basics
 permalink: /devops-basics/
 ---
 
-##Application Development Tutorial
-
-###Bluemix DevOps Services Basics
 
 [Bluemix DevOps Services](https://hub.jazz.net) or simply Bluemix DevOps is a software as a service (SaaS) cloud technology from IBM that supports development, tracking and planning, and continuous delivery of software.
 
