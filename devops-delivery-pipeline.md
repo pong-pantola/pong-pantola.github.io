@@ -442,7 +442,7 @@ You will intentionally introduce errors in `src/main/java/net/tutorial/Math.java
 1. On the `DEVOPS-TEST-STAGE-LOGS TAB`: View the logs to verify that both `add` and `multiply` methods encounter problems.
 
 
-1.  On the `GITHUB TAB`:  Open again the file `src/main/java/net/tutorial/Math.` for editing.  Correct the errors you introduced earlier (i.e., bring back `a+b` in the `add` method and remove the  `delay()` in the `multiply` method).  Don't forget to click the `Commit changes` button.
+1.  On the `GITHUB TAB`:  Open again the file `src/main/java/net/tutorial/Math.java` for editing.  Correct the errors you introduced earlier (i.e., bring back `a+b` in the `add` method and remove the  `delay()` in the `multiply` method).  Don't forget to click the `Commit changes` button.
 
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Ensure that all the stages are executed successfully.
 
