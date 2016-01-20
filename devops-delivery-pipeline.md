@@ -247,7 +247,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 	| **Deploy Script** | `#!/bin/bash`<br>`cf push calculator-<your_name> -m 256M -p build/libs/calcuapp.war`  |	
 	| **Stop running this stage if this job fails** | checked |
 
-	>**IMPORTANT:** In the `cf push` command, make sure to change <your_name> to your name.
+	>**IMPORTANT:** In the `cf push` command, make sure to change `<your_name>` to your name.
 	
 	<br>
 
@@ -305,6 +305,8 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 	```
 
 	<br>
+
+
 #### Automatically start the Delivery Pipeline
 
 In the previous steps, you manually started the delivery pipeline by clicking the `Run Stage` icon of the `Build Stage`.  
