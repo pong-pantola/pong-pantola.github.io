@@ -7,15 +7,19 @@ permalink: /gradle-unit-testing/
 ##Application Development Tutorial
 
 ###Gradle's Unit Testing
+
 Gradle's unit testing allows execution of test classes (e.g., those created using the JUnit library).
 
 In this tutorial you will learn how to run a test class created using a JUnit library in Gradle.
 
+<br>
+
 >**Prerequisite:**
 
->It is **required** that you have performed the [JUnit Basics Tutorial](/junit-basics).
+>You are required to do  the [JUnit Basics Tutorial](/junit-basics).
 
->It is also **required** that you have performed the [Gradle Dependency Management Tutorial](/gradle-dependency-management).
+>You are required to do  the [Gradle's Dependency Management Tutorial](/gradle-dependency-management).
+
 
 <br>
 
@@ -31,6 +35,8 @@ In this tutorial you will learn how to run a test class created using a JUnit li
 	> cd gradletemp
 	```
 
+	<br>
+	
 1. Clone the git repository `https://github.com/pong-pantola/gradle-unit-testing.git` and go to the created `gradle-unit-testing` directory.
 
 	```text
@@ -76,7 +82,7 @@ In this tutorial you will learn how to run a test class created using a JUnit li
  
 	In this tutorial, `build.gradle`will be updated to include entries related to unit testing.
 
-<br>
+	<br>
 
 
 ####Review the Java classes and Build script
@@ -98,6 +104,8 @@ In this tutorial you will learn how to run a test class created using a JUnit li
 	import org.apache.log4j.Logger;
 	```
 
+	<br>
+	
 1. `build.gradle` has the same content as the one you created in [Gradle's Dependency Management Tutorial](/gradle-dependency-management).
 
 	Please review the text below for the current content of `build.gradle`:
@@ -139,6 +147,7 @@ In this tutorial you will learn how to run a test class created using a JUnit li
 
 	You will observe later if the use of the JUnit libary has an effect in Gradle later.
 
+	<br>
 
 1. `TestRunner.java` is an application that runs the test methods found in `MyTest.java`.  
 
@@ -150,6 +159,7 @@ In this tutorial you will learn how to run a test class created using a JUnit li
 	import org.junit.runner.notification.Failure;
 	```
 
+	<br>
 
 1. Compile `.java` files using Gradle's `assemble` task.
 
@@ -209,6 +219,7 @@ In this tutorial you will learn how to run a test class created using a JUnit li
 	When the `assemble` task is used, only the files under the subdirectory `src/main` are considered.  Both `Math.java` and `Calculator.java` are under this subdirectory.
 
 	However, `MyTest.java` and `TestRunner.java` are under the subdirectory `src/test`.  Therefore, these files are excluded from the `assemble` task.
+
 	<br>
 
 ####Compile classes under the Subdirectory `src/test`
@@ -319,7 +330,7 @@ In this tutorial you will learn how to run a test class created using a JUnit li
 	To know how `'junit:junit:4.12'` was derived, you may go to the [Maven Central Repository](http://search.maven.org/).  In the search box, type `junit`.  For this tutorial, the row that was selected is the one with the following values:
 
 	GroupId | ArtifactId | Latest Vesion
-	-|-|-
+	---|---|---
 	junit | junit | 4.12
 
 	<br>
@@ -472,10 +483,12 @@ In this tutorial you will learn how to run a test class created using a JUnit li
 
 	The errors are now fixed.
 
-<br>
+	<br>
 
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
+[Creating a Web Application using Gradle Tutorial](/gradle-web-application)
