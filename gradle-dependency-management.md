@@ -1,19 +1,24 @@
 ---
 layout: post
-title: Gradle Dependency Management
+title: Gradle's Dependency Management
 permalink: /gradle-dependency-management/
 ---
 
 ##Application Development Tutorial
 
 ###Gradle's Dependency Management
+
 Gradle's dependency management allows quick resolution of library dependency.
 
 In this tutorial you will learn how to resolve library dependency using Gradle's dependency management.  In order to appreciate this feature of Gradle, you will first resolve the dependency problem using the manual approach.
 
 >**Prerequisite:**
 
->It is **required** that you have performed the [Gradle Basics Tutorial](/gradle-basics).
+>You are required to do  the [Gradle Basics Tutorial](/gradle-basics).
+
+>You are not required (but **recommended**) to do  the [Git Basics Tutorial](/git-basics).
+
+>- **However**, ensure that you have Git client installed in your machine.
 
 <br>
 
@@ -29,6 +34,8 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	> cd gradletemp
 	```
 
+	<br>
+	
 1. Clone the git repository `https://github.com/pong-pantola/gradle-dependency-management.git` and go to the created `gradle-dependency-management` directory.
 
 	```text
@@ -70,7 +77,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	`build/libs` is used for the libraries (i.e, `.jar` files) that you will download later.  These libraries are needed to compile the Java classes later.
 
-<br>
+	<br>
 
 
 ####Examine the Java classes
@@ -261,7 +268,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	At this point, what is important to note is the compilation (and execution) became successful due to the manual dependency resolution.
  
-<br>
+	<br>
 
 ####Resolve the Library Dependency Problem using Gradle's Dependency Management
 
@@ -271,6 +278,8 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	>In Gradle, the `build` subdirectory and its subdirectories (e.g., `classes`) need not exist for compilation to work.
 
+	<br>
+	
 1. In the `gradle-dependency-management` directory, create a text file with a filename `build.gradle`.
 
 1. Place the following line in `build.gradle`:
@@ -283,6 +292,8 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	At this point, Gradle's dependency management is not yet utilized in `build.gradle`.  Let's try to compile the `.java` files using Gradle and see what errors will be produced.
 
+	<br>
+	
 1. To compile the `.java` files using Gradle's `assemble` task:
 
 	> Make sure that you are in the `gradle-dependency-management` directory before issuing the command below.
@@ -382,7 +393,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	You may choose the most appropriate row in the search result.  For this tutorial, the row that was selected is the one with the following values:
 
 	GroupId | ArtifactId | Latest Vesion
-	-|-|-
+	---|---|---
 	log4j | log4j | 1.2.17
 
 	This is the reason why in `build.gradle` the dependency is specified as `compile 'log4j:log4j:1.2.17'`.
@@ -482,6 +493,8 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	}
 	```
 
+	<br>
+	
 1. Reassemble and try to run again the `.jar` file.
 
 	```text
@@ -536,6 +549,8 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	There are no classes related to Log4j that are included in the `.jar` file.
 
+	<br>
+	
 1. Specify that Log4j library should be included in the `.jar` file by updating the `build.gradle` file to the following:
 
 	```text
@@ -557,6 +572,8 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	}
 	```
 
+	<br>
+	
 1. Reassemble and try to run again the `.jar` file.
 
 	```text
@@ -607,10 +624,12 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	The subfolder `org/apache/log4j/` and additional subfolders and files are included in `gradle-dependency-management.jar`.
 
-<br>
+	<br>
 
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
+[Gradle's Unit Testing Tutorial](/gradle-unit-testing)
