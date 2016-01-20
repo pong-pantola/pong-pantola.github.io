@@ -89,7 +89,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 ####Create a Bluemix DevOps Project based on the GitHub Repository
 
-1. Open another web browser tab and login to [Bluemix DevOps](https://hub.jazz.net/).  In this tutorial, we will refer to this browser tab as `DEVOPS TAB`.
+1. Open another web browser tab and login to [Bluemix DevOps](https://hub.jazz.net/).
 
 1. Click `CREATE PROJECT`.
 
