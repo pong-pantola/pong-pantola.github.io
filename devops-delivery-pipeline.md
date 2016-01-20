@@ -509,7 +509,7 @@ Having separate deploy stages for development and production is essential to ens
 	```
 1. On the `GITHUB TAB`:  Click the `Commit changes` button.
 
-1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB` and verify that the `Build Stage` is triggered automatically, followed by the `Test Stage`, and followed by the `Dev Deploy Stage`.
+1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB` and verify that the `Build Stage` is triggered automatically, followed by the `Test Stage`, and followed by the `Dev Deploy Stage`.  Wait for the first three stages to completely execute.
 
 	Notice that the `Prod Deploy Stage` does not start automatically after the `Dev Deploy Stage` is complete.  You need to manually start the `Prod Deploy Stage`.
 
