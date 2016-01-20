@@ -1,20 +1,21 @@
 ---
 layout: post
-title: Bluemix Devops Services Delivery Pipeline
+title: Bluemix Devops Services Basics
 permalink: /devops-basics/
 ---
-*
+
 ##Application Development Tutorial
 
 ###Bluemix DevOps Services Basics
-[Bluemix DevOps Services](https://hub.jazz.net) or simply Bluemix DevOps is software as a service (SaaS) cloud technology that supports development, tracking and planning, and deployment of software.
+
+[Bluemix DevOps Services](https://hub.jazz.net) or simply Bluemix DevOps is a software as a service (SaaS) cloud technology from IBM that supports development, tracking and planning, and continuous delivery of software.
 
 In this tutorial you will explore the different features of Bluemix DevOps.
 
 >**Prerequisite:**
 
->Having a basic background in web application development is required in this tutorial.
->
+>Having a basic background in web application development is required to do this tutorial.
+
 >You are not required (but **recommended**) to do  the [Bluemix Basics Tutorial](/bluemix-basics).
 
 >- **However**, ensure that you have a Bluemix account.  
@@ -24,6 +25,7 @@ In this tutorial you will explore the different features of Bluemix DevOps.
 <br>
 
 ####Set-up your Bluemix DevOps Account
+
 1. Go to [Bluemix DevOps](https://hub.jazz.net) and click the `LOG IN` button.
 	
 1. Login using your Bluemix account.  
@@ -55,6 +57,8 @@ There are public projects in Bluemix DevOps that you may use as a basis for your
 
 	It should also be emphasized that the repository that was created is not saved in GitHub.  IBM Bluemix maintains its own Git repository (which we will call as Bluemix repository) and this is utilized by Bluemix DevOps.  However, when you create a project from scratch (i.e., you did not fork a project from an existing one), you have the option to use a Bluemix or GitHub repository.
 
+	<br>
+	
 1. Click the `EDIT CODE` button.  This will open the Bluemix DevOps editor.
 
 	The Bluemix DevOps editor allows you to update files that are in the working directory.  The files in a working directory is similar to files in a local repository as discussed in the [GitHub Basics Tutorial](/github-basics).  Recall that changes made in the local repository are not reflected automatically in the GitHub remote repository.
@@ -79,9 +83,10 @@ There are public projects in Bluemix DevOps that you may use as a basis for your
 
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
-
+[Bluemix DevOps Services Delivery Pipeline Tutorial](/devops-delivery-pipeline)
 
 
