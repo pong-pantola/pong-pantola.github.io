@@ -53,7 +53,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 	<username>/devops-delivery-pipeline
 	```
 
-		The repository contains the following.
+	The repository contains the following.
 
 	```text
 	devops-delivery-pipeline/
