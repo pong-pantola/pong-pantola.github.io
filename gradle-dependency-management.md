@@ -4,13 +4,13 @@ title: Gradle's Dependency Management
 permalink: /gradle-dependency-management/
 ---
 
-##Application Development Tutorial
 
-###Gradle's Dependency Management
 
 Gradle's dependency management allows quick resolution of library dependency.
 
 In this tutorial you will learn how to resolve library dependency using Gradle's dependency management.  In order to appreciate this feature of Gradle, you will first resolve the dependency problem using the manual approach.
+
+<br>
 
 >**Prerequisite:**
 
