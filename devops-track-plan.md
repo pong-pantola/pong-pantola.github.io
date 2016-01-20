@@ -31,291 +31,121 @@ In this tutorial you will learn how to use track and plan to create and monitor 
 <br>
 
 
-####Open Existing Bluemix DevOps project
+####Open AN Existing Bluemix DevOps project
 
 1. Login to [Bluemix DevOps](https://hub.jazz.net/).
 
-1. Click `CREATE PROJECT`.
-
-1. Name your project `devops-delivery-pipeline`.
-
-1. Click `Link to an existing GitHub repository`.
-
-	>If this is the first time you will link a Bluemix DevOps project to a GitHub repository, you will be asked to authorize your Bluemix DevOps account to access your GitHub account.  Proceed with confirming access.
-
-1. Select the repository `<username>/devops-delivery-pipeline`
-
-1. Ensure the following options are chosen:
-
-	||||
-	|---|---|---|
-	| **Private Project** | checked |
-	| **Add features for Scrum development** | checked |
-	| **Make this a Bluemix Project** | checked |
-	| **Region** | IBM Bluemix US South |
-	| **Organization** | you may leave the default selection |		
-	| **Space** | dev |
-
-	<br>
-	
-1. Click the `CREATE` button.  Wait for your project to be created.
+1. Click the `<username>|devops-delivery-pipeline` project you created in the [Bluemix DevOps Services Delivery Pipeline Tutorial](/devops-delivery-pipeline).
 
 1. Click the `EDIT CODE` button.  You will be redirected to Bluemix DevOps' editor.  In this tutorial, we will refer to this browser tab as `DEVOPS-EDITOR TAB`.
 
-	The editor shows the working directory (and not the GitHub repository you forked earlier).  The working directory is very similar to a local directory in your hard drive as discussed in the [GitHub Basics Tutorial](/github-basics).  In fact, when you chose to link the existing `<username>/devops-delivery-pipeline` remote repository in an earlier step, you basically instructed Bluemix DevOps to clone the said remote repository to the working directory.  This is very similar to cloning the remote repository to a local repository (i.e., the one in a hard drive).
-
-	However, notice that there are additional files/subdirectories (e.g., `.cfignore` and `launchConfigurations`) that were added in the working directory.  These were added automatically when the Bluemix DevOps project was created.  To sync the working directory with the GitHub repository `<username>/devops-delivery-pipeline`, these files/directories need to be pushed to the GitHub remote repository.
-
-	<br>
-
 1. On the `DEVOPS-EDITOR TAB`: Click (open in another browser tab) the `Git Repository` icon found on the left side of the screen.  We will refer to this browser tab as `DEVOPS-GIT TAB`.
 
-	<br>
+1. On the `DEVOPS-GIT TAB`: Make sure that there are no `Incoming` changes.  IF there are, click the `Sync` button to make sure that your Bluemix DevOps working directory and GitHub repository are in sync.
 
 
-1. On the `DEVOPS-GIT TAB`: On the `Working Directory` section (right side of the page) Set the following values:
-
-	||||
-	|---|---|---|
-	| **Select All** | checked |
-	| **Commit message** | files created when Bluemix DevOps project was created |
-
-	<br>
-
-1. On the `DEVOPS-GIT TAB`: Click the `Commit` button.
-
-
-1. On the `DEVOPS-GIT TAB`: Click the `Push` button.
-
-	Your working directory and GitHub repository are now synced.
-
-	<br>
-	
-1. On the `GITHUB TAB`: Refresh the page and verify that `.cfignore` and `launchConfigurations` are added.
-
-	You are now ready to create the delivery pipeline (i.e., build stage, test stage, deploy stage).
-
-	<br>
-	
 1. On the `DEVOPS-GIT TAB`: Click (open in another browser tab) the `BUILD & DEPLOY` button.  We will refer to this browser tab as `DEVOPS-DELIVERY-PIPELINE TAB`.
 
+1. On the `DEVOPS-GIT TAB`: Click (open in another browser tab) the `TRACK & PLAN` button.  We will refer to this browser tab as `DEVOPS-AGILE TAB`.
+
+	This opens Bluemix DevOps` quick planner that allow you to do agile planning.
 
 	<br>
 
+1. On the `DEVOPS-AGILE TAB`: On the left pane, click the `BACKLOG` link.
 
-####Create a Build Stage
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Click the `ADD STAGE` button.  Change the stage name `MyStage` to `Build Stage`.
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `INPUT` tab, set the following values:
-
-	||||
-	|---|---|---|
-	| **Input Type** | SCM Repository |
-	| **Git URL** | https://github.com/<username>/devops-delivery-pipeline.git |
-	| **Branch** | master |
-	| **Stage Trigger** | Run jobs whenever a change is pushed to Git |
+	The backlog for the current DevOps project is empty.  You will be adding entries in the backlog.
 
 	<br>
 
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `JOBS` tab, click the `ADD JOB` link and select `Build`.   Change the job name `Build` to `Gradle Assemble`.  Set the following values:
+1. On the `DEVOPS-AGILE TAB`: Click the `Create a work item` link to add a story.
 
-	||||
-	|---|---|---|
-	| **Builder Type** | Gradle |		
-	| **Build Shell Command** | `#!/bin/bash`<br>`gradle asemble`  |	
-	| **Stop running this stage if this job fails** | checked |
+1. On the `DEVOPS-AGILE TAB`: On the `Type a work item summary` text box, type the following: `As a user, I want to see the multiplication table for 9`.
 
-	<br>
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click the `SAVE` button.
+	This is an example of a story.  You may add attributes to a story using `Tweet-like notation`.
 
 	<br>
 	
-####Create a Test Stage
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Click the `ADD STAGE` button.  Change the stage name `MyStage` to `Test Stage`.
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `INPUT` tab, set the following values:
+1. On the `DEVOPS-AGILE TAB`: Make sure that your cursor is still in the text box and at the end of the `As a user, I want to see the multiplication table for 9`, click the following icons below the text box and choose the following values:
 
 	||||
 	|---|---|---|
-	| **Input Type** | Build Artifacts |
-	| **Stage** | Build Stage |
-	| **Job** | Gradle Assemble |
-	| **Stage Trigger** | Run jobs when the previous stage is completed |
+	| **type** | Story |
+	| **priority** | High |
+
+	>**Note**: Mouse hover on the icons to know the purpose of each icon.
+
+	Confirm that the text box now contains `As a user, I want to see the multiplication table for 9 *story $high`.  
+
+	If you made a mistake in using the icons, just copy the text `As a user, I want to see the multiplication table for 9 *story $high` in the text box.
 
 	<br>
 
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `JOBS` tab, click the `ADD JOB` link and select `Test`.   Change the job name `Test` to `JUnit Test through Gradle`.  Set the following values:
+1. On the `DEVOPS-AGILE TAB`: Click the `CREATE` button.
+
+	You now have your first entry in your backlog.
+
+	You will add another entry, this time the type is a defect (instead of a story).
+
+	<br>
+	
+1. On the `DEVOPS-AGILE TAB`: Click the `Create a work item` link to add a defect.
+
+1. On the `DEVOPS-AGILE TAB`: On the `Type a work item summary` text box, type the following: `Foreground color must be blue`.
+	
+1. On the `DEVOPS-AGILE TAB`: Make sure that your cursor is still in the text box and at the end of the `Foreground color must be blue`, click the following icons below the text box and choose the following values:
 
 	||||
 	|---|---|---|
-	| **Tester Type** | Simple |		
-	| **Test Command** | `#!/bin/bash`<br>`gradle test`  |	
-	| **Stop running this stage if this job fails** | checked |
+	| **type** | Defect |
+	| **priority** | Low |
+
+
+	Confirm that the text box now contains `Foreground color must be blue *defect $low`.  
+
 
 	<br>
 
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click the `SAVE` button.
+1. On the `DEVOPS-AGILE TAB`: Click the `CREATE` button.
 
-	<br>
+	You now have two entries in your backlog.
 
-####Create a Deploy Stage
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Click the `ADD STAGE` button.  Change the stage name `MyStage` to `Dev Deploy Stage`.
-
-	>Unlike the build and test stages which are named `Build Stage` and `Test Stage`, respectively, the name of the deploy stage you are about to create is `Dev Deploy Stage` to denote that that the application will be deployed in the `dev` space of your Bluemix account.  Another deploy stage will be created later.
-
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `INPUT` tab, set the following values:
-
-	||||
-	|---|---|---|
-	| **Input Type** | Build Artifacts |
-	| **Stage** | Build Stage |
-	| **Job** | Gradle Assemble |
-	| **Stage Trigger** | Run jobs when the previous stage is completed |
-
-	<br>
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `JOBS` tab, click the `ADD JOB` link and select `Deploy`.   Change the job name `Deploy` to `Cloud Foundry Push to Dev Space`.  Set the following values:
-
-	||||
-	|---|---|---|
-	| **Deployer Type** | Cloud Foundry |		
-	| **Target** | IBM Bluemix US South - https://api.ng.bluemix.net |		
-	| **Organization** | you may leave the default selection |		
-	| **Space** | dev |	
-	| **Application Name** | blank |		
-	| **Deploy Script** | `#!/bin/bash`<br>`cf push calculator-<your_name> -m 256M -p build/libs/calcuapp.war`  |	
-	| **Stop running this stage if this job fails** | checked |
-
-	>**IMPORTANT:** In the `cf push` command, make sure to change `<your_name>` to your name.
+	You will fix the defect (i.e., foreground color must be blue) in the backlog.  To properly track the fix you will do later, take note of the defect number of this defect.  This is the number (around 4-digits) that is visible on the left side of the `Foreground color must be blue` entry.  In this tutorial, we will refer to this defect as the foreground defect.
 	
 	<br>
-
 	
+1. On the `DEVOPS-AGILE TAB`: Click the `Unassigned` link of the foreground defect and assign it to yourself.
 
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click the `SAVE` button.
-
-	You have created a delivery pipeline. 
+	>In an actual project, you may add members in your Bluemix DevOps project so that you may assign a backlog to a particular member.  You will learn later how to add members in a Bluemix DevOps project.
 
 	<br>
 
-#### Deploy the Application through the Delivery Pipeline
-
-1.  On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click (open in another browser tab) the `View logs and history ` link of the `Build Stage`.  We will refer to this browser tab as `DEVOPS-BUILD-STAGE-LOGS TAB`.
-
-1.  On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click (open in another browser tab) the `View logs and history ` link of the `Test Stage`.  We will refer to this browser tab as `DEVOPS-TEST-STAGE-LOGS TAB`.
-
-1.  On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click (open in another browser tab) the `View logs and history ` link of the `Dev Deploy Stage`.  We will refer to this browser tab as `DEVOPS-DEV-DEPLOY-STAGE-LOGS TAB`.
-
-	The `DEVOPS-BUILD-STAGE-LOGS TAB`, `DEVOPS-TEST-STAGE-LOGS TAB`, `DEVOPS-DEV-DEPLOY-STAGE-LOGS TAB` will allow you to monitor the status of the delivery pipeline in each stage.
-
-	Recall that in the [Creating a Web Application using Gradle Tutorial](/gradle-web-application) the following commands are used:
-
-	Command | Purpose
-	---|---
-	`gradle assemble` | build `calcuapp.war`
-	`gradle test` | run the JUnit test
-	`cf push` | deploy the web application in Bluemix
-
-	These three commands are exactly the same commands that the three stages will do.
-
-
-1.  On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click the `Run Stage` icon of the `Build Stage`.
-
-	Notice that the status of the `Build Stage` changes to `STAGE RUNNING`.
-
-	Once the status of `Build Stage` changes to `STAGE PASSED`, the `Test Stage` will automatically start.
-
-	Similarly, when the status of `Test Stage` changes to `STAGE PASSED`, the `Dev Deploy Stage` will automatically start.
-
-	Wait for the status of the `Dev Deploy Stage` to change to `STAGE PASSED`.
-
-	You may view the `DEVOPS-BUILD-STAGE-LOGS TAB`, `DEVOPS-TEST-STAGE-LOGS TAB`, `DEVOPS-DEV-DEPLOY-STAGE-LOGS TAB` to see the logs related to the execution of the three stages.
-
-1. Open another web browser tab.  We will refer to this browser tab as `CALCULATOR-APP TAB`.
-
-1.  On the `CALCULATOR-APP TAB`:  Go to `http://calculator-<your_name>.mybluemix.net/calculator.jsp`.
-
-	**Output:**
-	
-	```text
-	5 + 9 = 14
-	8 - 2 = 6
-	4 x 7 = 28 
-	```
-
-	<br>
-
-
-#### Automatically start the Delivery Pipeline
-
-In the previous steps, you manually started the delivery pipeline by clicking the `Run Stage` icon of the `Build Stage`.  
-
-Since the `Build Stage` is configured to `Run jobs whenever a change is pushed to Git`, the delivery pipeline can be started whenever changes occur in the GitHub repository.
-
-1.  On the `GITHUB TAB`:  Open the file `src/main/webapp/calculator.jsp` for editing.
-
-1. On the `GITHUB TAB`:  Add the following lines at the end just before the `</body>` tag:
-
-	```java
-	<%="2 + 2 = " + m.add(2, 2)%>
-	<br>
-	```
-1. On the `GITHUB TAB`:  Click the `Commit changes` button.
-
-1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB` and verify that the `Build Stage` automatically started due to the changes made in the GitHub repository.
-
-	Wait until the three stages are complete.
-
-1.  On the `CALCULATOR-APP TAB`:  Refresh the page to see the changes made in the calculator application.
-
-	**Output:**
-	
-	```text
-	5 + 9 = 14
-	8 - 2 = 6
-	4 x 7 = 28 
-	2 + 2 = 4 
-	```
-
-	As expected, `2 + 2 = 4` is included in the output.
-
-	Let's modify again the  file `src/main/webapp/calculator.jsp` but this time using the Bluemix DevOps editor and see if the delivery pipeline is automatically triggered.
+1. On the `DEVOPS-AGILE TAB`: Click the `New` link of the foreground defect and change it `Start Working`.
 
 1.  On the `DEVOPS-EDITOR TAB`:  Open the file `src/main/webapp/calculator.jsp`.  
 
-	Notice that the lines you added in the `calculator.jsp`(i.e., `<%="2 + 2 = " + m.add(2, 2)%>` and `<br>`) in your GitHub repository do not appear in `calculator.jsp` of your working directory.
+1. On the `DEVOPS-EDITOR TAB`: Update the `body` section of `calculator.jsp` to include the `<font>` and `</font>` tags:
 
-	You need first to sync the working directory in your Bluemix DevOps project before you start editing another file.
-
-1.  On the `DEVOPS-GIT TAB`:  Refresh the page.
-
-1.  On the `DEVOPS-GIT TAB`:  Notice that there is an `Incoming` change due to the modification you did on `calculator.jsp` in GitHub.  Click the `Sync` button to update the copy of `calculator.jsp` in the working directory in your Bluemix DevOps project.
-
-1.  On the `DEVOPS-EDITOR TAB`:  Refresh the page and reopen the file `src/main/webapp/calculator.jsp`.  Notice that the following lines now exist:
-
-	```java
+	```text
+	<font color="blue">
+	<%="5 + 9 = " + m.add(5, 9)%>
+	<br>
+	<%="8 - 2 = " + m.sub(8, 2)%>
+	<br>
+	<%="4 x 7 = " + m.multiply(4, 7)%>
+	<br>
 	<%="2 + 2 = " + m.add(2, 2)%>
 	<br>
-	```
-
-1. On the `DEVOPS-EDITOR TAB`:  Add the following lines at the end just before the `</body>` tag:
-
-	```java
 	<%="3 - 3 = " + m.sub(3, 3)%>
 	<br>
+	<%="4 x 4 = " + m.add(4, 4)%>
+	<br>
+	</font>
 	```
+
+	<br>
+	
 1. On the `DEVOPS-EDITOR TAB`:  Make sure to save the changes made.
-
-1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB`.  
-
-	Notice that the `Build Stage` did not start automatically.  You only changed the `calculator.jsp` that is in the working directory and not the one in the GitHub repository.   You need to push the changes made in the working directory to the GitHub repository for the `Build Stage` to start.
-
-
 
 1. On the `DEVOPS-GIT TAB`: Refresh the page.
 
@@ -324,7 +154,9 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 	||||
 	|---|---|---|
 	| **Select All** | checked |
-	| **Commit message** | added another computation |
+	| **Commit message** | updated `calculator.jsp` to fix defect `<defect number>` |
+
+	>**IMPORTANT:** Make sure to change `<defect number>` with the defect number of the foreground defect.  If you don't remember the defect number, go back to the `DEVOPS-AGILE TAB`.
 
 	<br>
 
@@ -337,160 +169,67 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 
 1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB` and verify that the `Build Stage` automatically started due to the changes made in the GitHub repository.
 
-	<br>
-
-####See the Effect if an Error is encountered in the Delivery Piipeline
-
-You will intentionally introduce errors in `src/main/java/net/tutorial/Math.java` so that you can verify if the `Test Stage` will detect the errors.
-
-1.  On the `GITHUB TAB`:  Open the file `src/main/java/net/tutorial/Math.java` for editing.
-
-1. On the `GITHUB TAB`:  Change the method `add` to the following:
-
-	```java
-	  public int add(int a, int b){
-	    return a-b;
-	  }
-	```
-	Since `a+b` is changed to `a-b`, we expect an error to be reported related to the `add` method.
-	
-	This error is discussed in detail in the [JUnit Basics Tutorial](/junit-basics) and revisited in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
-
-	<br>
-	
-1. On the `GITHUB TAB`:  Change the method `multiply` to the following:
-
-	```java
-	  public int multiply(int a, int b){
-	    delay();
-	    return a*b;
-	  }
-	```
-
-	Since `delay()` is added, we expect that `multiply` method will execute for at least 3 secs..  This will cause a timeout error.
-
-	This error is also discussed in detail in the [JUnit Basics Tutorial](/junit-basics) and revisited in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
+	Wait for the first three stages (i.e., `Build Stage`, `Test Stage`, and `Dev Deploy Stage`) to complete.
 
 	<br>
 
-1. On the `GITHUB TAB`:  Click the `Commit changes` button.
+1. Open another web browser tab.  We will refer to this browser tab as `CALCULATOR-APP TAB`.
 
-1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB`.  
+1.  On the `CALCULATOR-APP TAB`:  Go to `http://calculator-<your_name>.mybluemix.net/calculator.jsp`.
 
-	As expected,  the `Build Stage` started automatically. 
+	The value of `<your_name>` is the one you used in the [Bluemix DevOps Services Delivery Pipeline Tutorial](/devops-delivery-pipeline). 
 
-	After the `Build Stage` is complete, the `Test Stage` will start as well.  Due to the errors you introduced in the previous steps, the status of the `Test Stage` becomes `STAGE FAILED`.
-
-	<br>
-
-1. On the `DEVOPS-TEST-STAGE-LOGS TAB`: View the logs to verify that both `add` and `multiply` methods encounter problems.
-
-
-1.  On the `GITHUB TAB`:  Open again the file `src/main/java/net/tutorial/Math.java` for editing.  Correct the errors you introduced earlier (i.e., bring back `a+b` in the `add` method and remove the  `delay()` in the `multiply` method).  Don't forget to click the `Commit changes` button.
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Ensure that all the stages are executed successfully.
-
-	<br>
-	
-#### Create another Deploy Stage
-
-The `Dev Deploy Stage` created earlier deploys the web application in the `dev` space in your Bluemix account.
-
-You will create another deploy stage called `Prod Deploy Stage` which will redeploy the same application in the `prod` space in your Bluemix account.
-
-Having separate deploy stages for development and production is essential to ensure that features/functionalities that are added to a web application is verified first in the `dev` space.  Once the features/functionalities are verified to be working properly, this is the only time the updated web application is redeployed to the `prod` space through the `Prod Deploy Stage`.
-
-1. Make sure that you have a `prod` space under the region `US-South` in your Bluemix account. 
-
-	>If you don't have a `prod` space,  you may use the [Bluemix Basics Tutorial](/bluemix-basics) as a guide in creating a space.
-
-	
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Click the `ADD STAGE` button.  Change the stage name `MyStage` to `Prod Deploy Stage`.
-
-
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `INPUT` tab, set the following values:
-
-	||||
-	|---|---|---|
-	| **Input Type** | Build Artifacts |
-	| **Stage** | Build Stage |
-	| **Job** | Gradle Assemble |
-	| **Stage Trigger** | Run jobs only when this stage is run manually |
-
-	It should be noted that the **Stage Trigger** for this stage is `Run jobs only when this stage is run manually`.  This is different from the `Dev Deploy Stage` that uses the **Stage Trigger** `Run jobs when the previous stage is completed`.
-
-	Unlike the web application in the `dev` space, the web application deployed in the `prod` space should be free from errors.  If you use the **Stage Trigger** `Run jobs when the previous stage is completed`, it is possible that an application developer may push changes to the GitHub repository which will eventually trigger the `Prod Deploy Stage` to run even if the changes made by the developer are unverified.
+	If you cannot recall the URL of your application, look at the `Dev Deploy Stage` of the `DEVOPS-DELIVERY-PIPELINE TAB`.   The URL of the Bluemix application is indicated here.
 	
 	<br>
 
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `JOBS` tab, click the `ADD JOB` link and select `Deploy`.   Change the job name `Deploy` to `Cloud Foundry Push to Prod Space`.  Set the following values:
-
-	||||
-	|---|---|---|
-	| **Deployer Type** | Cloud Foundry |		
-	| **Target** | IBM Bluemix US South - https://api.ng.bluemix.net |		
-	| **Organization** | you may leave the default selection |		
-	| **Space** | prod |	
-	| **Application Name** | blank |		
-	| **Deploy Script** | `#!/bin/bash`<br>`cf push calculator-prod-<your_name> -m 256M -p build/libs/calcuapp.war`  |	
-	| **Stop running this stage if this job fails** | checked |
+1.  On the `CALCULATOR-APP TAB`:  Verify that the foreground color is already blue.
 
 	<br>
-
 	
+####Update your Work Progress
 
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click the `SAVE` button.
+1.  On the `DEVOPS-AGILE TAB`: On the left pane, click the `MY WORK` link.
+ 
+1.  On the `DEVOPS-AGILE TAB`: Click the foreground defect to update its progress.
 
-	You have completed the `Prod Deploy Stage`.  You can now test the **Stage Trigger** of this stage.
+1.  On the `DEVOPS-AGILE TAB`: Change the status `In Progress` to `Resolve`.
 
-1.  On the `GITHUB TAB`:  Open the file `src/main/webapp/calculator.jsp` for editing.
+1.  On the `DEVOPS-AGILE TAB`: In the `DISCUSSION` text area, enter `added the <font> and </font> tags to make the foreground color blue`.
 
-1. On the `GITHUB TAB`:  Add the following lines at the end just before the `</body>` tag:
+1.  On the `DEVOPS-AGILE TAB`: Click the `SAVE` button.
 
-	```java
-	<%="4 x 4 = " + m.add(4, 4)%>
+
 	<br>
-	```
-1. On the `GITHUB TAB`:  Click the `Commit changes` button.
 
-1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB` and verify that the `Build Stage` is triggered automatically, followed by the `Test Stage`, and followed by the `Dev Deploy Stage`.  Wait for the first three stages to completely execute.
+####Add members to your Bluemix DevOps Project
 
-	Notice that the `Prod Deploy Stage` does not start automatically after the `Dev Deploy Stage` is complete.  You need to manually start the `Prod Deploy Stage`.
+In the activity below, you need to have a teammate with a Bluemix DevOps account.
 
-1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Click the `Run Stage` icon of the `Prod Deploy Stage`.
+1. On the `DEVOPS-AGILE TAB`: In the menu, click `MY PROJECTS`.
 
-	Wait for this stage to be completed.
+1. On the `DEVOPS-AGILE TAB`: Click the `<username>|devops-delivery-pipeline` project.
 
-1. Open another web browser tab.  We will refer to this browser tab as `CALCULATOR-PROD-APP TAB`.
+1. On the `DEVOPS-AGILE TAB`: Click the `Invite others to join your project` link.
 
-1.  On the `CALCULATOR-PROD-APP TAB`:  Go to `http://calculator-prod-<your_name>.mybluemix.net/calculator.jsp`.
+1. On the `DEVOPS-AGILE TAB`: Enter the Bluemix DevOps acount (e-mail address) of your teammate.  Click the `INVITE` button.
 
-	**Output:**
+1. Ask your teammate to:
+- login to his/her Bluemix DevOps account
+- click `MY PROJECTS`
+- click `INVITATIONS`
+- click `ACCEPT`
+- click `MY PROJECTS`
+- verify if project you shared is already in his/her project list.
+
+	<br>
 	
-	```text
-	5 + 9 = 14
-	8 - 2 = 6
-	4 x 7 = 28 
-	2 + 2 = 4
-	3 - 3 = 0
-	4 x 4 = 16 	
-	```
+####Delete your Bluemix Application
 
-	Note that what you have viewed is the production version of the calculator application (`http://calculator-prod-<your_name>.mybluemix.net/calculator.jsp`)
-
-	The development version of the application is accessible through `http://calculator-<your_name>.mybluemix.net/calculator.jsp`.
-
-	<br>
-
-####Delete the Sample Application and PostgreSQL Service
-
-1. Delete the two applications (i.e., the one deployed in `dev` space and the other one deployed in `prod` space) in your Bluemix account.
+1. Delete the Bluemix application that was created in this tutorial.
 
 	This will free up some resources which is essential to accommodate new applications and services you want to deploy in the future.
 
-1. You may retain the Bluemix DevOps project `devops-delivery-pipeline` and your <username>/devops-delivery-pipeline GitHub repository.
-
-	The DevOps project and the GitHub repository are needed in the [Bluemix DevOps Services Track and Plan Tutorial](/devops-track-plan), DO NOT delete your 
 
 	<br>
 
