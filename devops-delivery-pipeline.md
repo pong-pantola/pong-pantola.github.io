@@ -460,7 +460,7 @@ Having separate deploy stages for development and production is essential to ens
 
 	>If you don't have a `prod` space,  you may use the [Bluemix Basics Tutorial](/bluemix-basics) as a guide in creating a space.
 
-
+	
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Click the `ADD STAGE` button.  Change the stage name `MyStage` to `Prod Deploy Stage`.
 
 
@@ -475,7 +475,7 @@ Having separate deploy stages for development and production is essential to ens
 
 	It should be noted that the **Stage Trigger** for this stage is `Run jobs only when this stage is run manually`.  This is different from the `Dev Deploy Stage` that uses the **Stage Trigger** `Run jobs when the previous stage is completed`.
 
-	Unlike the web application in the `dev` space, the web application deployed in the `prod` space should be free from errors.  If you use the **Stage Trigger** `Run jobs when the previous stage is completed`, it is possible that a an application developer may push changes to the GitHub repository which will eventually trigger the `Prod Deploy Stage` to run even if the changes made by the developer are unverified.
+	Unlike the web application in the `dev` space, the web application deployed in the `prod` space should be free from errors.  If you use the **Stage Trigger** `Run jobs when the previous stage is completed`, it is possible that an application developer may push changes to the GitHub repository which will eventually trigger the `Prod Deploy Stage` to run even if the changes made by the developer are unverified.
 	
 	<br>
 
