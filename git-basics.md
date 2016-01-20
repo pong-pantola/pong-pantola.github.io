@@ -4,9 +4,6 @@ title: Git Basics
 permalink: /git-basics/
 ---
 
-##Application Development Tutorial
-
-###Git Basics
 
 [Git](https://git-scm.com) is a version control system for software development.
 
