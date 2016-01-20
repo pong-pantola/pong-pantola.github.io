@@ -41,9 +41,9 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 1. Open a web browser tab and login to [GitHub](https://github.com/).  In this tutorial, we will refer to this browser tab as `GITHUB TAB`.
 
-1. Using the same web browser tab, go to the GitHub repository [`https://github.com/pong-pantola/devops-delivery-pipeline`](https://github.com/pong-pantola/devops-delivery-pipeline).
+1. Using the same web browser tab (`GITHUB TAB`), go to the GitHub repository [`https://github.com/pong-pantola/devops-delivery-pipeline`](https://github.com/pong-pantola/devops-delivery-pipeline).
 
-	1. Fork the repository by clicking the ` Fork` button. 
+1. Fork the repository by clicking the ` Fork` button. 
 
 1. Verify that you have successfully forked the repository by checking its name:
 
