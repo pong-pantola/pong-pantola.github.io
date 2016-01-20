@@ -3,23 +3,25 @@ layout: post
 title: Bluemix Basics
 permalink: /bluemix-basics/
 ---
-*
+
 ##Application Development Tutorial
 
 ###Bluemix Basics
+
 IBM [Bluemix](https://ibm.biz/bluemixph) is a platform as a service (PaaS) cloud technology of IBM.  You may develop applications and deploy them in Bluemix.
 
 In this tutorial you will learn how to deploy a sample JSP application in Bluemix.  In addition, you will also learn how to create a PostgreSQL database service that will be used by the sample application.
 
+<br>
+
 >**Prerequisite:**
 
->Having a basic background in web application development is required in this tutorial.
-
-
+>Having a basic background in web application development is required to do this tutorial.
 
 <br>
 
 ####Create a Bluemix Account
+
 1. Go to [Bluemix](https://ibm.biz/bluemixph) and click the `SIGN UP` button.
 
 1. Fill-up and submit the registration form.
@@ -46,9 +48,6 @@ In this tutorial you will learn how to deploy a sample JSP application in Bluemi
 	<br>
 	
 1. Each organization has an allotted set of resources.  As an example, your dashboard shows the following:
-
-
-	
 	
 	Resource  | Consumed | Total Allocation 
 	--- | --- | --- 
@@ -73,11 +72,13 @@ In this tutorial you will learn how to deploy a sample JSP application in Bluemi
 
 	>Once you select `US South` it is possible that you will be prompted to create a space.  If you are prompted, enter a space named `dev`.  This purpose of a space is explained in the next step.
 
+	<br>
+	
 1. Under the `US South` region, you may deploy one ore more applications.  
 
 	As the number of applications you deploy in a region increases, the harder it is to manage your applications.  To help manage them, applications are grouped together in spaces.  As an example, you may create spaces which groups applications belonging to the same phase.  For example, you may create a space called `dev` and deploy all of your applications that are still under development phase.  You may create a second space called `prod` for applications that are already in production.
 
-	Another way to utilize spaces is to group applications based on projects.  For example, you may create a space called `proj1` for all projects belonging to project 1.
+	Another way to utilize spaces is to group applications based on projects.  For example, you may create a space called `proj1` for all projects belonging to project 
 
 	<br>
 
@@ -140,6 +141,7 @@ Cloud Foundry is an open-source platform as a service cloud technology.  Bluemix
 
 
 ####Copy Sample Application
+
 You will download a copy of a sample application that you will deploy in your Bluemix account.
 
 
@@ -147,8 +149,7 @@ You will download a copy of a sample application that you will deploy in your Bl
 
 1. Download [PostgreSQLUpload.war](https://github.com/ibmjstart/bluemix-java-postgresql-uploader/releases/download/v1.1/PostgreSQLUpload.war) and save it in the `myfirstapp` subdirectory.
 
-<br>
-
+	<br>
 
 ####Deploy Sample Application in Bluemix using the `cf` tool.
 
@@ -261,7 +262,6 @@ You will download a copy of a sample application that you will deploy in your Bl
 	>b. your application is not yet running (**solution:** wait for your application to run, refer to the sample output above)
 	>c. your application failed to run (**solution:** look at the error message and issue again the `cf push` command)
 
-		
 	The sample application allows you to upload a text file in a PostgreSQL database.  You will test if this sample application is correctly running.
 
 	<br>
@@ -277,6 +277,7 @@ You will download a copy of a sample application that you will deploy in your Bl
 	HOWEVER, since you have not created any PostgreSQL database yet, you encountered the error `No PostgreSQL service URL found. Make sure you have bound the correct services to your app.`.  You will fix this error by creating a PostgreSQL server later.
 
 	<br>
+	
 1. Close the browser tab containing the sample application.
 
 	<br>
@@ -355,8 +356,8 @@ However, as demonstrated, you were able to make the sample application to commun
 	The value above contains the credentials of the PostgreSQL service.  This value was produced when you created the service earlier.  
 
 	Recall that you clicked the `ADD A SERVICE OR API` link earlier then created the PostgreSQL service.  Adding a service (or API) does two things:
-		- create a service
-		- bind the service to the application
+	- create a service
+	- bind the service to the application
 
 	Binding the PostgreSQL service to the application simply instructs Bluemix to share the credentials of the PostgreSQL service to the sample application.  The credentials are shared by placing the values of the credentials to `VCAP_SERVICES`.
 
@@ -445,6 +446,7 @@ However, as demonstrated, you were able to make the sample application to commun
 	<br>
 	
 ####Delete the Sample Application and PostgreSQL Service
+
 You may delete applications and services that you don't anymore need.  This will free up some resources which is essential to accommodate new applications and services you want to deploy in the future.
 
 1. Go back to the browser tab containing your Bluemix account.  In the menu, click `DASHBOARD`.  
@@ -469,4 +471,8 @@ You may delete applications and services that you don't anymore need.  This will
 
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
 
+####What's Next?
+
+[Git Basics Tutorial](/git-basics)
