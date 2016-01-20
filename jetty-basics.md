@@ -7,6 +7,7 @@ permalink: /jetty-basics/
 ##Application Development Tutorial
 
 ###Jetty Basics
+
 Jetty is a Java HTTP (Web) server and Java Servlet container. 
 
 In this tutorial you will learn how to deploy a web application packaged as a `.war` file in Jetty.
@@ -19,12 +20,7 @@ In this tutorial you will learn how to deploy a web application packaged as a `.
 
 >- **However**, ensure that you have Git client installed in your machine.
 
-
-
-
-
-
-
+	
 <br>
 
 
@@ -35,6 +31,8 @@ In this tutorial you will learn how to deploy a web application packaged as a `.
 
 	Jetty is highly dependent on the installed JDK.  Make sure that your version of JDK is compatible with the Jetty version you will download.  You may refer to the [Jetty Comparison Table](https://wiki.eclipse.org/Jetty/Starting/Jetty_Version_Comparison_Table) for Jetty-JDK version compatibility.
 
+	<br>
+	
 1. Extract Jetty in a directory.  We will call this directory as Jetty's home directory.
 
 1. Open a terminal window a go to the Jetty directory.
@@ -72,6 +70,8 @@ In this tutorial you will learn how to deploy a web application packaged as a `.
 
 	A sample web application `calcu.app` can be found in the directory.  This sample application simply displays 3 simple mathematical equations.  
 
+	<br>
+	
 1. Copy `calcuapp.war` to Jetty's `webapps` subdirectory.
 
 1. On a web browser, go to [`http://localhost:8080/calcuapp/calculator.jsp`](http://localhost:8080/calcuapp/calculator.jsp).
@@ -96,7 +96,9 @@ In this tutorial you will learn how to deploy a web application packaged as a `.
 
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
+
 ####What's next?
 
-
+[GitHub Basics Tutorial](/github-basics)
 
