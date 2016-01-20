@@ -9,6 +9,7 @@ permalink: /devops-track-plan/
 
 In this tutorial you will learn how to use track and plan to create and monitor stories and defects in a web application project.
 
+<br>
 
 >**Prerequisite:**
 
