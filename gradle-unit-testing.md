@@ -3,10 +3,7 @@ layout: post
 title: Gradle's Unit Testing
 permalink: /gradle-unit-testing/
 ---
-*
-##Application Development Tutorial
 
-###Gradle's Unit Testing
 
 Gradle's unit testing allows execution of test classes (e.g., those created using the JUnit library).
 
