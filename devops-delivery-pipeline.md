@@ -399,7 +399,7 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 
 You will intentionally introduce errors in `src/main/java/net/tutorial/Math.java` so that you can verify if the `Test Stage` will detect the errors.
 
-1.  On the `GITHUB TAB`:  Open the file `src/main/java/net/tutorial/Math.` for editing.
+1.  On the `GITHUB TAB`:  Open the file `src/main/java/net/tutorial/Math.java` for editing.
 
 1. On the `GITHUB TAB`:  Change the method `add` to the following:
 
@@ -410,7 +410,7 @@ You will intentionally introduce errors in `src/main/java/net/tutorial/Math.java
 	```
 	Since `a+b` is changed to `a-b`, we expect an error to be reported related to the `add` method.
 	
-	This error is discussed in detail in the [JUnit Basics Tutorial](/junit-basic) and revisited in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
+	This error is discussed in detail in the [JUnit Basics Tutorial](/junit-basics) and revisited in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
 
 	<br>
 	
