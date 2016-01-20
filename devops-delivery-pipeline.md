@@ -350,7 +350,7 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 
 1.  On the `DEVOPS-GIT TAB`:  Refresh the page.
 
-1.  On the `DEVOPS-GIT TAB`:  Notice that there is an `Incoming` change due to the modification of `calculator.jsp`.  Click the `Sync` button to update the copy of `calculator.jsp` in the working directory in your Bluemix DevOps project.
+1.  On the `DEVOPS-GIT TAB`:  Notice that there is an `Incoming` change due to the modification you did on `calculator.jsp` in GitHub.  Click the `Sync` button to update the copy of `calculator.jsp` in the working directory in your Bluemix DevOps project.
 
 1.  On the `DEVOPS-EDITOR TAB`:  Refresh the page and reopen the file `src/main/webapp/calculator.jsp`.  Notice that the following lines now exist:
 
@@ -392,6 +392,8 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 	Your GitHub repository is now updated with the new version of `calculator.jsp`.
 
 1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB` and verify that the `Build Stage` automatically started due to the changes made in the GitHub repository.
+
+	<br>
 
 ####See the Effect if an Error is encountered in the Delivery Piipeline
 
