@@ -435,7 +435,7 @@ You will intentionally introduce errors in `src/main/java/net/tutorial/Math.java
 
 	As expected,  the `Build Stage` started automatically. 
 
-	After the `Build Stage` is complete, the `Test Stage` started as well.  Due to the errors you introduced in the previous steps, the status of the `Test Stage` becomes `STAGE FAILED`.
+	After the `Build Stage` is complete, the `Test Stage` will start as well.  Due to the errors you introduced in the previous steps, the status of the `Test Stage` becomes `STAGE FAILED`.
 
 	<br>
 
