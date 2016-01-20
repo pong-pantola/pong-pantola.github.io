@@ -3,10 +3,7 @@ layout: post
 title: GitHub Basics
 permalink: /github-basics/
 ---
-*
-##Application Development Tutorial
 
-###GitHub Basics
 
 [GitHub](https://github.com) is a Git repository hosting system that can be used as a remote Git repository.
 
