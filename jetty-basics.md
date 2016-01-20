@@ -4,9 +4,6 @@ title: Jetty Basics
 permalink: /jetty-basics/
 ---
 
-##Application Development Tutorial
-
-###Jetty Basics
 
 Jetty is a Java HTTP (Web) server and Java Servlet container. 
 
