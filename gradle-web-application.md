@@ -4,9 +4,6 @@ title: Creating a Web Application using Gradle
 permalink: /gradle-web-application/
 ---
 
-##Application Development Tutorial
-
-###Creating a Web Application using Gradle
 
 Gradle has an available `war` plugin that allows you to package your Java web application into a `.war` file.
 
