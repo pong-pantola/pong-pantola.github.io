@@ -3,36 +3,22 @@ layout: post
 title: Git Basics
 permalink: /git-basics/
 ---
-*
+
 ##Application Development Tutorial
 
 ###Git Basics
+
 [Git](https://git-scm.com) is a version control system for software development.
 
 There are two ways to manage versions using Git.  Either through a series of commits or through the use of branches.
 
-In this tutorial you will learn how to use the version control of Git using commit and revert to a previous commit.
+In this tutorial you will learn how to use the version control of Git using commit and go back to a previous commit.
 
+<br>
 
 >**Prerequisite:**
 
->You are **required** to do the [Creating a Web Application using Gradle Tutorial](/gradle-web-application).
-
->- The sample code used in the current tutorial is based from the sample code used in [Creating a Web Application using Gradle Tutorial](/gradle-web-application). 
-
->You are not required (but **recommended**) to do  the [Bluemix Basics Tutorial](/bluemix-basics).
-
->- **However**, ensure that you have a Bluemix account.  
->- Your account should have the space `dev` under the region `US-South`.  The creation of the space `dev` is discussed in [Bluemix Basics Tutorial](/bluemix-basics).
-
->XXXYou are not required (but **recommended**) to do  the [Bluemix DevOps Services Basics Tutorial](/devops-basics).
-
->- **However**, ensure that you have a Bluemix DevOps Services account.
-
->XXXYou are not required (but **recommended**) to do  the [GitHub Basics Tutorial](/github-basics).
-
->- **However**, ensure that you have a GitHub account.
-
+>Having a programming background is required to do this tutorial.
 
 <br>
 
@@ -81,6 +67,8 @@ In this tutorial, you will be creating several `.txt` files that will contain a 
 	> cd gittemp
 	```
 
+	<br>
+	
 1. Create the subdirectory `alphabet` in the `gittemp` directory.  Go to the created directory.
 
 	```text
@@ -384,6 +372,8 @@ Checking out previous commits allows you to inspect the state of the files after
 
 	The hash value is important to undo previous commits and go to a particular state of a file.
 
+	<br>
+	
 1. Inspect the state of the file when the words ant to horse has just been added.
 
 	```text
@@ -539,6 +529,8 @@ The `git checkout` command that was demonstrated above allows you to inspect the
 
 	This is the same log that was shown in the previous steps.
 
+	<br>
+	
 1. Go back to the state of the file when the words ant to horse has just been added.
 
 	```text
@@ -629,9 +621,11 @@ The `git checkout` command that was demonstrated above allows you to inspect the
 	
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
+[Jetty Basics Tutorial](/jetty-basics)
 
 
 
