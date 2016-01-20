@@ -463,7 +463,7 @@ Having separate deploy stages for development and production is essential to ens
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `INPUT` tab, set the following values:
 
 	||||
-	|-|-|-|
+	|---|---|---|
 	| **Input Type** | Build Artifacts |
 	| **Stage** | Build Stage |
 	| **Job** | Gradle Assemble |
