@@ -1,31 +1,27 @@
 ---
 layout: post
-title: Bluemix Devops Services Delivery Pipeline
+title: Bluemix Devops Services Track and Plan
 permalink: /devops-track-plan/
 ---
 *
 ##Application Development Tutorial
 
-###Bluemix DevOps Services Delivery Pipeline
-[Bluemix DevOps Services](https://hub.jazz.net) has a delivery pipeline that allows you to build, test, and deploy your web application.
+###Bluemix DevOps Services Track and Plan
+[Bluemix DevOps Services](https://hub.jazz.net) has a track and plan feature supports Agile planning.
 
-In this tutorial you will learn to set-up a delivery pipeline by creating a build stage, a test stage, and a deploy stage.  The build stage will use Gradle.  The test stage will use JUnit through Gradle.  The deploy stage will use the cf tool.
+In this tutorial you will learn how to use track and plan to create and monitor stories and defects.
 
 
 >**Prerequisite:**
 
->You are **required** to do the [Creating a Web Application using Gradle Tutorial](/gradle-web-application).
+>You are **required** to do the [Bluemix DevOps Services Delivery Pipeline Tutorial](/devops-delivery-pipeline).
 
->- The sample code used in the current tutorial is based from the sample code used in [Creating a Web Application using Gradle Tutorial](/gradle-web-application). 
+>- The Bluemix DevOps project as well as the GitHub repository you created in this tutorial are needed in the current tutorial. 
 
 >You are not required (but **recommended**) to do  the [Bluemix Basics Tutorial](/bluemix-basics).
 
 >- **However**, ensure that you have a Bluemix account.  
 >- Your account should have the space `dev` under the region `US-South`.  The creation of the space `dev` is discussed in [Bluemix Basics Tutorial](/bluemix-basics).
-
->You are not required (but **recommended**) to do  the [Bluemix DevOps Services Basics Tutorial](/devops-basics).
-
->- **However**, ensure that you have a Bluemix DevOps Services account.
 
 >You are not required (but **recommended**) to do  the [GitHub Basics Tutorial](/github-basics).
 
@@ -35,61 +31,9 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 <br>
 
 
+####Open Existing Bluemix DevOps project
 
-####Copy a GitHub Repository
-
-
-1. Open a web browser tab and login to [GitHub](https://github.com/).  In this tutorial, we will refer to this browser tab as `GITHUB TAB`.
-
-1. Using the same web browser tab (`GITHUB TAB`), go to the GitHub repository [`https://github.com/pong-pantola/devops-delivery-pipeline`](https://github.com/pong-pantola/devops-delivery-pipeline).
-
-1. Fork the repository by clicking the ` Fork` button. 
-
-1. Verify that you have successfully forked the repository by checking its name:
-
-	**Name of Repository:**
-
-	```text		
-	<username>/devops-delivery-pipeline
-	```
-
-	The repository contains the following.
-
-	```text
-	devops-delivery-pipeline/
-	|
-	|----build.gradle
-	|
-	|----src/
-	     |
-	     |----main/
-	     |    |
-	     |    |----java/net/tutorial/
-	     |    |             |
-	     |    |             |----Math.java
-	     |    |             |----Calculator.java
-	     |    |
-	     |    |----resources/
-	     |    |    |
-	     |    |    |----log4j.properties        
-	     |    |
-	     |    |----webapp/
-	     |         |
-	     |         |----calculator.jsp
-	     |	     
-	     |----test/
-	          |
-	          |----java/net/tutorial/
-	                        |
-	                        |----MyTest.java
-	                        |----TestRunner.java	
-	```
-
-	The subdirectories and files are exactly the same as the one you used and created in [Creating a Web Application using Gradle Tutorial](/gradle-web-application). 
-
-####Create a Bluemix DevOps Project based on the GitHub Repository
-
-1. Open another web browser tab and login to [Bluemix DevOps](https://hub.jazz.net/).
+1. Login to [Bluemix DevOps](https://hub.jazz.net/).
 
 1. Click `CREATE PROJECT`.
 
