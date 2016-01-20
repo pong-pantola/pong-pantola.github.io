@@ -3,10 +3,11 @@ layout: post
 title: Bluemix Devops Services Delivery Pipeline
 permalink: /devops-delivery-pipeline/
 ---
-*
+
 ##Application Development Tutorial
 
 ###Bluemix DevOps Services Delivery Pipeline
+
 [Bluemix DevOps Services](https://hub.jazz.net) has a delivery pipeline that allows you to build, test, and deploy your web application.
 
 In this tutorial you will learn to set-up a delivery pipeline by creating a build stage, a test stage, and a deploy stage.  The build stage will use Gradle.  The test stage will use JUnit through Gradle.  The deploy stage will use the cf tool.
@@ -87,6 +88,8 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 	The subdirectories and files are exactly the same as the one you used and created in [Creating a Web Application using Gradle Tutorial](/gradle-web-application). 
 
+	<br>
+
 ####Create a Bluemix DevOps Project based on the GitHub Repository
 
 1. Open another web browser tab and login to [Bluemix DevOps](https://hub.jazz.net/).
@@ -99,6 +102,8 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 	>If this is the first time you will link a Bluemix DevOps project to a GitHub repository, you will be asked to authorize your Bluemix DevOps account to access your GitHub account.  Proceed with confirming access.
 
+	<br>
+	
 1. Select the repository `<username>/devops-delivery-pipeline`
 
 1. Ensure the following options are chosen:
@@ -223,6 +228,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 	>Unlike the build and test stages which are named `Build Stage` and `Test Stage`, respectively, the name of the deploy stage you are about to create is `Dev Deploy Stage` to denote that that the application will be deployed in the `dev` space of your Bluemix account.  Another deploy stage will be created later.
 
+	<br>
 
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: On the `INPUT` tab, set the following values:
 
@@ -279,7 +285,8 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 	These three commands are exactly the same commands that the three stages will do.
 
-
+	<br>
+	
 1.  On the `DEVOPS-DELIVERY-PIPELINE TAB`:  Click the `Run Stage` icon of the `Build Stage`.
 
 	Notice that the status of the `Build Stage` changes to `STAGE RUNNING`.
@@ -292,6 +299,8 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 
 	You may view the `DEVOPS-BUILD-STAGE-LOGS TAB`, `DEVOPS-TEST-STAGE-LOGS TAB`, `DEVOPS-DEV-DEPLOY-STAGE-LOGS TAB` to see the logs related to the execution of the three stages.
 
+	<br>
+	
 1. Open another web browser tab.  We will refer to this browser tab as `CALCULATOR-APP TAB`.
 
 1.  On the `CALCULATOR-APP TAB`:  Go to `http://calculator-<your_name>.mybluemix.net/calculator.jsp`.
@@ -321,11 +330,16 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 	<%="2 + 2 = " + m.add(2, 2)%>
 	<br>
 	```
+
+	<br>
+
 1. On the `GITHUB TAB`:  Click the `Commit changes` button.
 
 1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB` and verify that the `Build Stage` automatically started due to the changes made in the GitHub repository.
 
 	Wait until the three stages are complete.
+
+	<br>
 
 1.  On the `CALCULATOR-APP TAB`:  Refresh the page to see the changes made in the calculator application.
 
@@ -342,12 +356,16 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 
 	Let's modify again the  file `src/main/webapp/calculator.jsp` but this time using the Bluemix DevOps editor and see if the delivery pipeline is automatically triggered.
 
+	<br>
+	
 1.  On the `DEVOPS-EDITOR TAB`:  Open the file `src/main/webapp/calculator.jsp`.  
 
 	Notice that the lines you added in the `calculator.jsp`(i.e., `<%="2 + 2 = " + m.add(2, 2)%>` and `<br>`) in your GitHub repository do not appear in `calculator.jsp` of your working directory.
 
 	You need first to sync the working directory in your Bluemix DevOps project before you start editing another file.
 
+	<br>
+	
 1.  On the `DEVOPS-GIT TAB`:  Refresh the page.
 
 1.  On the `DEVOPS-GIT TAB`:  Notice that there is an `Incoming` change due to the modification you did on `calculator.jsp` in GitHub.  Click the `Sync` button to update the copy of `calculator.jsp` in the working directory in your Bluemix DevOps project.
@@ -359,19 +377,24 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 	<br>
 	```
 
+	<br>
+	
 1. On the `DEVOPS-EDITOR TAB`:  Add the following lines at the end just before the `</body>` tag:
 
 	```java
 	<%="3 - 3 = " + m.sub(3, 3)%>
 	<br>
 	```
+
+	<br>
+	
 1. On the `DEVOPS-EDITOR TAB`:  Make sure to save the changes made.
 
 1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB`.  
 
 	Notice that the `Build Stage` did not start automatically.  You only changed the `calculator.jsp` that is in the working directory and not the one in the GitHub repository.   You need to push the changes made in the working directory to the GitHub repository for the `Build Stage` to start.
 
-
+	<br>
 
 1. On the `DEVOPS-GIT TAB`: Refresh the page.
 
@@ -391,6 +414,8 @@ Since the `Build Stage` is configured to `Run jobs whenever a change is pushed t
 
 	Your GitHub repository is now updated with the new version of `calculator.jsp`.
 
+	<br>
+	
 1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB` and verify that the `Build Stage` automatically started due to the changes made in the GitHub repository.
 
 	<br>
@@ -460,6 +485,7 @@ Having separate deploy stages for development and production is essential to ens
 
 	>If you don't have a `prod` space,  you may use the [Bluemix Basics Tutorial](/bluemix-basics) as a guide in creating a space.
 
+	<br>
 	
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Click the `ADD STAGE` button.  Change the stage name `MyStage` to `Prod Deploy Stage`.
 
@@ -499,6 +525,8 @@ Having separate deploy stages for development and production is essential to ens
 
 	You have completed the `Prod Deploy Stage`.  You can now test the **Stage Trigger** of this stage.
 
+	<br>
+	
 1.  On the `GITHUB TAB`:  Open the file `src/main/webapp/calculator.jsp` for editing.
 
 1. On the `GITHUB TAB`:  Add the following lines at the end just before the `</body>` tag:
@@ -507,15 +535,22 @@ Having separate deploy stages for development and production is essential to ens
 	<%="4 x 4 = " + m.add(4, 4)%>
 	<br>
 	```
+
+	<br>
+	
 1. On the `GITHUB TAB`:  Click the `Commit changes` button.
 
 1. Quickly switch to the `DEVOPS-DELIVERY-PIPELINE TAB` and verify that the `Build Stage` is triggered automatically, followed by the `Test Stage`, and followed by the `Dev Deploy Stage`.  Wait for the first three stages to completely execute.
 
 	Notice that the `Prod Deploy Stage` does not start automatically after the `Dev Deploy Stage` is complete.  You need to manually start the `Prod Deploy Stage`.
 
+	<br>
+	
 1. On the `DEVOPS-DELIVERY-PIPELINE TAB`: Click the `Run Stage` icon of the `Prod Deploy Stage`.
 
 	Wait for this stage to be completed.
+
+	<br>
 
 1. Open another web browser tab.  We will refer to this browser tab as `CALCULATOR-PROD-APP TAB`.
 
@@ -564,8 +599,9 @@ Having separate deploy stages for development and production is essential to ens
 
 ####End of Tutorial
 
+Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
-
+[Bluemix DevOps Services Track and Plan Tutorial](/devops-track-plan)
 
