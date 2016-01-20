@@ -4,9 +4,7 @@ title: Gradle Basics
 permalink: /gradle-basics/
 ---
 
-##Application Development Tutorial
 
-###Gradle Basics
 
 [Gradle](http://gradle.org/) is an open source build automation system.  It has a Java plugin to allow building Java applications and running tests for them.
 
