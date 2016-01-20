@@ -9,6 +9,7 @@ permalink: /devops-delivery-pipeline/
 
 In this tutorial you will learn to set-up a delivery pipeline by creating a build stage, a test stage, and a deploy stage.  The build stage will use Gradle.  The test stage will use JUnit through Gradle.  The deploy stage will use the cf tool.
 
+<br>
 
 >**Prerequisite:**
 
