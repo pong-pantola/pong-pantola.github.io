@@ -34,8 +34,6 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	> cd gradletemp
 	```
 
-	<br>
-	
 1. Clone the git repository `https://github.com/pong-pantola/gradle-dependency-management.git` and go to the created `gradle-dependency-management` directory.
 
 	```text
@@ -46,7 +44,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	The `gradle-dependency-management` directory has two subdirectories: `src` and `build`.
 
 	```text
-	gradle-dependency-management/
+	manual-dependency-management/
 	|
 	|----src/main/
 	|        |
@@ -77,7 +75,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	`build/libs` is used for the libraries (i.e, `.jar` files) that you will download later.  These libraries are needed to compile the Java classes later.
 
-	<br>
+<br>
 
 
 ####Examine the Java classes
@@ -140,50 +138,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	<br>
  
-
-####Review the Java classes and Build script
-
-
-1. `Math.java`  contains the methods `add`, `sub`, and `multiply`.   This is exactly the same file that was discussed in [JUnit Basics Tutorial](/junit-basics). 
- 
-	 >Remember that the method `add` has a logical error (i.e., instead of `a+b`;, the return statement is `a-b;`). 
-
-	>In addition, a delay is inserted in the method `multiply` to demonstrate the timeout mechanism of JUnit.
-	
-	<br>
-
-1. `Calculator.java` is exactly the same file that was discussed in [Gradle's Dependency Management Tutorial](/gradle-dependency-management).   It is a Java application that uses `Math.java`.  
-
-1. `build.gradle` has the same content as the one you created in [Gradle's Dependency Management Tutorial](/gradle-dependency-management).
-
-	Please review the text below for the current contents of `build.gradle`:
-
-	```text
-	apply plugin: 'java'
-	
-	repositories {
-	    mavenCentral()
-	}
-	 
-	dependencies {
-	    compile 'log4j:log4j:1.2.17'
-	}
-	
-	jar {
-		from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-	    manifest {
-	        attributes 'Main-Class': 'net.tutorial.Calculator'
-	    }
-	}
-	```
-
-	Note that the contents are related to repositories and dependencies since the `build.gradle` file was used in the [Gradle's Dependency Management Tutorial](/gradle-dependency-management).  
-
-	In this tutorial, entries related to testing will be added to `build.gradle'.
-	
-	<br>
- 
-1. Compile `Math.java` and `Calculator.java`.
+1. Try to compile `Math.java` and `Calculator.java`.
 
 	> Make sure that you are in the `gradle-dependency-management` directory before issuing the command below.
  
@@ -268,7 +223,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	At this point, what is important to note is the compilation (and execution) became successful due to the manual dependency resolution.
  
-	<br>
+<br>
 
 ####Resolve the Library Dependency Problem using Gradle's Dependency Management
 
@@ -278,9 +233,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	>In Gradle, the `build` subdirectory and its subdirectories (e.g., `classes`) need not exist for compilation to work.
 
-	<br>
-	
-1. In the `gradle-dependency-management` directory, create a text file with a filename `build.gradle`.
+1. In the `manual-dependency-management` directory, create a text file with a filename `build.gradle`.
 
 1. Place the following line in `build.gradle`:
 
@@ -292,8 +245,6 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	At this point, Gradle's dependency management is not yet utilized in `build.gradle`.  Let's try to compile the `.java` files using Gradle and see what errors will be produced.
 
-	<br>
-	
 1. To compile the `.java` files using Gradle's `assemble` task:
 
 	> Make sure that you are in the `gradle-dependency-management` directory before issuing the command below.
@@ -393,7 +344,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	You may choose the most appropriate row in the search result.  For this tutorial, the row that was selected is the one with the following values:
 
 	GroupId | ArtifactId | Latest Vesion
-	---|---|---
+	-|-|-
 	log4j | log4j | 1.2.17
 
 	This is the reason why in `build.gradle` the dependency is specified as `compile 'log4j:log4j:1.2.17'`.
@@ -427,16 +378,16 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	Notice that the subdirectory `build` is automatically created.  Below are some of the subdirectories and files that are inside `build`.
 
 	```text
-	gradle-dependency-management/
+	manual-dependency-management/
 	|
 	|----build/
 	     |
 	     |----classes/main
 	     |           |
-	     |           |----net/tutorial/
-	     |                    |
-	     |                    |----Math.class
-	     |                    |----Calculator.class
+	     |           |----java/net/tutorial/
+	     |                        |
+	     |                        |----Math.class
+	     |                        |----Calculator.class
 	     |
 	     |----libs/
 	     |    |
@@ -450,10 +401,6 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	Notice that the `Math.class` and `Calculator.class` were created after the `assemble` task.  
 
 	More importantly, the `assemble` task generated the `gradle-dependency-management.jar` under the `libs` subdirectory.  This `.jar` file will be executed later.  In addition, the log4j.properties file is copied inside a subdirectory of `build`.  This is needed since the application uses the Log4j library.
-
-	>Instead of using the `assemble` task (i.e., by issuing the command `gradle assemble`) you may use the `classes` task (i.e., by issuing the command `gradle classes`) to compile the `.java` followed by the `jar` task (i.e., by issuing the command `gradle jar`) .
-
-	>In other words, `assemble` task = `classes` task + `jar` task.
 
 	<br>
 	
@@ -493,8 +440,6 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	}
 	```
 
-	<br>
-	
 1. Reassemble and try to run again the `.jar` file.
 
 	```text
@@ -549,8 +494,6 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	There are no classes related to Log4j that are included in the `.jar` file.
 
-	<br>
-	
 1. Specify that Log4j library should be included in the `.jar` file by updating the `build.gradle` file to the following:
 
 	```text
@@ -572,8 +515,6 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	}
 	```
 
-	<br>
-	
 1. Reassemble and try to run again the `.jar` file.
 
 	```text
@@ -624,11 +565,9 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	The subfolder `org/apache/log4j/` and additional subfolders and files are included in `gradle-dependency-management.jar`.
 
-	<br>
+<br>
 
 ####End of Tutorial
-
-Go back to the [List of Tutorials](/tutorial-list).
 
 ####What's next?
 
