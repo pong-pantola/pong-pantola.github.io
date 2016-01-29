@@ -157,11 +157,11 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 	 create mode 100644 sample.txt
 	```	
 
-	At this point, the changes made (i.e., updated the `README.md` file and created the `sample.txt text file`) are committed in your local repository.  However, the local repository is not synced with the remote repository `myfirstrepo`.  
+	At this point, the changes made (i.e., updated the `README.md` file and created the `sample.txt` text file) are committed in your local repository.  However, the local repository is not synced with the remote repository `myfirstrepo`.  
 
 	<br>
 
-1. Go back to your web browser and refresh your page to confirm that `README.md` has not been updated and `sample.txt` is not yet created in the remote repository`myfirstrepo`.
+1. Go back to your web browser and refresh your page to confirm that `README.md` has not been updated and `sample.txt` is not yet created in the remote repository `myfirstrepo`.
 
 1. Verify that the Git URL of your remote repository is declared in your local repository.
 
@@ -203,13 +203,13 @@ In this tutorial, you will learn how to use GitHub as a remote Git repository in
 
 	The command `git push` is used because you did some modifications in the local repository (i.e., updated `README.md` and created `sample.txt`) and you want to push these changes to your `remote repository`.
 
-	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository`myfirstrepo`.  A repository may have one or more branches.  By default, a repository has only one branch named `master`.   That is why your remote repository `myfirstrepo` has a `master` branch even if you never explicitly created it.  You may look at your GitHub page to verify that there is indeed a branch named `master` under the remote repository `myfirstrepo`.  This tutorial does not cover the creation of additional branches.
+	As discussed earlier, `origin` refers to the Git URL `https://github.com/<username>/myfirstrepo.git`.   The name `master` refers to the `master` branch in your  remote repository `myfirstrepo`.  A repository may have one or more branches.  By default, a repository has only one branch named `master`.   That is why your remote repository `myfirstrepo` has a `master` branch even if you never explicitly created it.  You may look at your GitHub page to verify that there is indeed a branch named `master` under the remote repository `myfirstrepo`.  This tutorial does not cover the creation of additional branches.
 
 	In summary, the command `git push origin master` pushes the changes of your local repository to the `master` branch of the remote repository referred to by origin (which is `https://github.com/<username>/myfirstrepo.git`).
 
 	<br>
 	
-1. Go back to your web browser and refresh your page to confirm that `README.md` has been updated and `sample.txt` already exist in the remote repository`myfirstrepo`.
+1. Go back to your web browser and refresh your page to confirm that `README.md` has been updated and `sample.txt` already exist in the remote repository `myfirstrepo`.
 
 	<br>
 	
@@ -228,7 +228,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	
 1. Click the `Fork` button.
 
-	You know have your own copy of `mysecondrepo`.  This can be verified through to the text `<username>/mysecondrepo` followed by `forked from pong-pantola/mysecondrepo`.
+	You now have your own copy of `mysecondrepo`.  This can be verified through the text `<username>/mysecondrepo` followed by `forked from pong-pantola/mysecondrepo`.
 
 	Forking allows you to make a copy of an existing repository and make it independent from the said existing repository.  If you start making changes to your forked repository, it will affect only this repository.
 
@@ -303,7 +303,7 @@ As mentioned earlier, there are two ways to create a repository.  Either create 
 	```	
 	
 
-	At this point, the changes made (i.e., created the `anothersample.txt text file`) are committed in your local repository.  However, the local repository is not synced with the remote repository `mysecondrepo`.  
+	At this point, the changes made (i.e., created the `anothersample.txt` text file) are committed in your local repository.  However, the local repository is not synced with the remote repository `mysecondrepo`.  
 
 	<br>
 	
@@ -492,7 +492,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 
 	||||
 	|---|---|---|
-	| **Repository name** | myfirstrepo |
+	| **Repository name** | mysharedrepo |
 	| **Type** | Public |
 	| **Initialize this repository with a README** | checked |
 
@@ -666,7 +666,7 @@ Syncing the contents of a local repository to a remote repository is an effectiv
 	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 	```
 
-	The `unable to access` error does not anymore appear.  This means that **Person B** is already given authorization to push updates to **Person A**'s remote repository.  However, the error message encountered in the previous activity.  This is due to to a `git push` will not sync the local repository of **Person B** and the remote repository of **Person A**.  Note that the remote repository already has `contribution-a.txt` which is still missing in **Person B**'s local repository.  This is summarized below:
+	The `unable to access` error does not anymore appear.  This means that **Person B** is already given authorization to push updates to **Person A**'s remote repository.  However, the error message encountered in the previous activity appeared again.  This is due to to a `git push` will not sync the local repository of **Person B** and the remote repository of **Person A**.  Note that the remote repository already has `contribution-a.txt` which is still missing in **Person B**'s local repository.  This is summarized below:
 
 	Repository | Contents Before **Person B**'s Push | Contents After **Person B**'s Push (if push will be allowed to proceed)
 	---|---|---
@@ -889,7 +889,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 	```
 
-	Similar to the error encountered by **Person B** earlier, **Person B** needs to perform a pull first before doing a push.  The only difference with the error encountered in this step is that the error is caused not by a missing file but due to the varying contents of `contribution-a.txt` in the remote repository and **Pearson B**'s local repository. 
+	Similar to the error encountered by **Person B** earlier, **Person B** needs to perform a pull first before doing a push.  The only difference with the error encountered in this step is that the error is caused not by a missing file but due to the varying contents of `contribution-a.txt` in the remote repository and **Person B**'s local repository. 
 
 	**Person B**'s  local repository's `contribution-a.txt`:
 	
@@ -900,6 +900,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	```
 
 	**Person A**'s remote repository's  `contribution-a.txt`:
+	
 	```text
 	This is the contribution of Person A.  This represents a source code written by Person A.
 	
@@ -932,7 +933,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	Automatic merge failed; fix conflicts and then commit the result.
 	```
 	
-	The `git pull` command is able to pull the changes from the remote repository (i.e., the line added in `contribution-a.txt`) and include it in `contribution-a.txt` in the local repository of **Person B**.  However, since **Person B** did its own changes on the file, git failed to figure out ohow to properly merge/consolidate the two changes.  
+	The `git pull` command is able to pull the changes from the remote repository (i.e., the line added in `contribution-a.txt`) and include it in `contribution-a.txt` in the local repository of **Person B**.  However, since **Person B** did its own changes on the file, Git failed to figure out how to properly merge/consolidate the two changes.  
 
 	The `contribution-a.txt` in the local repository of **Person B** now contains the following:
 
@@ -963,7 +964,7 @@ The previous activity demonstrated how the contributions made by teammates can b
 	This is an UPDATE made by Person A.
 	```
 
-	Take note that `contribution-a.txt` in the remote repository still does not contain the updates made by **Person B**:
+	Take note that `contribution-a.txt` in the remote repository still does not contain the updates made by **Person B**.  This is the current content of  `contribution-a.txt` in the remote repository:
 
 	```text
 	This is the contribution of Person A.  This represents a source code written by Person A.
