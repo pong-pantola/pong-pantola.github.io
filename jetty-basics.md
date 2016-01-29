@@ -65,7 +65,7 @@ In this tutorial you will learn how to deploy a web application packaged as a `.
 	> cd jetty-basics
 	```
 
-	A sample web application `calcu.app` can be found in the directory.  This sample application simply displays 3 simple mathematical equations.  
+	A sample web application `calcuapp.war` can be found in the directory.  This sample application simply displays 3 simple mathematical equations.  
 
 	<br>
 	
