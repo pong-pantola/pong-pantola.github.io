@@ -13,6 +13,11 @@ In this tutorial you will learn how to create a simple test class that is used t
 
 >Having a good understanding of Java programming is required to do this tutorial.
 
+>You are not required (but **recommended**) to do  the [Git Basics Tutorial](/git-basics).
+
+>- **However**, ensure that you have Git client installed in your machine.
+
+
 <br>
 
 ####Copy Sample Codes from Git repository
