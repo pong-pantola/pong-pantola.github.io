@@ -83,11 +83,11 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 1. `Math.java`  contains the methods `add`, `sub`, and `multiply`.   This is exactly the same file that was discussed in [JUnit Basics Tutorial](/junit-basics). 
  
-	Since the focus of this tutorial is on Gradle's dependency management, you don't need to analyze at this point the contents of `Math.java`.  This class was discussed in the [JUnit Basics Tutorial](/junit-basics) and will be revisited in [Gradle's Test Task Tutorial](/gradle-test-task).
+	Since the focus of this tutorial is on Gradle's dependency management, you don't need to analyze at this point the contents of `Math.java`.  This class was discussed in the [JUnit Basics Tutorial](/junit-basics) and will be revisited in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
  
-	 >Note that the method `add` has a logical error (i.e., instead of `a+b`;, the return statement is `a-b;`).  This error will be discussed further in the [Gradle's Test Task Tutorial](/gradle-test-task).  No need to fix this error at this point.
+	 >Note that the method `add` has a logical error (i.e., instead of `a+b`;, the return statement is `a-b;`).  This error will be discussed further in the [Gradle's Unit Testing Tutorial](/gradle-unit-testing).  No need to fix this error at this point.
 
-	>In addition, a delay is inserted in the method `multiply`.  This will also be discussed in the [Gradle's Test Task Tutorial](/gradle-test-task).
+	>In addition, a delay is inserted in the method `multiply`.  This will also be discussed in the [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
 	
 	<br>
 
@@ -173,7 +173,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 > In order to appreciate Gradle, let's try resolving library dependency without using Gradle.  After this, you will use Gradle's dependency management to see how dependency resolution becomes simple with the use of Gradle.
 
-1. Go to [http://logging.apache.org/log4j/2.x/download.html]([http://logging.apache.org/log4j/2.x/download.html]).
+1. Go to [http://logging.apache.org/log4j/2.x/download.html](http://logging.apache.org/log4j/2.x/download.html).
  
 	>Just in case the URL is broken,  you may go to [Apache Log4j](http://logging.apache.org/log4j) and find the download link.
  
