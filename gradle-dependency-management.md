@@ -44,7 +44,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	The `gradle-dependency-management` directory has two subdirectories: `src` and `build`.
 
 	```text
-	manual-dependency-management/
+	gradle-dependency-management/
 	|
 	|----src/main/
 	|        |
@@ -219,7 +219,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	INFO  - Calculator                 - Calculation completed.
 	```
 
-	As mentioned earlier the method `sum` has a logical error (i.e., sum should be 14 and not -4).  In addition, the method `multiply` has a delay that is why you have observed a 3 secs. delay before `4 x 7 = 28` appeared.  The logical error and the delay are not important in this tutorial.  These will be useful in [Gradle's Test Task Tutorial](/gradle-test-task).
+	As mentioned earlier the method `sum` has a logical error (i.e., sum should be 14 and not -4).  In addition, the method `multiply` has a delay that is why you have observed a 3 secs. delay before `4 x 7 = 28` appeared.  The logical error and the delay are not important in this tutorial.  These will be useful in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
 
 	At this point, what is important to note is the compilation (and execution) became successful due to the manual dependency resolution.
  
@@ -233,7 +233,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	>In Gradle, the `build` subdirectory and its subdirectories (e.g., `classes`) need not exist for compilation to work.
 
-1. In the `manual-dependency-management` directory, create a text file with a filename `build.gradle`.
+1. In the `gradle-dependency-management` directory, create a text file with a filename `build.gradle`.
 
 1. Place the following line in `build.gradle`:
 
@@ -245,7 +245,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	At this point, Gradle's dependency management is not yet utilized in `build.gradle`.  Let's try to compile the `.java` files using Gradle and see what errors will be produced.
 
-1. To compile the `.java` files using Gradle's `assemble` task:
+1. To compile the `.java` files, use Gradle's `assemble` task:
 
 	> Make sure that you are in the `gradle-dependency-management` directory before issuing the command below.
  
@@ -305,7 +305,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 
 	In this tutorial, you need one repository to resolve the dependency problem caused by the use of the Log4j library.
 
-	Repositories can be local (e.g., a local directory in your hard drive) or remote (e.g., Maven or Ivy repository).  This tutorial does not cover the details on how to use local repositories as well as the difference between Maven and Ivy repositories.  You may check [Gradle's website](https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html). for additional information on repositores.
+	Repositories can be local (e.g., a local directory in your hard drive) or remote (e.g., Maven or Ivy repository).  This tutorial does not cover the details on how to use local repositories as well as the difference between Maven and Ivy repositories.  You may check [Gradle's website](https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html) for additional information on repositories.
 
 	In `build.gradle`, you added the following lines earlier:
 
@@ -344,7 +344,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	You may choose the most appropriate row in the search result.  For this tutorial, the row that was selected is the one with the following values:
 
 	GroupId | ArtifactId | Latest Vesion
-	-|-|-
+	---|---|---
 	log4j | log4j | 1.2.17
 
 	This is the reason why in `build.gradle` the dependency is specified as `compile 'log4j:log4j:1.2.17'`.
@@ -378,7 +378,7 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
 	Notice that the subdirectory `build` is automatically created.  Below are some of the subdirectories and files that are inside `build`.
 
 	```text
-	manual-dependency-management/
+	gradle-dependency-management/
 	|
 	|----build/
 	     |
