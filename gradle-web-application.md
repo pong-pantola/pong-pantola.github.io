@@ -274,7 +274,7 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 
 ####Deploy the Web Application in Jetty
 
-1. Copy `calcuapp.war` to Jetty's `webapps` subdirectory.
+1. Copy `calcuapp.war` found in the `build/libs/` subdirectory to Jetty's `webapps` subdirectory.
 
 	>Refer to [Jetty Basics Tutorial](/jetty-basics) if your machine do not have the Jetty web server.
 	
