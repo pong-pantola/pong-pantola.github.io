@@ -77,7 +77,7 @@ In this tutorial you will learn how to run a test class created using a JUnit li
 
 	`gradle-unit-testing` has a Gradle build script `build.gradle`.  Its contents are those that were discussed in [Gradle's Dependency Management Tutorial](/gradle-dependency-management).  Specifically, it defines Maven as a repository as well as the Log4j library dependency.
  
-	In this tutorial, `build.gradle`will be updated to include entries related to unit testing.
+	In this tutorial, `build.gradle` will be updated to include entries related to unit testing.
 
 	<br>
 
