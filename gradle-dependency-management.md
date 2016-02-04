@@ -179,9 +179,12 @@ In this tutorial you will learn how to resolve library dependency using Gradle's
  
 1. Download the latest version of Apache Log4j library (i.e., apache-log4j-x.x-bin.zip OR apache-log4j-x.x-bin.tar.gz) in a temporary directory.
 
-1. Extract the contents of the zip (or gz) file.  You will see several Log4j `.jar` files.  Copy all the `.jar` files in the subdirectory `build/libs`.
+1. Extract the contents of the zip (or gz) file.  You will see several Log4j `.jar` files.  Copy the following `.jar` files in the subdirectory `build/libs`:
+	- `log4j-y.y-api-x.x.jar` (e.g., `log4j-1.2-api-2.5.jar`)
+	- `log4j-api-x.x.jar` (e.g., `log4j-api-2.5.jar`)
+	- `log4j-core-x.x.jar` (e.g., `log4j-core-2.5.jar`)
 
-	>Note that for the compilation to work, you don't need to copy all the `.jar` files.  Only one to three `.jar` files are needed.  However, since it may take sometime to identify which `.jar` files are needed, it is quicker just to copy all the files.  This is one problem with manually resolving dependencies.  You need to identify the necessary `.jar` files.
+	>Note that for the compilation to work, you need to select the necessary `.jar` files.  In a non-tutorial environment, you will be the one who will identify which `.jar` files are necessary which makes manual dependency resolution much harder.
 
 	<br>
 
