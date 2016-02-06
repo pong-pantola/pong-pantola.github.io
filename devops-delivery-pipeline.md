@@ -182,7 +182,7 @@ In this tutorial you will learn to set-up a delivery pipeline by creating a buil
 	||||
 	|---|---|---|
 	| **Builder Type** | Gradle |		
-	| **Build Shell Command** | `#!/bin/bash`<br>`gradle asemble`  |	
+	| **Build Shell Command** | `#!/bin/bash`<br>`gradle assemble`  |	
 	| **Stop running this stage if this job fails** | checked |
 
 	<br>
