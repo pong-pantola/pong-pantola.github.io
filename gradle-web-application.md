@@ -321,7 +321,7 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 	**Example:**
 		
 	```text
-	> cf push calculator-pong -p build/libs/calcuapp.war
+	> cf push calculator-pong -m 256M -p build/libs/calcuapp.war
 	```
 
 	<br>
