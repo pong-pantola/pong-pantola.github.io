@@ -165,8 +165,11 @@ permalink: /tutorial-list/
 >In this tutorial you will learn how to combine services in [IBM Bluemix](https://ibm.biz/bluemixph).
 
 >**Prerequisite:**
+
 >[Bluemix Basics Tutorial](/bluemix-basics) (recommended but not required)
+
 >[Creating a Web Application using Gradle Tutorial](/gradle-web-application)
+
 >[GitHub Basics Tutorial](/github-basics) (recommended but not required)
 
 
