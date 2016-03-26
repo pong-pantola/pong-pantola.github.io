@@ -31,6 +31,7 @@ permalink: /tutorial-list/
 >In this tutorial you will learn how to deploy a web application packaged as a `.war` file in Jetty.
 
 >**Prerequisite:**
+
 >[Git Basics Tutorial](/git-basics) (recommended but not required)
 
 <br>
