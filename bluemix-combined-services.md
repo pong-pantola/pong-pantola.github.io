@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Creating a Web Application using Gradle
+title: Combining Services in Bluemix
 permalink: /bluemix-combined-services/
 ---
 
