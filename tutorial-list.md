@@ -158,7 +158,7 @@ permalink: /tutorial-list/
 
 
 
-[Bluemix Combined Services Tutorial](/bluemix-combined-services)
+[Combining Services in Bluemix Tutorial](/bluemix-combined-services)
 
 >Bluemix has a set of services that can be combined in a single web application (e.g., output of one service will serve as input of another service).
 
