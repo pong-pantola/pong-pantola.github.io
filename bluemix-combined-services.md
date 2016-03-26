@@ -133,6 +133,7 @@ In this tutorial you will learn how to combine services in [IBM Bluemix](https:/
 	- redis (not Redis by Compose)
 
 	> **VERY IMPORTANT:**
+	
 	>For monogdb and redis, as mentioned above, do not use the version "by Compose".  Instead, in the `Catalog` page, scroll down in the `CATALOG` page until you see the `Bluemix Labs Catalog` link.  Click this link.	 Look for the services named `mongodb` and `redis`.
 
 	> When you add the last service (redis), you will be asked to restage your application, click the `RESTAGE` button.  If you don't click the `RESTAGE` button, your application will not restart and it will not recognize all the services you added.
