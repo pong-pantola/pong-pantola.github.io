@@ -5,27 +5,28 @@ permalink: /bluemix-combined-services/
 ---
 
 
-Gradle has an available `war` plugin that allows you to package your Java web application into a `.war` file.
+Bluemix has a set of services that can be combined in a single web application (e.g., output of one service will serve as input of another service).
 
-In this tutorial you will learn how to create a `.war` file.  The `.war` file will be deployed twice: locally (through a Jetty web server) and remotely (through [IBM Bluemix](https://ibm.biz/bluemixph)).
+In this tutorial you will learn how to combine services in [IBM Bluemix](https://ibm.biz/bluemixph).
 
 <br>
 
 >**Prerequisite:**
 
->You are **required** to do the [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
+>You are **required** to do the [Creating a Web Application using Gradle Tutorial](/gradle-web-application).
 
->- The sample code used in the current tutorial is based from the sample code used in [Gradle's Unit Testing Tutorial](/gradle-unit-testing). 
-
->You are not required (but **recommended**) to do the [Jetty Basics Tutorial](/jetty-basics).
-
->- **However**, ensure that your machine has the Jetty web server set-up as discussed in [Jetty Basics Tutorial](/jetty-basics).
+>- The steps used in this tutorial is based from [Creating a Web Application using Gradle Tutorial](/gradle-web-application). 
 
 >You are not required (but **recommended**) to do  the [Bluemix Basics Tutorial](/bluemix-basics).
 
 >- **However**, ensure that you have a Bluemix account.  
 >- Your account should have the space `dev` under the region `US-South`.  The creation of the space `dev` is discussed in [Bluemix Basics Tutorial](/bluemix-basics).
 >- Make sure that the `cf` tool is installed.  The installation of `cf` tool is discussed in [Bluemix Basics Tutorial](/bluemix-basics).
+
+>You are not required (but **recommended**) to do  the [GitHub Basics Tutorial](/github-basics).
+
+>- **However**, ensure that you have a GitHub account.
+
 
 
 <br>
@@ -37,215 +38,23 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 1. Open a terminal window and create the directory `gradletemp` in the root directory.  Go to the created directory.
 
 	```text		
-	> mkdir gradletemp
-	> cd gradletemp
+	> mkdir bluemixtemp
+	> cd bluemixtemp
 	```
 
 	<br>
 	
-1. Clone the git repository `https://github.com/pong-pantola/gradle-web-application.git` and go to the created `gradle-web-application` directory.
+1. Clone the git repository `https://github.com/pong-pantola/bluemix-combined-services.git` and go to the created `bluemix-combined-services` directory.
 
 	```text
-	> git clone https://github.com/pong-pantola/gradle-web-application.git
-	> cd gradle-web-application
+	> git clone https://github.com/pong-pantola/bluemix-combined-services.git
+	> cd bluemix-combined-services
 	```
  
-	The `gradle-web-application` directory has a subdirectory `src`.
-
-	```text
-	gradle-web-application/
-	|
-	|----build.gradle
-	|
-	|----src/
-	     |
-	     |----main/
-	     |    |
-	     |    |----java/net/tutorial/
-	     |    |             |
-	     |    |             |----Math.java
-	     |    |             |----Calculator.java
-	     |    |
-	     |    |----resources/
-	     |    |    |
-	     |    |    |----log4j.properties        
-	     |    |
-	     |    |----webapp/
-	     |         |
-	     |         |----calculator.jsp
-	     |	     
-	     |----test/
-	          |
-	          |----java/net/tutorial/
-	                        |
-	                        |----MyTest.java
-	                        |----TestRunner.java	
-	``` 
-
-	The subdirectories and files are exactly the same as the one you used and created in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).  However, an additional file is added: `src/main/webapp/calculator.jsp`.
-
-	`calculator.jsp` is the `.jsp` version of `Calculator.java`.
-
-	The logical errors present in `Math.java` in the [Gradle's Unit Testing Tutorial](/gradle-unit-testing) are already corrected in this tutorial's version of `Math.java`.
-
-	<br>
-
-####Review some of the Java classes and Build script
-
-
-1. As mentioned, `Math.java`  logical errors in [Gradle's Unit Testing Tutorial](/gradle-unit-testing) are already corrected.
-
-	**Source code** of	`src/main/java/net/tutorial/Math.java`:
- 
-	```java
-	package net.tutorial;
-	
-	public class Math{
-	
-	  //will be used in the multiply method to simulate that
-	  //the multiply method is taking too long to execute
-	  private void delay(){
-	    try{
-	      Thread.sleep(3000);//3000 msec. or 3 sec. delay
-	    } catch(InterruptedException ex) {
-	      Thread.currentThread().interrupt();
-	    }
-	  }
-	
-	  public int add(int a, int b){
-	    return a+b;
-	  }
-	  
-	  public int sub(int a, int b){
-	    return a-b;
-	  }  
-	
-	  public int multiply(int a, int b){
-	    return a*b;
-	  }
-	}
-	```
- 
-	 Remember that in the [Gradle's Unit Testing Tutorial](/gradle-unit-testing), the method `add` had a logical error (i.e., instead of `a+b`;, the return statement is `a-b;`). 	In addition, a delay is inserted in the method `multiply` to demonstrate the timeout mechanism of JUnit.  These two issues are already resolved in this tutorial's version of `Math.java`. 
-	
-	<br>
-
-1. `build.gradle` has the same content as the one you created in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).
-
-	Please review the text below for the current content of `build.gradle`:
-
-
-	```text
-	apply plugin: 'java'
-	
-	repositories {
-	    mavenCentral()
-	}
-	 
-	dependencies {
-	    compile 'log4j:log4j:1.2.17'
-	    testCompile 'junit:junit:4.12'
-	}
-	
-	jar {
-		from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-	    manifest {
-	        attributes 'Main-Class': 'net.tutorial.Calculator'
-	    }
-	}
-	```
-
-	Note that the contents of the above script are the same as the contents of `build.gradle` file that you completed in [Gradle's Unit Testing Tutorial](/gradle-unit-testing).  
-
-	In this tutorial, entries related to web application (e.g., use of `.war` file) will be added to `build.gradle`.
-	
-	<br>
- 
-1. As mentioned, `calculator.jsp` is the `.jsp` version of `Calculator.java`.
-
-	**Source code** of	`src/main/webapp/calculator.jsp`:
- 
-	```java
-	<!DOCTYPE html>
-	<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-	<%@ page import="net.tutorial.Math" %>
-	<html>
-	<head>
-	    <title>Calculator</title>
-	</head>
-	<body>
-	<%
-	Math m = new Math();
-	%>
-	
-	<%="5 + 9 = " + m.add(5, 9)%>
-	<br>
-	<%="8 - 2 = " + m.sub(8, 2)%>
-	<br>
-	<%="4 x 7 = " + m.multiply(4, 7)%>
-	<br>
-	
-	</body>
-	</html>
-	```
-
-	Note that similar to `Calculator.java`, `calculator.jsp` uses `Math.java`:
-	
-	```java
-	<%@ page import="net.tutorial.Math" %>
-	```
-
-	<br>
-	
-####Update Build script to support Web Application
-	
-1. Update `build.gradle` to include `.war` related entries:
-
-	```text
-	apply plugin: 'java'
-	
-	apply plugin: 'war'
-	
-	war {
-		archiveName 'calcuapp.war'
-	}
-	
-	repositories {
-	    mavenCentral()
-	}
-	 
-	dependencies {
-	    compile 'log4j:log4j:1.2.17'
-	    testCompile 'junit:junit:4.12'
-	}
-	
-	jar {
-		from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
-	    manifest {
-	        attributes 'Main-Class': 'net.tutorial.Calculator'
-	    }
-	}
-	```
-
-	Take note that the following were added in the script above:
-
-	```text
-	apply plugin: 'war'
-	
-	war {
-		archiveName 'calcuapp.war'
-	}
-	```
-	
-	The `apply plugin: 'war'` entry will provide capability to Gradle to create a `war` file.
-
-	The entry containing `archiveName 'calcuapp.war'` is added so that when the `.war` file is created, its name is `calcuapp.war`.  If you omit this entry, the name of the `.war` file is the name of the directory containing the project.  As an example, if `archiveName 'calcuapp.war'` is omitted, the `.war` file will be named `gradle-web-application.war`.
-
-	<br>
 
 1. Assemble the Gradle project.
 
-	> Make sure that you are in the `gradle-web-application` directory before issuing the command below.
+	> Make sure that you are in the `bluemix-combined-services` directory before issuing the command below.
 
 	```text
 	> gradle assemble
@@ -265,46 +74,16 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 	Total time: 9.289 secs
 	```
 	
-	The `build` directory and its subdirectories and files are created.
-
-     	In this tutorial, the most important file that was created is the `build/libs/calcuapp.war` file.  This is the `.war` file containing the web application.
 
 
 	<br>
 
-####Deploy the Web Application in Jetty
-
-1. Copy `calcuapp.war` found in the `build/libs/` subdirectory to Jetty's `webapps` subdirectory.
-
-	>Refer to [Jetty Basics Tutorial](/jetty-basics) if your machine do not have the Jetty web server.
-	
-1. Make sure that the Jetty web server is running.
-
-	>To start the Jetty web server
-	>- open another terminal window
-	>- go to Jetty's home directory
-	>- issue the command `java -jar start.jar`.
-
-1. On a web browser, go to [`http://localhost:8080/calcuapp/calculator.jsp`](http://localhost:8080/calcuapp/calculator.jsp).
-
-	**Output:**
-		
-	```text
-	5 + 9 = 14
-	8 - 2 = 6
-	4 x 7 = 28 
-	```
-
-	You have successfully deployed the calculator application in Jetty.
-
-
-	<br>
 
 ####Deploy the Web Application in Bluemix
 
 1. Login to your Bluemix account using the `cf` tool.
 
-	> Make sure that you are in the `gradle-web-application` directory before issuing the command below.
+	> Make sure that you are in the `bluemix-combined-services` directory before issuing the command below.
 
 	```text
 	> cf login -a https://api.ng.bluemix.net -s dev
@@ -315,45 +94,118 @@ In this tutorial you will learn how to create a `.war` file.  The `.war` file wi
 1. Upload the web application to your Bluemix account.
 
 	```text
-	> cf push calculator-<your_name> -m 256M -p build/libs/calcuapp.war
+	> cf push combination-<your_name> -m 512M -p build/libs/webapp.war
 	```
 
 	**Example:**
 		
 	```text
-	> cf push calculator-pong -m 256M -p build/libs/calcuapp.war
+	> cf push combination-pong -m 512M -p build/libs/webapp.war
 	```
 
 	<br>
+
+####Add Bluemix Services to the Web Application
+
+1. Open a web browser and login to your [Bluemix](https://ibm.biz/bluemixph) account.
+
+1. Click the widget of your application (`combination-<your_name>`) to see its overview.
+
+1. Click the `ADD A SERVICE OR API` link.  You will be redirected to the `Catalog` page. 
+
+1. Look for the `AlchemyAPI` service and click it.
+
+1. In the `Service name` text box, use the default name.
+
+1. Click the `CREATE` button.
+
+1. When asked to restage your application, click the `CANCEL` button.
+
+	> If you click the `RESTAGE` button, your application will restart.  It is advisable to click the `RESTAGE` button once you have added all the services, otherwise your web application will keep on restarting every time you click `RESTAGE` which will make the procedure of adding services longer.
+
+1. Repeat the steps above to add the following services:
+	- Language Translation
+	- Speech To Text
+	- Text To Speech
+	- Cloudant NoSQL DB
+	- Object Storage
+	- mongodb (not MongoDB by Compose)
+	- redis (not Redis by Compose)
+
+	> **VERY IMPORTANT:**
+	>For monogdb and redis, as mentioned above, do not use the version "by Compose".  Instead, in the `Catalog` page, scroll down in the `CATALOG` page until you see the `Bluemix Labs Catalog` link.  Click this link.	 Look for the services named `mongodb` and `redis`.
+
+	> When you add the last service (redis), you will be asked to restage your application, click the `RESTAGE` button.  If you don't click the `RESTAGE` button, your application will not restart and it will not recognize all the services you added.
+
+1. Wait for your application to restart.
 	
-1. On a web browser, go to `http://calculator-<your_name>.mybluemix.net/calculator.jsp`.
+1. On another browser tab, go to `http://combination-<your_name>.mybluemix.net`.
 
 	**Output:**
 		
 	```text
-	5 + 9 = 14
-	8 - 2 = 6
-	4 x 7 = 28 
+	Alchemy-Cloudant
+	
+	Alchemy-MongoDB
+	
+	Alchemy-Redis
+	
+	Alchemy-TextToSpeech
+	
+	LanguageTranslation-TextToSpeech
+	
+	ObjectStorage-SpeechToText
+	
+	TextToSpeech-ObjectStorage 
 	```
 
-	You have successfully deployed the calculator application in Bluemix.
+	You have successfully deployed the web application in Bluemix.
 
 	<br>
 
+####Test the Application
+Each hyperlink demonstrates how two services are combined.  For example, the link `Alchemy-Cloudant` demonstrates how the output of Alchemy API is used in Cloudant NoSQL DB.
+
+1. Alchemy-Cloudant
+
+	This asks a user to enter a URL of an image file.  The image should contain at least one person.  Alchemy API will extract information from the image.  Specifically, it will extract the age and gender of the person in the image.
+
+	The extracted age and gender are saved in a Cloudant NoSQL DB service.
+	
+1. Alchemy-MongoDB
+
+	This is the same as Alchemy-Cloudant except that the extracted age and gender are saved in a mongodb service .
+	
+1. Alchemy-Redis
+
+	This is the same as Alchemy-Cloudant and Alchemy-MongoDB except that the extracted age and gender are saved in a redis service .
+	
+1. Alchemy-TextToSpeech
+	
+	This is the same as Alchemy-Cloudant, Alchemy-MongoDB, and Alchemy-Redis.  However, instead of saving the age and gender, it will create a WAV file that contains the following sound: `Information Extraction Complete.  The person in the picture is a <GENDER>.  <His/Her> age is <AGE>`.
+	
+1. LanguageTranslation-TextToSpeech
+
+	This asks a user to enter a text in Spanish.  Using the Language Translation service, it will convert the text to English.  The English text is converted to a speech (i.e., WAV file) using the Text To Speech Service.
+	
+1. ObjectStorage-SpeechToText
+
+	This asks a user to select a WAV file containing an English sentence.  The WAV file is uploaded in an Object Storage service.
+
+	From the Object Storage service, it will download the WAV file and convert it to its equivalent to text using the Speech To Text service.
+	
+1. TextToSpeech-ObjectStorage 
+
+	This asks a user to enter a text.  The text is converted to speech (i.e., WAV file) using the Text To Speech service.  The WAV file is uploaded in an Object Storage service.  
+
 ####Clean up
 
-1. Delete your Bluemix application `calculator-<your_name>`.
+1. Delete your Bluemix application `combination-<your_name>`.
 
-1. Delete `calcuapp.war` from Jetty's `webapps` subdirectory.
-	>You may need to stop the Jetty web server to delete `calcuapp.war`.
-
+1. Make sure to delete as well all the created services.
 	<br>
 
 ####End of Tutorial
 
 Go back to the [List of Tutorials](/tutorial-list).
-
-####What's next?
-
-[Bluemix DevOps Services Basics Tutorial](/devops-basics)
 
