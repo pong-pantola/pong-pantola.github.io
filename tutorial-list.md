@@ -157,3 +157,21 @@ permalink: /tutorial-list/
 
 
 
+
+[Bluemix Combined Services Tutorial](/bluemix-combined-services)
+
+>Bluemix has a set of services that can be combined in a single web application (e.g., output of one service will serve as input of another service).
+
+>In this tutorial you will learn how to combine services in [IBM Bluemix](https://ibm.biz/bluemixph).
+
+>**Prerequisite:**
+>[Bluemix Basics Tutorial](/bluemix-basics) (recommended but not required)
+>[Creating a Web Application using Gradle Tutorial](/gradle-web-application)
+>[GitHub Basics Tutorial](/github-basics) (recommended but not required)
+
+
+<br>
+
+
+
+
