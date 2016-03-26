@@ -46,6 +46,7 @@ permalink: /tutorial-list/
 >In this tutorial, you will learn how to use GitHub as a remote Git repository in order for you to share your work with a teammate.
 
 >**Prerequisite:**
+
 >[Git Basics Tutorial](/git-basics)
 
 <br>
@@ -79,7 +80,9 @@ permalink: /tutorial-list/
 >In this tutorial you will learn how to resolve library dependency using Gradle's dependency management.  In order to appreciate this feature of Gradle, you will first resolve the dependency problem using the manual approach.
 
 >**Prerequisite:**
+
 >[Git Basics Tutorial](/git-basics) (recommended but not required)
+
 >[Gradle Basics Tutorial](/gradle-basics)
 
 <br>
@@ -92,7 +95,9 @@ permalink: /tutorial-list/
 >In this tutorial you will learn how to run a test class created using a JUnit library in Gradle.
 
 >**Prerequisite:**
+
 >[JUnit Basics Tutorial](/junit-basics)
+
 >[Gradle's Dependency Management Tutorial](/gradle-dependency-management)
 
 <br>
@@ -106,8 +111,11 @@ permalink: /tutorial-list/
 >In this tutorial you will learn how to create a `.war` file.  The `.war` file will be deployed twice: locally (through a Jetty web server) and remotely (through [IBM Bluemix](https://ibm.biz/bluemixph)).
 
 >**Prerequisite:**
+
 >[Jetty Basics Tutorial](/jetty-basics) (recommended but not required)
+
 >[Bluemix Basics Tutorial](/bluemix-basics) (recommended but not required)
+
 >[Gradle's Unit Testing Tutorial](/gradle-unit-testing)
 
 <br>
@@ -120,7 +128,9 @@ permalink: /tutorial-list/
 >In this tutorial you will explore the different features of Bluemix DevOps.
 
 >**Prerequisite:**
+
 >[Bluemix Basics Tutorial](/bluemix-basics) (recommended but not required)
+
 >[GitHub Basics Tutorial](/github-basics)
 
 <br>
@@ -133,9 +143,13 @@ permalink: /tutorial-list/
 >In this tutorial you will learn to set-up a delivery pipeline by creating a build stage, a test stage, and a deploy stage.  The build stage will use Gradle.  The test stage will use JUnit through Gradle.  The deploy stage will use the cf tool.
 
 >**Prerequisite:**
+
 >[Bluemix Basics Tutorial](/bluemix-basics) (recommended but not required)
+
 >[Bluemix DevOps Services Basics](/devops-basics) (recommended but not required)
+
 >[GitHub Basics Tutorial](/github-basics) (recommended but not required)
+
 >[Creating a Web Application using Gradle Tutorial](/gradle-web-application)
 
 <br>
@@ -148,8 +162,11 @@ permalink: /tutorial-list/
 >In this tutorial you will learn how to use track and plan to create and monitor stories and defects in a web application project.
 
 >**Prerequisite:**
+
 >[Bluemix Basics Tutorial](/bluemix-basics) (recommended but not required)
+
 >[GitHub Basics Tutorial](/github-basics) (recommended but not required)
+
 >[Bluemix DevOps Services Delivery Pipeline Tutorial](/devops-delivery-pipeline)
 
 <br>
